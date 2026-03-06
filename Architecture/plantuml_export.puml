@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+
+actor "User" as User
+actor "Compliance Expert" as Expert
+
+rectangle "AI Compliance Checker (Safety & Security)" as System {
+  usecase "S1: Run Automated\nCompliance Check" as S1
+  usecase "S4: Generate Automated\nCompliance Report" as S4
+  usecase "S3: Missing Evidence Handling\n(mark Unknown + gaps)" as S3
+}
+
+rectangle "Evaluation Context" as Eval {
+  usecase "S2: Create Expert\nCompliance Report\n(baseline)" as S2
+}
+
+User --> S1
+Expert --> S2
+
+S1 --> S4 : <<include>>
+S3 ..> S1 : <<extend>>
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+' Process View - Activity Diagram
+
+start
+
+:User uploads system docs;
+:Capture metadata (doc type, owner, date);
+
+:Chunk system docs;
+:Compute embeddings;
+:Store chunks+embeddings in Vector DB\n(doc_type=system);
+
+:Load Safety & Security criteria set;
+
+repeat
+  :Select next criterion Ci;
+
+  :Form query Qi = Ci text\n(or Ci-as-question);
+
+  :Retrieve top-k evidence chunks\nfrom Vector DB;
+
+  if (Evidence found?) then (yes)
+    :Assemble context:\n- Ci requirement + rubric\n- evidence chunks\n- (optional) regulation context;
+    :LLM judges Ci\n-> {status, quotes, reason, missing};
+  else (no)
+    :Set status = Unknown/Not evidenced;
+    :Record missing evidence request;
+  endif
+
+repeat while (More criteria?)
+
+:Generate compliance matrix report\n(criterion -> decision -> evidence -> gaps);
+:Export report (PDF/HTML/JSON);
+
+stop
+@enduml

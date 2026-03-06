@@ -1,0 +1,1191 @@
+{
+  "schema_version": "2.1",
+  "domain": "Safety & Security (GPAI Code of Practice)",
+  "source": {
+    "document": "EU Code of Practice for General-Purpose AI Models \u2013 Safety and Security Chapter",
+    "commitment_count": 10,
+    "criterion_count": 32
+  },
+  "commitments": [
+    {
+      "id": "SS-1",
+      "title": "Safety & Security Framework",
+      "description": "Establish, implement, and maintain a comprehensive Safety & Security Framework",
+      "criteria": [
+        {
+          "id": "SS-1.1",
+          "short_name": "Create framework",
+          "title": "Create a Safety & Security Framework",
+          "requirement": "Define a state-of-the-art Safety and Security Framework that conceptually describes how systemic risks are assessed, accepted, and mitigated across the model lifecycle.",
+          "assessment_question": "Does the framework define, at a conceptual and descriptive level, the key elements required for systemic risk management under the Safety and Security Chapter (including trigger points, risk acceptance logic, mitigation expectations, responsibility allocation, external input, and update processes)?",
+          "expected_evidence": [
+            "The framework explicitly describes its purpose as managing systemic risks associated with general-purpose AI models.",
+            "The framework outlines how systemic risks are identified, assessed, and mitigated at a high level.",
+            "The framework describes trigger points at which additional evaluations or assessments would occur during the model lifecycle.",
+            "The framework defines how systemic risk acceptability is determined, including the use of risk tiers or acceptance criteria.",
+            "The framework describes, at a high level, expected categories or types of safety and security mitigations associated with different risk levels.",
+            "The framework explains how responsibility for systemic risk assessment and mitigation is allocated within the organization.",
+            "The framework describes whether and how input from external actors may influence risk-related decisions.",
+            "The framework describes how and under what conditions the framework itself would be reviewed or updated.",
+            "Indicative concepts and phrases: framework scope, systemic risk management, trigger points, risk acceptance criteria, mitigation expectations, responsibility allocation, external input, framework update process"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 6,
+          "extracted_keywords": [
+            "framework scope",
+            "systemic risk management",
+            "trigger points",
+            "risk acceptance criteria",
+            "mitigation expectations",
+            "responsibility allocation"
+          ],
+          "extracted_artifacts": [
+            "Safety & Security Framework",
+            "Risk Acceptance Criteria",
+            "Responsibility Allocation Map"
+          ]
+        },
+        {
+          "id": "SS-1.2",
+          "short_name": "Implement framework",
+          "title": "Implement the Safety & Security Framework",
+          "requirement": "Describe how the Safety and Security Framework is intended to be applied across the entire model lifecycle, including continuous systemic risk assessment activities, trigger-point evaluations, post-market monitoring, incident inputs, and escalation to a full systemic risk assessment and mitigation process.",
+          "assessment_question": "Does the framework describe how its systemic risk assessment and mitigation processes are intended to be applied across the model lifecycle, including continuous assessment activities, trigger-point evaluations, post-market monitoring, incident consideration, and escalation to a full systemic risk assessment?",
+          "expected_evidence": [
+            "The framework describes how systemic risks are continuously assessed along the entire model lifecycle.",
+            "The framework explains how lighter-touch evaluations are conducted at predefined trigger points (e.g. based on time, development stage, compute, access, or affordances).",
+            "The framework describes how post-market monitoring is conducted to inform ongoing systemic risk assessment.",
+            "The framework explains how information about serious incidents or near misses is taken into account within the risk assessment process.",
+            "The framework describes how results from trigger-point evaluations, post-market monitoring, or incident inputs can lead to deeper analysis or escalation to a full systemic risk assessment and mitigation process.",
+            "The framework outlines the sequence or structure of the full systemic risk assessment and mitigation process (identification, analysis, acceptability determination, mitigation, and re-assessment).",
+            "Indicative concepts and phrases: continuous implementation, lifecycle application, trigger-point evaluation, post-market monitoring, incident inputs, escalation, full systemic risk assessment, mitigation cycle"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 7,
+          "extracted_keywords": [
+            "continuous implementation",
+            "lifecycle application",
+            "trigger-point evaluation",
+            "post-market monitoring",
+            "incident inputs",
+            "escalation"
+          ],
+          "extracted_artifacts": [
+            "Lighter-touch Eval Results",
+            "Post-market Monitoring Data",
+            "Serious Incident Reports"
+          ]
+        },
+        {
+          "id": "SS-1.3",
+          "short_name": "Framework updates",
+          "title": "Framework updates",
+          "requirement": "Describe how the Safety and Security Framework defines the conditions, processes, and scope for periodic and event-driven framework assessments and updates, including versioning, changelogs, and remediation planning, in line with Measure 1.3 of the Safety and Security Chapter.",
+          "assessment_question": "Does the framework define how and when framework assessments and updates are intended to occur, including assessment triggers, periodic review, evaluation of framework adequacy and adherence, and the handling of remediation and versioning?",
+          "expected_evidence": [
+            "The framework describes that it is subject to periodic reassessment (e.g. at defined intervals) and to reassessment when specified conditions or events occur.",
+            "The framework describes conditions or triggers that would lead to a framework assessment (e.g. material changes in model development, serious incidents or near misses, materially changed systemic risks or model capabilities).",
+            "The framework explains the scope of a framework assessment, including the evaluation of framework adequacy with respect to the systemic risks of the models.",
+            "The framework explains that framework adherence is assessed, including consideration of non-adherence and its causes.",
+            "The framework describes how findings from a framework assessment may lead to updates of the framework to keep it state-of-the-art.",
+            "The framework describes that updates are intended to be versioned and accompanied by a changelog explaining the nature and rationale of changes.",
+            "The framework describes how remediation plans are intended to be defined when framework assessments identify risks of continued or future non-adherence.",
+            "Indicative concepts and phrases: framework assessment, adequacy, adherence, periodic review, reassessment triggers, serious incidents, material changes, versioning, changelog, remediation planning"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 9,
+          "extracted_keywords": [
+            "framework assessment",
+            "adequacy",
+            "adherence",
+            "periodic review",
+            "reassessment triggers",
+            "serious incidents"
+          ],
+          "extracted_artifacts": [
+            "Framework Changelog",
+            "Framework Assessment Report",
+            "Remediation Plans"
+          ]
+        },
+        {
+          "id": "SS-1.4",
+          "short_name": "AI Office notification",
+          "title": "AI Office notification",
+          "requirement": "Acknowledge the obligation to notify the AI Office of the Safety and Security Framework and its updates, in line with Measure 1.4 of the Safety and Security Chapter.",
+          "assessment_question": "Measure 1.4 Framework notifications: Does the framework acknowledge the obligation to notify the AI Office of the framework and its updates, including any intended notification timing?",
+          "expected_evidence": [
+            "The framework explicitly acknowledges an obligation to notify or inform the AI Office about the Safety and Security Framework.",
+            "The framework indicates that updates to the framework are also subject to notification.",
+            "The framework references the intended timing for such notification (e.g. after confirmation or update).",
+            "Indicative concepts and phrases: AI Office notification, regulatory notification, framework notification, update notification"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 10,
+          "extracted_keywords": [
+            "AI Office notification",
+            "regulatory notification",
+            "framework notification",
+            "update notification"
+          ],
+          "extracted_artifacts": [
+            "Unredacted Framework",
+            "Framework Updates"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-10",
+      "title": "Documentation & Transparency",
+      "description": "Maintain detailed documentation and provide appropriate public transparency",
+      "criteria": [
+        {
+          "id": "SS-10.1",
+          "short_name": "Additional documentation",
+          "title": "Additional documentation",
+          "requirement": "Define and maintain additional detailed documentation describing the model\u2019s architecture, integration into AI systems, evaluation approaches and results, and implemented safety mitigations, and ensure such documentation can be provided to the AI Office upon request and is retained for at least ten years after market placement. The framework should also define how key systemic risk decisions and justifications are documented.",
+          "assessment_question": "Does the framework define requirements to maintain, retain, and make available additional detailed documentation and decision justifications for AI Office review?",
+          "expected_evidence": [
+            "Documentation defines requirements for maintaining detailed model architecture descriptions.",
+            "Documentation defines requirements for describing model integration into AI systems (where applicable).",
+            "Documentation defines requirements for documenting model evaluations, results, and evaluation strategies.",
+            "Documentation defines requirements for documenting implemented safety mitigations.",
+            "Documentation defines how key systemic risk processes, decisions, and justifications are recorded.",
+            "Documentation specifies retention periods for additional documentation (e.g. at least 10 years).",
+            "Indicative keywords/phrases: additional documentation, detailed description, architecture, integration, evaluations, results, safety mitigations, decision records, justification, retention, AI Office request"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 28,
+          "extracted_keywords": [],
+          "extracted_artifacts": [
+            "Detailed Architecture Doc",
+            "Integration Description",
+            "Detailed Evaluation Results",
+            "Mitigation Details"
+          ]
+        },
+        {
+          "id": "SS-10.2",
+          "short_name": "Public transparency",
+          "title": "Public transparency",
+          "requirement": "Define when and how summarised public versions of the Framework and Model Reports are published for the purpose of systemic risk assessment and mitigation, including safeguards to protect sensitive information and the effectiveness of safety and security mitigations. The framework should also define conditions under which public publication is not required (e.g. similarly safe or safer models).",
+          "assessment_question": "Does the framework define conditions, scope, safeguards, and exceptions for publishing public summaries of the Framework and Model Reports?",
+          "expected_evidence": [
+            "Documentation defines criteria for when public transparency is necessary for systemic risk assessment or mitigation.",
+            "Documentation defines the scope and content of public summaries of the Framework and/or Model Reports.",
+            "Documentation defines safeguards for protecting sensitive commercial information and mitigation effectiveness.",
+            "Documentation defines conditions under which public publication is not required (e.g. similarly safe or safer models).",
+            "Indicative keywords/phrases: public transparency, publish summaries, framework summary, model report summary, systemic risk, safeguards, redactions, sensitive information, similarly safe or safer, exception justification"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 28,
+          "extracted_keywords": [],
+          "extracted_artifacts": [
+            "Public Framework Summary",
+            "Public Model Report Summary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-2",
+      "title": "Systemic Risk Identification",
+      "description": "Identify and develop scenarios for systemic risks",
+      "criteria": [
+        {
+          "id": "SS-2.1",
+          "short_name": "Risk identification process",
+          "title": "Risk identification process",
+          "requirement": "Define a structured systemic risk identification process that is explicitly informed by the types of risks, the nature of systemic risks, and the sources of systemic risks as set out in Appendix 1, and that explicitly considers the specified systemic risks.",
+          "assessment_question": "Does the framework define a structured systemic risk identification process that is informed by the risk types (Appendix 1.1), the nature of systemic risks (Appendix 1.2), the sources of systemic risks (Appendix 1.3), and that explicitly considers the specified systemic risks (Appendix 1.4)?",
+          "expected_evidence": [
+            "The framework describes a structured process for identifying systemic risks stemming from the model.",
+            "The framework indicates that potential systemic risks are initially considered with reference to the types of risks defined in Appendix 1.1 (e.g. risks to public health, safety, public security, fundamental rights, and society).",
+            "The framework explains that the identification process considers the nature of systemic risks, including essential and contributing characteristics such as scale, propagation, capability-dependence, or irreversibility (Appendix 1.2).",
+            "The framework describes how potential sources of systemic risks are considered in the identification process, including model capabilities, model propensities, and model affordances or contextual factors (Appendix 1.3).",
+            "The framework explicitly indicates that the specified systemic risks listed in Appendix 1.4 are taken into account as part of the systemic risk identification process, such as risks related to chemical, biological, radiological, and nuclear (CBRN) threats, loss of control of the model, large-scale cyber offence, and harmful manipulation.",
+            "Indicative concepts and phrases: systemic risk identification, structured process, risk types, nature of systemic risks, risk sources, model capabilities, model propensities, model affordances, specified systemic risks"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 11,
+          "extracted_keywords": [
+            "systemic risk identification",
+            "structured process",
+            "risk types",
+            "nature of systemic risks",
+            "risk sources",
+            "model capabilities"
+          ],
+          "extracted_artifacts": [
+            "List of Systemic Risks",
+            "Risk Characteristics Analysis",
+            "Risk Source Analysis"
+          ]
+        },
+        {
+          "id": "SS-2.2",
+          "short_name": "Risk scenarios",
+          "title": "Risk scenarios",
+          "requirement": "The framework defines the need for the development of systemic risk scenarios for each identified systemic risk, including the appropriate number and level of detail of such scenarios.",
+          "assessment_question": "Does the framework define the need for the development of systemic risk scenarios for each identified systemic risk, including the appropriate number and level of detail of scenarios?",
+          "expected_evidence": [
+            "The framework states that systemic risk scenarios are to be developed for each identified systemic risk.",
+            "The framework describes the purpose of systemic risk scenarios in supporting subsequent risk analysis and assessment.",
+            "The framework states that an appropriate number of scenarios for a given systemic risk is needed.",
+            "The framework states that the level of detail of systemic risk scenarios is needed.",
+            "The framework indicates that systemic risk scenarios are linked conceptually to the risks identified through the systemic risk identification process.",
+            "Indicative concepts and phrases: systemic risk scenarios, scenario development, number of scenarios, level of detail, scenario appropriateness, linkage to identified risks"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 10,
+          "extracted_keywords": [
+            "systemic risk scenarios",
+            "scenario development",
+            "number of scenarios",
+            "level of detail",
+            "scenario appropriateness",
+            "linkage to identified risks"
+          ],
+          "extracted_artifacts": [
+            "Systemic Risk Scenarios"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-3",
+      "title": "Systemic Risk Analysis",
+      "description": "Analyze systemic risks through model-independent information, evaluations, modelling, estimation, and monitoring",
+      "criteria": [
+        {
+          "id": "SS-3.1",
+          "short_name": "Model-independent information",
+          "title": "Model-independent information",
+          "requirement": "Describe how the framework defines the gathering of model-independent information relevant to systemic risk analysis, including how the breadth and depth of information gathering are determined in relation to the systemic risk.",
+          "assessment_question": "Does the organisation systematically gather and document model-independent information relevant to identified systemic risks, using structured methods such as web searches or OSINT, literature reviews, market analyses of comparable models, training data reviews, historical incident analysis, forecasting of technological trends, expert consultations, and/or stakeholder or community engagement?",
+          "expected_evidence": [
+            "The framework describes that systemic risk analysis is informed by model-independent information.",
+            "The framework explains that the breadth and depth of model-independent information gathering are adjusted based on the characteristics or severity of the systemic risk.",
+            "The framework indicates categories of methods that may be used to gather model-independent information, such as web searches or open-source intelligence, literature reviews, market analyses, reviews of historical incident data, forecasting of general trends, expert interviews or panels, and participatory or community-based research methods.",
+            "The framework clarifies the role of model-independent information in informing subsequent stages of systemic risk analysis (e.g. evaluations, modelling, or estimation), without requiring that such stages have already been performed.",
+            "Indicative concepts and phrases: model-independent information, information gathering, breadth and depth, proportionality, literature review, market analysis, incident data, expert input, participatory methods"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 12,
+          "extracted_keywords": [
+            "model-independent information",
+            "information gathering",
+            "breadth and depth",
+            "proportionality",
+            "literature review",
+            "market analysis"
+          ],
+          "extracted_artifacts": [
+            "Model-independent Info",
+            "Literature Reviews",
+            "Training Data Reviews",
+            "Incident Data Analysis"
+          ]
+        },
+        {
+          "id": "SS-3.2",
+          "short_name": "Model evaluations",
+          "title": "Model evaluations",
+          "requirement": "Describe how the framework defines the design and conduct of state-of-the-art model evaluations to analyse systemic risks, in line with Appendix 3.",
+          "assessment_question": "Does the framework describe how model evaluations are intended to be designed and conducted to analyse systemic risks in a state-of-the-art manner, including appropriate elicitation, open-ended or adversarial testing, assessment of mitigation effectiveness, methodological rigour, and the use of qualified evaluation teams?",
+          "expected_evidence": [
+            "The framework describes that model evaluations are used to analyse systemic risks related to model capabilities, propensities, affordances, and/or effects.",
+            "The framework indicates that model evaluations are designed to be state-of-the-art and appropriate to the specific systemic risk being analysed.",
+            "The framework describes principles for ensuring scientific and technical rigour of evaluations, such as internal validity, external validity, and reproducibility.",
+            "The framework explains how model elicitation during evaluations is designed to minimise under-elicitation and model deception (e.g. by matching expected use contexts or misuse actor capabilities).",
+            "The framework describes that evaluations include open-ended or adversarial testing to identify unexpected behaviours, capability boundaries, or emergent properties.",
+            "The framework explains how the effectiveness of safety and security mitigations is assessed as part of model evaluations, including under adversarial pressure.",
+            "The framework describes requirements or expectations regarding the qualification of evaluation teams and the adequacy of resources and access needed for evaluations.",
+            "The framework indicates whether and under what conditions independent external model evaluations are intended to be used.",
+            "Indicative concepts and phrases: model evaluations, state-of-the-art evaluation, open-ended testing, adversarial testing, model elicitation, mitigation effectiveness, evaluation rigour, external evaluators"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 12,
+          "extracted_keywords": [
+            "model evaluations",
+            "state-of-the-art evaluation",
+            "open-ended testing",
+            "adversarial testing",
+            "model elicitation",
+            "mitigation effectiveness"
+          ],
+          "extracted_artifacts": [
+            "Model Evaluation Results",
+            "Red-teaming Reports",
+            "Benchmark Scores"
+          ]
+        },
+        {
+          "id": "SS-3.3",
+          "short_name": "Risk modelling",
+          "title": "Risk modelling",
+          "requirement": "Describe how the framework defines the modelling of systemic risks using at least state-of-the-art risk modelling methods, building on systemic risk scenarios and relevant information inputs.",
+          "assessment_question": "Does the framework describe how systemic risks are intended to be modelled using state-of-the-art methods, building on systemic risk scenarios and taking into account relevant information from risk identification and systemic risk analysis?",
+          "expected_evidence": [
+            "The framework describes that systemic risk modelling is part of the systemic risk analysis process.",
+            "The framework explains that modelling builds on systemic risk scenarios developed pursuant to the risk identification process.",
+            "The framework indicates that at least state-of-the-art risk modelling methods are used, appropriate to the systemic risk being analysed.",
+            "The framework describes how modelling takes into account relevant information inputs, such as risk identification outputs and information gathered during systemic risk analysis.",
+            "The framework explains the purpose of modelling in understanding risk pathways, interactions, or potential impacts, without requiring specific modelling outputs.",
+            "Indicative concepts and phrases: systemic risk modelling, risk modelling methods, state-of-the-art modelling, scenario-based modelling, information inputs"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 13,
+          "extracted_keywords": [
+            "systemic risk modelling",
+            "risk modelling methods",
+            "state-of-the-art modelling",
+            "scenario-based modelling",
+            "information inputs"
+          ],
+          "extracted_artifacts": [
+            "Systemic Risk Modelling Results"
+          ]
+        },
+        {
+          "id": "SS-3.4",
+          "short_name": "Risk estimation",
+          "title": "Risk estimation",
+          "requirement": "Describe how the framework defines the estimation of the probability and severity of harm for systemic risks, using at least state-of-the-art risk estimation methods and taking into account relevant information inputs.",
+          "assessment_question": "Does the framework describe how the probability and severity of harm for systemic risks are intended to be estimated using state-of-the-art methods, taking into account relevant information from systemic risk identification, analysis, and serious incident reporting, and how such estimates are expressed?",
+          "expected_evidence": [
+            "The framework describes that probability and severity of harm are estimated as part of systemic risk analysis.",
+            "The framework indicates that at least state-of-the-art risk estimation methods are used, appropriate to the systemic risk being assessed.",
+            "The framework explains that risk estimation takes into account relevant information inputs, such as outputs from systemic risk identification and analysis and information about serious incidents or near misses.",
+            "The framework describes how estimates of systemic risk are expressed, for example as risk scores, risk matrices, probability distributions, or other qualitative, semi-quantitative, or quantitative formats.",
+            "The framework explains the purpose of risk estimation in supporting systemic risk acceptance determination, without requiring specific numerical or qualitative results.",
+            "Indicative concepts and phrases: systemic risk estimation, probability of harm, severity of harm, risk estimation methods, risk score, risk matrix, probability distribution"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 13,
+          "extracted_keywords": [
+            "systemic risk estimation",
+            "probability of harm",
+            "severity of harm",
+            "risk estimation methods",
+            "risk score",
+            "risk matrix"
+          ],
+          "extracted_artifacts": [
+            "Systemic Risk Estimates",
+            "Risk Matrix",
+            "Probability Distributions"
+          ]
+        },
+        {
+          "id": "SS-3.5",
+          "short_name": "Post-market monitoring",
+          "title": "Post-market monitoring",
+          "requirement": "Describe how the framework defines post-market monitoring to gather information relevant to systemic risk assessment and updating, and how independent external evaluators are intended to be enabled under appropriate safeguards, where applicable.",
+          "assessment_question": "Does the framework describe an approach for post-market monitoring to gather information relevant to systemic risk assessment and updates, and does it define how independent external evaluators may be enabled with appropriate safeguards, where applicable?",
+          "expected_evidence": [
+            "The framework describes that post-market monitoring is conducted to gather information about the model\u2019s capabilities, propensities, affordances, and/or effects.",
+            "The framework explains that post-market monitoring informs systemic risk acceptability determinations and decisions on framework or report updates.",
+            "The framework indicates that a range of post-market monitoring methods may be used, such as collecting end-user feedback, providing reporting or incident channels, engaging with affected stakeholders, monitoring public sources, or supporting independent research.",
+            "The framework describes how post-market monitoring applies when the model is integrated into AI systems provided or deployed by the Signatory.",
+            "The framework describes whether and under what conditions independent external evaluators are intended to be provided with access to the model for post-market monitoring purposes.",
+            "The framework explains the safeguards associated with external evaluator access, such as selection criteria, information security measures, responsible disclosure procedures, and non-retaliation commitments.",
+            "Indicative concepts and phrases: post-market monitoring, continuous monitoring, incident reporting, feedback channels, independent external evaluators, evaluator access, safeguards, responsible disclosure, non-retaliation"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 13,
+          "extracted_keywords": [
+            "post-market monitoring",
+            "continuous monitoring",
+            "incident reporting",
+            "feedback channels",
+            "independent external evaluators",
+            "evaluator access"
+          ],
+          "extracted_artifacts": [
+            "Post-market Monitoring Results",
+            "End-user Feedback Logs",
+            "Incident Reporting Forms"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-4",
+      "title": "Risk Acceptance & Decisions",
+      "description": "Define acceptance criteria and make proceeding decisions based on risk acceptability",
+      "criteria": [
+        {
+          "id": "SS-4.1",
+          "short_name": "Acceptance criteria",
+          "title": "Acceptance criteria",
+          "requirement": "Describe how the framework defines and justifies systemic risk acceptance criteria or tiers for each identified systemic risk, including how acceptability is determined at the individual and overall level and how safety margins are incorporated.",
+          "assessment_question": "Does the framework describe and justify how systemic risk acceptance criteria or tiers are defined for each identified systemic risk, how they are used to determine acceptability at the individual and overall level, and how appropriate safety margins are incorporated?",
+          "expected_evidence": [
+            "The framework describes how systemic risk acceptance is determined for each identified systemic risk.",
+            "The framework defines systemic risk acceptance tiers or, where tiers are not suitable and the risk is not a specified systemic risk, alternative acceptance criteria.",
+            "The framework explains that acceptance tiers or criteria are measurable and are defined primarily in terms of model capabilities, and may also incorporate model propensities, risk estimates, or other suitable metrics.",
+            "The framework indicates that at least one systemic risk tier exists that has not yet been reached by the model.",
+            "The framework describes how acceptance criteria or tiers are used to determine acceptability for each systemic risk and for the overall systemic risk.",
+            "The framework explains how safety margins are incorporated into acceptance determination, taking into account uncertainty, potential future changes in model capabilities or usage, limitations of risk assessments, and the effectiveness of safety and security mitigations.",
+            "Indicative concepts and phrases: systemic risk acceptance, acceptance criteria, risk tiers, measurable thresholds, capability-based tiers, safety margin, uncertainty, acceptability determination"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 7,
+          "extracted_keywords": [
+            "systemic risk acceptance",
+            "acceptance criteria",
+            "risk tiers",
+            "measurable thresholds",
+            "capability-based tiers",
+            "safety margin"
+          ],
+          "extracted_artifacts": [
+            "Risk Acceptance Criteria",
+            "Systemic Risk Tiers",
+            "Forecast Timelines",
+            "External Input Process"
+          ]
+        },
+        {
+          "id": "SS-4.2",
+          "short_name": "Proceeding decisions",
+          "title": "Proceeding decisions",
+          "requirement": "Describe how the framework defines decisions to proceed with, restrict, or not proceed with the development, making available on the market, or use of the model based on systemic risk acceptance determination.",
+          "assessment_question": "Does the framework describe how decisions to proceed or not proceed with the development, market availability, or use of the model are made based on systemic risk acceptance determination, and how responses are defined when risks are not acceptable or are likely to become unacceptable?",
+          "expected_evidence": [
+            "The framework describes that proceeding with development, market availability, or use of the model is conditional on systemic risks being determined to be acceptable.",
+            "The framework explains how situations in which systemic risks are not acceptable or are reasonably foreseeable to become unacceptable are identified.",
+            "The framework describes the types of actions that may be taken when systemic risks are not acceptable, such as not making the model available, restricting availability, withdrawing or recalling the model.",
+            "The framework indicates that safety and security mitigations are to be implemented when systemic risks are not acceptable, in line with relevant mitigation commitments.",
+            "The framework describes that a new cycle of systemic risk identification, analysis, and acceptance determination is intended to be conducted following significant changes or mitigation measures.",
+            "Indicative concepts and phrases: proceed or not proceed, go/no-go decision logic, systemic risk acceptability, restriction, withdrawal, recall, mitigation, reassessment cycle"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 7,
+          "extracted_keywords": [
+            "proceed or not proceed",
+            "go/no-go decision logic",
+            "systemic risk acceptability",
+            "restriction",
+            "withdrawal",
+            "recall"
+          ],
+          "extracted_artifacts": [
+            "Proceeding Decision Record",
+            "Re-assessment Results"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-5",
+      "title": "Safety Mitigations",
+      "description": "Implement safety mitigations robust under adversarial pressure",
+      "criteria": [
+        {
+          "id": "SS-5.1",
+          "short_name": "Safety mitigations",
+          "title": "Safety mitigations",
+          "requirement": "The framework defines and requires the implementation of safety mitigations along the entire model lifecycle that are appropriate to identified systemic risks, sufficiently robust under adversarial pressure, and aligned with the model’s release and distribution strategy, with the objective of ensuring that systemic risks are acceptable",
+          "assessment_question": "Does the framework define and require the implementation of safety mitigations along the entire model lifecycle that are appropriate to identified systemic risks, sufficiently robust under adversarial pressure, and aligned with the model\u2019s release and distribution strategy, with the objective of ensuring that systemic risks are acceptable?",
+          "expected_evidence": [
+            "The framework describes categories or types of safety mitigations intended to address systemic risks.",
+            "The framework explains that safety mitigations are designed to be robust under adversarial pressure, such as attempts to bypass or subvert them.",
+            "The framework describes how the choice or combination of safety mitigations depends on the model\u2019s release and distribution strategy.",
+            "The framework provides examples of safety mitigation approaches, such as input or output filtering, behaviour modification, staged access, or other emerging safety techniques.",
+            "The framework indicates that safety mitigations are considered and adapted across the model lifecycle.",
+            "Indicative concepts and phrases: safety mitigation strategy, adversarial robustness, release strategy, distribution strategy, filtering, access staging, behaviour modification"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 17,
+          "extracted_keywords": [
+            "safety mitigation strategy",
+            "adversarial robustness",
+            "release strategy",
+            "distribution strategy",
+            "filtering",
+            "access staging"
+          ],
+          "extracted_artifacts": [
+            "Safety Mitigation Docs",
+            "Data Filtering Logs",
+            "Access Control Records",
+            "Model Behavior Tests"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-6",
+      "title": "Security Protections",
+      "description": "Define security goals and implement appropriate security mitigations",
+      "criteria": [
+        {
+          "id": "SS-6.1",
+          "short_name": "Security goal",
+          "title": "Security goal",
+          "requirement": "Describe a Security Goal that defines which threat actors the model\u2019s security mitigations are intended to protect against, taking into account the current and expected capabilities of the model.",
+          "assessment_question": "Does the framework explicitly define a Security Goal that identifies relevant threat actors (including non-state external and insider threats) and explains how this goal takes into account the model\u2019s current and expected capabilities?",
+          "expected_evidence": [
+            "The framework explicitly defines a Security Goal describing the purpose and scope of security protections for the model.",
+            "The Security Goal identifies relevant threat actors, including non-state external threats, insider threats, and other expected threat actors.",
+            "The framework explains how the Security Goal takes into account the current capabilities of the model.",
+            "The framework indicates that expected or foreseeable future model capabilities are considered when defining the Security Goal.",
+            "Indicative concepts and phrases: security goal, threat actors, non-state external threats, insider threats, model capability assumptions, future capability considerations"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 18,
+          "extracted_keywords": [
+            "security goal",
+            "threat actors",
+            "non-state external threats",
+            "insider threats",
+            "model capability assumptions",
+            "future capability considerations"
+          ],
+          "extracted_artifacts": [
+            "Security Goal Definition",
+            "Threat Actor Analysis"
+          ]
+        },
+        {
+          "id": "SS-6.2",
+          "short_name": "Security mitigations",
+          "title": "Security mitigations",
+          "requirement": "The framework defines how security mitigations are selected and applied to meet the Security Goal, including alignment with the mitigation objectives set out in Appendix 4 or the use of equivalent alternative measures, and specifies that implementation may be staged across the model lifecycle as model capabilities increase.",
+          "assessment_question": "Does the framework describe how security mitigations are selected to meet the Security Goal, how the mitigation objectives defined in Appendix 4 (e.g. general security, protection of unreleased model parameters, interface hardening, insider threat protection, and security assurance) are addressed or achieved through equivalent measures, and how implementation is intended to be staged over the model lifecycle?",
+          "expected_evidence": [
+            "The framework explicitly links security mitigations to achieving a defined Security Goal.",
+            "The framework explains how security mitigations are selected to address the mitigation objectives outlined in Appendix 4, such as general security protections, protection of unreleased model parameters, interface-access hardening, insider threat mitigation, and security assurance.",
+            "The framework indicates that specific security measures may vary depending on organisational context or infrastructure, and explains how alternative mitigations achieve equivalent mitigation objectives.",
+            "The framework describes how security mitigations may be introduced, strengthened, or expanded in stages as model capabilities increase along the entire model lifecycle.",
+            "Indicative concepts and phrases: security mitigation objectives, Appendix 4 alignment, protection of model parameters, interface hardening, insider threats, security assurance, staged security implementation"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 18,
+          "extracted_keywords": [
+            "security mitigation objectives",
+            "Appendix 4 alignment",
+            "protection of model parameters",
+            "interface hardening",
+            "insider threats",
+            "security assurance"
+          ],
+          "extracted_artifacts": [
+            "Security Mitigation Docs",
+            "Cybersecurity Audit Reports",
+            "Access Logs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-7",
+      "title": "Model Reporting",
+      "description": "Create and maintain comprehensive Model Reports with required documentation",
+      "criteria": [
+        {
+          "id": "SS-7.1",
+          "short_name": "Model description",
+          "title": "Model description",
+          "requirement": "Describe, in the Model Report, the model\u2019s characteristics and intended behaviour, including a high-level description of the model, its intended and actual uses, version differences, and a model specification explaining how the model is intended to operate.",
+          "assessment_question": "Does the Model Report describe the model\u2019s architecture, capabilities, propensities, and affordances, its intended and actual uses, differences between model versions, and its intended behaviour (including principles, refusal topics, and system prompt or references thereto)?",
+          "expected_evidence": [
+            "The Model Report provides a high-level description of the model\u2019s architecture, capabilities, propensities, and affordances, and how it differs from other models made available by the provider.",
+            "The Model Report describes how the model has been used and how it is intended to be used, including relevant use contexts.",
+            "The Model Report identifies model versions that are or will be made available on the market and explains relevant differences, including differences in systemic risks or mitigations.",
+            "The Model Report includes or references a model specification describing how the model is intended to operate, including guiding principles, prioritisation of instructions, refusal topics, and the system prompt (or a valid reference to it).",
+            "Indicative concepts and phrases: model description, intended use, version differences, model specification, guiding principles, refusal topics, system prompt"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 19,
+          "extracted_keywords": [
+            "model description",
+            "intended use",
+            "version differences",
+            "model specification",
+            "guiding principles",
+            "refusal topics"
+          ],
+          "extracted_artifacts": [
+            "Model Description",
+            "Model Specification",
+            "System Prompt",
+            "Training Data Documentation"
+          ]
+        },
+        {
+          "id": "SS-7.2",
+          "short_name": "Reasons for proceeding",
+          "title": "Reasons for proceeding",
+          "requirement": "Describe how the Model Report explains the reasons for proceeding with the development, making available on the market, and/or use of the model, based on the systemic risk acceptance determination defined in the framework (including safety margins).",
+          "assessment_question": "Does the Model Report explain the reasons for proceeding in a way that is consistent with the framework\u2019s systemic risk acceptance determination, including safety margins, foreseeable undermining conditions, and the described decision-making process?",
+          "expected_evidence": [
+            "The Model Report explains why the systemic risks are considered acceptable for this model, with reference to the acceptance logic and safety margins defined in the framework.",
+            "The Model Report identifies foreseeable conditions under which this justification would no longer hold.",
+            "The Model Report describes how the decision to proceed was made in line with the framework, including whether external actors or independent external evaluators informed the decision.",
+            "Indicative concepts and phrases: reported justification, consistency with acceptance criteria, safety margins, undermining conditions, decision rationale, external input"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 19,
+          "extracted_keywords": [
+            "reported justification",
+            "consistency with acceptance criteria",
+            "safety margins",
+            "undermining conditions",
+            "decision rationale",
+            "external input"
+          ],
+          "extracted_artifacts": [
+            "Justification for Proceeding",
+            "Safety Margin Analysis",
+            "Decision Record"
+          ]
+        },
+        {
+          "id": "SS-7.3",
+          "short_name": "Risk documentation",
+          "title": "Risk documentation",
+          "requirement": "Describe in the Model Report how the systemic risk framework has been applied to the model, including reported results of systemic risk identification, analysis, modelling, estimation, evaluations, implemented safety and security mitigations, their limitations, and planned future developments.",
+          "assessment_question": "Does the Model Report describe, in a structured and traceable manner, the reported outcomes of systemic risk identification, analysis, evaluation, and mitigation as defined by the framework, including limitations and forward-looking plans?",
+          "expected_evidence": [
+            "The Model Report describes the reported results of systemic risk identification and analysis, including assumptions, uncertainties, and links to the risk types defined in the framework.",
+            "The Model Report explains the reported outcomes of systemic risk modelling and estimation, including how risks are characterised and compared with and without mitigations.",
+            "The Model Report summarises relevant model evaluation approaches and results used to understand systemic risks, including illustrative examples or references.",
+            "The Model Report describes implemented safety mitigations and their limitations, and explains how they align with the framework\u2019s safety requirements.",
+            "The Model Report describes the Security Goal and implemented security mitigations, including alignment with defined mitigation objectives or justified alternatives.",
+            "The Model Report includes a high-level forward-looking description of planned model developments and anticipated changes to capabilities, risks, and mitigations.",
+            "Indicative concepts and phrases: reported results, description of process, assumptions and uncertainties, mitigation rationale, security goal, limitations, forward-looking plans"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 20,
+          "extracted_keywords": [
+            "reported results",
+            "description of process",
+            "assumptions and uncertainties",
+            "mitigation rationale",
+            "security goal",
+            "limitations"
+          ],
+          "extracted_artifacts": [
+            "Risk ID & Analysis Results",
+            "Model Evaluation Results",
+            "Elicitation Records",
+            "Input/Output Samples"
+          ]
+        },
+        {
+          "id": "SS-7.4",
+          "short_name": "External reports",
+          "title": "External reports",
+          "requirement": "Describe how the Model Report provides or references any available external reports from independent external model evaluators (Appendix 3.5) and independent external security reviews (Appendix 4.5), subject to confidentiality and evaluator control of publication, and how the report addresses cases where no external evaluator was involved or where evaluator selection must be justified.",
+          "assessment_question": "Does the Model Report (i) include or link to any available reports from independent external evaluators and independent external security reviews in a manner consistent with confidentiality and evaluator control, (ii) justify the absence of an external evaluator where applicable, and (iii) explain evaluator selection based on qualification criteria when an evaluator was involved?",
+          "expected_evidence": [
+            "The Model Report includes or references (e.g., via valid hyperlinks) any available reports from independent external evaluators involved under Appendix 3.5, and any available independent external security review reports under Appendix 4.5, where sharing is compatible with confidentiality obligations and external-party control over publication.",
+            "The Model Report indicates that inclusion of external reports does not imply endorsement of their content by the Signatory.",
+            "If no independent external evaluator was involved, the Model Report provides a justification referencing the applicable exception conditions (e.g., similarly safe or safer model, or inability to appoint qualified evaluators despite early search efforts).",
+            "If at least one independent external evaluator was involved, the Model Report explains the choice of evaluator with reference to qualification criteria (e.g., domain expertise, technical evaluation experience, appropriate security protocols, confidentiality protections).",
+            "Indicative concepts and phrases: external evaluator report, independent external security review, confidentiality obligations, control over publication, no implicit endorsement, evaluator qualification criteria, justification for absence"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 21,
+          "extracted_keywords": [
+            "external evaluator report",
+            "independent external security review",
+            "confidentiality obligations",
+            "control over publication",
+            "no implicit endorsement",
+            "evaluator qualification criteria"
+          ],
+          "extracted_artifacts": [
+            "External Evaluation Reports",
+            "Security Review Reports",
+            "Evaluator Selection Justification"
+          ]
+        },
+        {
+          "id": "SS-7.5",
+          "short_name": "Risk landscape changes",
+          "title": "Risk landscape changes",
+          "requirement": "Describe, in the Model Report, information relevant for understanding whether and how the development, making available on the market, and/or use of the model results in material changes to the systemic risk landscape that are relevant for systemic risk assessment and mitigation under this Chapter.",
+          "assessment_question": "Does the Model Report describe whether and how the model results in material changes to the systemic risk landscape, in a way that supports understanding of implications for systemic risk assessment and mitigation?",
+          "expected_evidence": [
+            "The Model Report includes information enabling understanding of whether and how the model leads to material changes in the systemic risk landscape relevant for systemic risk assessment and mitigation.",
+            "The Model Report describes scaling effects or scaling laws that suggest novel or materially enhanced model capabilities, where applicable.",
+            "The Model Report summarises characteristics of novel model architectures that materially improve computational efficiency or capabilities, where applicable.",
+            "The Model Report describes information relevant to assessing changes in mitigation effectiveness (e.g., reduced human legibility of chain-of-thought or other safety-relevant properties).",
+            "The Model Report describes training techniques that materially improve the efficiency or feasibility of training (e.g., distributed or large-scale training), where applicable.",
+            "Indicative concepts and phrases: material changes, systemic risk landscape, scaling laws, novel architectures, mitigation effectiveness, training techniques, computational efficiency"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 21,
+          "extracted_keywords": [
+            "material changes",
+            "systemic risk landscape",
+            "scaling laws",
+            "novel architectures",
+            "mitigation effectiveness",
+            "training techniques"
+          ],
+          "extracted_artifacts": [
+            "Scaling Laws Analysis",
+            "Novel Architecture Summary",
+            "Mitigation Effectiveness Review"
+          ]
+        },
+        {
+          "id": "SS-7.6",
+          "short_name": "Model report updates",
+          "title": "Model report updates",
+          "requirement": "Describe whether and how the framework defines obligations to update the Model Report when the justification for systemic risk acceptability is materially undermined, and whether it specifies periodic update expectations, versioning, and changelog requirements in line with Measure 7.6.",
+          "assessment_question": "Does the framework acknowledge and describe when Model Report updates are required, including material undermining triggers, timing expectations, periodic updates for most capable models, and versioning/changelog requirements?",
+          "expected_evidence": [
+            "The framework describes circumstances under which the justification for systemic risk acceptability may be materially undermined and requires a Model Report update in such cases.",
+            "The framework lists or references example triggers for updates, such as material changes in model capabilities, use, integrations, serious incidents, or evaluation validity.",
+            "The framework specifies expectations regarding the timing of Model Report updates, including completion within a reasonable time and prior to market release for deliberate changes.",
+            "The framework acknowledges periodic Model Report updates for the most capable models (e.g. at least every six months), including applicable exemptions.",
+            "The framework requires updated Model Reports to include versioning information and a changelog explaining how and why updates were made.",
+            "Indicative concepts and phrases: Model Report update, materially undermined justification, update triggers, reasonable time, periodic updates, most capable models, version number, changelog"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 22,
+          "extracted_keywords": [
+            "Model Report update",
+            "materially undermined justification",
+            "update triggers",
+            "reasonable time",
+            "periodic updates",
+            "most capable models"
+          ],
+          "extracted_artifacts": [
+            "Updated Model Report",
+            "Model Report Changelog"
+          ]
+        },
+        {
+          "id": "SS-7.7",
+          "short_name": "AI Office notification",
+          "title": "AI Office notification",
+          "requirement": "Describe whether and how the framework acknowledges the obligation to provide the AI Office with access to the Model Report and any updates, including timing requirements, permitted delays, interim reporting, and conditions for redactions in line with Measure 7.7.",
+          "assessment_question": "Does the framework acknowledge and describe obligations to provide the AI Office with access to the Model Report and updates, including timing rules, permitted delays with interim reporting, and conditions for redactions?",
+          "expected_evidence": [
+            "The framework states that the AI Office must be provided with access to the Model Report by the time a model is placed on the market.",
+            "The framework specifies that updates to the Model Report must be made accessible to the AI Office within a defined timeframe (e.g. five business days).",
+            "The framework acknowledges conditions under which redactions may be applied, such as requirements arising from national security laws.",
+            "The framework describes the possibility of delaying provision of the Model Report or updates for a limited period (e.g. up to 15 business days), subject to good-faith conditions.",
+            "The framework requires or acknowledges the provision of an interim Model Report containing specified information when such a delay is used.",
+            "The framework describes acceptable access mechanisms (e.g. publicly accessible link or secure channel specified by the AI Office).",
+            "Indicative concepts and phrases: AI Office access, Model Report notification, market placement, five business days, interim Model Report, delay, national security redactions"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 22,
+          "extracted_keywords": [
+            "AI Office access",
+            "Model Report notification",
+            "market placement",
+            "five business days",
+            "interim Model Report",
+            "delay"
+          ],
+          "extracted_artifacts": [
+            "Model Report Access Link"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-8",
+      "title": "Governance & Resources",
+      "description": "Establish governance, allocate resources, and promote healthy risk culture",
+      "criteria": [
+        {
+          "id": "SS-8.1",
+          "short_name": "Responsibilities",
+          "title": "Responsibilities",
+          "requirement": "Describe whether and how the framework defines clear responsibilities for managing systemic risks, including systemic risk oversight, ownership, support and monitoring, and assurance, and how these responsibilities are allocated across organisational governance levels.",
+          "assessment_question": "Does the framework explicitly define the four systemic risk responsibility types and describe how they are allocated across organisational governance levels, including independence where required?",
+          "expected_evidence": [
+            "The framework explicitly defines responsibilities for systemic risk oversight, ownership, support and monitoring, and assurance.",
+            "The framework describes how systemic risk oversight is assigned to a supervisory or otherwise independent governance function.",
+            "The framework describes how systemic risk ownership is assigned to executive-level functions responsible for risk-producing activities.",
+            "The framework describes how systemic risk support and monitoring is assigned to functions that are organisationally independent from core business activities.",
+            "The framework describes how systemic risk assurance is provided to a supervisory or independent body, including internal and, where applicable, external assurance.",
+            "The framework acknowledges proportional allocation of responsibilities based on organisational size and complexity (e.g. SMEs or SMCs).",
+            "Indicative concepts and phrases: systemic risk oversight, systemic risk ownership, support and monitoring, assurance, governance levels, supervisory function, executive function, independence"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 23,
+          "extracted_keywords": [
+            "systemic risk oversight",
+            "systemic risk ownership",
+            "support and monitoring",
+            "assurance",
+            "governance levels",
+            "supervisory function"
+          ],
+          "extracted_artifacts": [
+            "Responsibility Allocation Map",
+            "Governance Structure Doc"
+          ]
+        },
+        {
+          "id": "SS-8.2",
+          "short_name": "Resources",
+          "title": "Resources",
+          "requirement": "Describe whether and how the framework specifies that management bodies oversee the allocation of resources appropriate to the systemic risks, for actors assigned systemic risk responsibilities.",
+          "assessment_question": "Does the framework explicitly acknowledge management oversight of resource allocation for systemic risk responsibilities and specify the categories of resources to be considered?",
+          "expected_evidence": [
+            "The framework explicitly states that management bodies oversee the allocation of resources for managing systemic risks.",
+            "The framework links resource allocation to the responsibilities defined for systemic risk management.",
+            "The framework specifies that resource allocation must be appropriate to the systemic risks stemming from the model.",
+            "The framework explicitly identifies human resources as a required resource category for systemic risk management.",
+            "The framework explicitly identifies financial resources as a required resource category for systemic risk management.",
+            "The framework explicitly identifies access to information and knowledge as a required resource category for systemic risk management.",
+            "The framework explicitly identifies computational resources as a required resource category for systemic risk management.",
+            "Indicative concepts and phrases: management oversight, allocation of resources, appropriate resources, human resources, financial resources, information and knowledge, computational resources, systemic risk responsibilities"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 24,
+          "extracted_keywords": [
+            "management oversight",
+            "allocation of resources",
+            "appropriate resources",
+            "human resources",
+            "financial resources",
+            "information and knowledge"
+          ],
+          "extracted_artifacts": [
+            "Resource Allocation Plan",
+            "Budget/Personnel Records"
+          ]
+        },
+        {
+          "id": "SS-8.3",
+          "short_name": "Risk culture",
+          "title": "Risk culture",
+          "requirement": "Describe whether and how the framework promotes a healthy systemic risk culture, including leadership tone, openness to challenge, independence of systemic risk functions, and protections for reporting and whistleblowing.",
+          "assessment_question": "Does the framework explicitly acknowledge the importance of a healthy systemic risk culture and describe principles or mechanisms intended to promote it?",
+          "expected_evidence": [
+            "The framework explicitly recognises the importance of promoting a healthy systemic risk culture.",
+            "The framework describes leadership responsibilities or tone-from-the-top communication regarding systemic risk.",
+            "The framework states that challenge, escalation, or critical discussion of systemic risk decisions is encouraged.",
+            "The framework describes independence or safeguards for actors involved in systemic risk assessment and mitigation.",
+            "The framework references internal reporting or whistleblowing channels related to systemic risks.",
+            "The framework includes a non-retaliation commitment or protection for individuals raising systemic risk concerns.",
+            "Indicative concepts and phrases: risk culture, tone from the top, challenge of decisions, independence, reporting channels, whistleblower protection, non-retaliation, systemic risk governance"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 25,
+          "extracted_keywords": [
+            "risk culture",
+            "tone from the top",
+            "challenge of decisions",
+            "independence",
+            "reporting channels",
+            "whistleblower protection"
+          ],
+          "extracted_artifacts": [
+            "Risk Culture Promotion Plan",
+            "Anonymous Survey Results",
+            "Whistleblower Policy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SS-9",
+      "title": "Serious Incident Management",
+      "description": "Identify, document, report, and retain serious incident information",
+      "criteria": [
+        {
+          "id": "SS-9.1",
+          "short_name": "Incident identification",
+          "title": "Incident identification",
+          "requirement": "Describe whether and how the framework defines methods and channels for identifying and tracking serious incidents across the model lifecycle, including consideration of external sources and facilitation of third-party reporting.",
+          "assessment_question": "Does the framework acknowledge and describe approaches for identifying serious incidents, including monitoring external sources and enabling third-party reporting?",
+          "expected_evidence": [
+            "The framework explicitly recognises the need to identify and track serious incidents across the model lifecycle.",
+            "The framework describes intended methods for identifying serious incidents, including reference to post-market monitoring or similar processes.",
+            "The framework references consideration of external information sources (e.g. media, incident databases, research, public reporting).",
+            "The framework describes how downstream providers, users, or other third parties may report serious incidents to the Signatory and/or authorities.",
+            "Indicative concepts and phrases: serious incident identification, incident tracking, external sources, post-market monitoring, third-party reporting, downstream actors, reporting channels"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 25,
+          "extracted_keywords": [
+            "serious incident identification",
+            "incident tracking",
+            "external sources",
+            "post-market monitoring",
+            "third-party reporting",
+            "downstream actors"
+          ],
+          "extracted_artifacts": [
+            "Incident Tracking Log",
+            "External Report Reviews"
+          ]
+        },
+        {
+          "id": "SS-9.2",
+          "short_name": "Incident documentation",
+          "title": "Incident documentation",
+          "requirement": "Describe whether and how the framework defines the information that should be tracked, documented, and reported for serious incidents, including root cause analysis, mitigation failures or circumvention, and handling of incomplete information.",
+          "assessment_question": "Does the framework specify the minimum information set for serious incident documentation and reporting, including root cause analysis and treatment of missing information?",
+          "expected_evidence": [
+            "The framework defines the categories of information to be documented for serious incidents (e.g. timing, harm, affected groups, model involvement, and response actions).",
+            "The framework specifies that a root cause analysis should be conducted, including examination of model outputs, inputs, and any failures or circumvention of systemic risk mitigations.",
+            "The framework describes how patterns or signals from post-market monitoring may inform incident analysis.",
+            "The framework acknowledges that some information may be unavailable at the time of reporting and requires such gaps to be explicitly recorded.",
+            "The framework indicates that the level of detail in serious incident documentation should be proportionate to the severity of the incident.",
+            "Indicative concepts and phrases: serious incident documentation, minimum information set, root cause analysis, mitigation failure, circumvention, post-market patterns, incomplete information"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 26,
+          "extracted_keywords": [
+            "serious incident documentation",
+            "minimum information set",
+            "root cause analysis",
+            "mitigation failure",
+            "circumvention",
+            "post-market patterns"
+          ],
+          "extracted_artifacts": [
+            "Serious Incident Report",
+            "Root Cause Analysis",
+            "Harm Assessment",
+            "Chain of Events Analysis"
+          ]
+        },
+        {
+          "id": "SS-9.3",
+          "short_name": "Reporting timelines",
+          "title": "Reporting timelines",
+          "requirement": "The framework defines mandatory severity-based reporting timelines for serious incidents involving the model, including differentiated deadlines for initial reports based on incident type, requirements for periodic intermediate updates for unresolved incidents, and submission of a final report after incident resolution.",
+          "assessment_question": "Does the framework specify clearly differentiated reporting timelines for serious incidents (including specific deadlines for initial notification based on severity), periodic intermediate updates for unresolved incidents, and a final report after resolution?",
+          "expected_evidence": [
+            "The framework defines categories of serious incidents (e.g., critical infrastructure disruption, cybersecurity breach, death, serious harm to health, fundamental rights, property or environment).",
+            "The framework associates specific deadlines for initial reporting following awareness of a serious incident (e.g., two days, five days, ten days, fifteen days depending on severity).",
+            "The framework clarifies that reporting is triggered when the organisation becomes aware of the involvement of its model, including cases of reasonable suspicion of causal linkage.",
+            "The framework specifies periodic intermediate updates for unresolved serious incidents (e.g., at least every four weeks after the initial report).",
+            "The framework defines a deadline for submitting a final report after resolution of the serious incident (e.g., within 60 days after resolution).",
+            "The framework allows aggregation of multiple similar serious incidents within defined reporting timelines while respecting the earliest applicable deadline.",
+            "Indicative concepts and phrases: reporting timelines, severity-based deadlines, awareness trigger, reasonable likelihood, initial report within X days, intermediate update every four weeks, final report after resolution, serious incident notification"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence shows that severity-based reporting timelines are defined with specific differentiated deadlines for initial reporting, requirements for periodic intermediate updates for unresolved incidents, and a defined final reporting obligation after resolution. All core structural elements of the measure are addressed without material gaps.",
+            "PARTIALLY_COMPLIANT": "The framework defines reporting timelines or reporting obligations for serious incidents but lacks full differentiation by severity, omits specific deadlines, or does not clearly define intermediate or final reporting obligations.",
+            "NOT_COMPLIANT": "The framework does not meaningfully define structured reporting timelines for serious incidents or lacks differentiated deadlines and structured update/final reporting requirements.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved documentation does not provide sufficient information to determine whether structured severity-based reporting timelines and reporting obligations are defined."
+          },
+          "page": 26,
+          "extracted_keywords": [
+            "reporting timelines",
+            "severity-based deadlines",
+            "initial report within two days",
+            "initial report within five days",
+            "initial report within ten days",
+            "initial report within fifteen days",
+            "intermediate update every four weeks",
+            "final report within sixty days",
+            "reasonable likelihood",
+            "awareness trigger"
+          ],
+          "extracted_artifacts": [
+            "Incident Reporting Procedure",
+            "Initial Incident Report Template",
+            "Intermediate Incident Update Template",
+            "Final Incident Report Template",
+            "Regulatory Notification Workflow"
+          ]
+        },
+        {
+          "id": "SS-9.4",
+          "short_name": "Retention",
+          "title": "Retention",
+          "requirement": "Define and maintain retention requirements ensuring that serious-incident documentation is preserved for at least five years from the later of the documentation date or the incident date.",
+          "assessment_question": "Does the framework define retention requirements for serious-incident documentation that meet or exceed a five-year period?",
+          "expected_evidence": [
+            "Documentation includes a retention policy addressing serious-incident records.",
+            "Documentation specifies a minimum retention duration (e.g. five years or longer).",
+            "Documentation describes archival or long-term storage arrangements for incident records.",
+            "Indicative keywords/phrases: retain, retention, serious incident, documentation, records, five years, minimum period, archival, storage"
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "Clear and explicit evidence in the retrieved framework documentation shows that all core concepts and elements of the measure are addressed at a conceptual and structural level. The requirement can reasonably be considered defined within the framework, with no material conceptual gaps.",
+            "PARTIALLY_COMPLIANT": "The retrieved framework documentation addresses some relevant concepts or elements of the measure, but coverage is incomplete, implicit, high-level, or missing important aspects. As a result, the measure is only partially reflected at a conceptual level.",
+            "NOT_COMPLIANT": "The retrieved framework documentation does not meaningfully address the core concepts or intent of the measure, or addresses them in a way that clearly diverges from the measure\u2019s objectives.",
+            "NOT_EVIDENCED / UNKNOWN": "The retrieved framework documentation is insufficient to determine whether the measure\u2019s concepts are addressed (e.g. relevant sections are missing, outside scope, or not retrieved)."
+          },
+          "page": 27,
+          "extracted_keywords": [
+            "retain",
+            "retention",
+            "serious incident",
+            "documentation",
+            "records",
+            "five years",
+            "minimum period",
+            "archival",
+            "storage"
+          ],
+          "extracted_artifacts": [
+            "Document Retention Policy",
+            "Archived Incident Records"
+          ]
+        }
+      ]
+    }
+  ]
+}

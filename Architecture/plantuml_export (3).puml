@@ -1,0 +1,48 @@
+@startuml
+' Development View - Simplified (thesis-friendly)
+
+package "Compliance Checker App" {
+  [Assessment Runner\n(main workflow)] as RUN
+}
+
+package "Inputs" {
+  [System Docs Ingestion\n(parse + chunk + metadata)] as ING
+  [Safety & Security Criteria\n(criteria file)] as CRITFILE
+}
+
+package "Core Services" {
+  [Evidence Retrieval\n(embed query + vector search)] as RET
+  [LLM Assessment\n(prompt + decision JSON)] as LLM
+  [Report Builder\n(compliance matrix)] as REP
+}
+
+package "Storage" {
+  [Uploaded Docs Store] as DOCS
+  [Vector DB\n(evidence chunks)] as VDB
+  [Results Store\n(run outputs)] as RES
+}
+
+package "Evaluation (Research)" {
+  [Expert Baseline\n(labels + evidence refs)] as EXP
+  [Agreement Metrics\n(compare EXP vs RES)] as MET
+}
+
+' Flow dependencies
+RUN --> ING
+ING --> DOCS
+ING --> VDB
+
+RUN --> CRITFILE : load criteria
+
+RUN --> RET
+RET --> VDB
+
+RUN --> LLM
+RUN --> REP
+
+REP --> RES
+
+MET --> EXP
+MET --> RES
+
+@enduml

@@ -1,0 +1,666 @@
+{
+  "schema_version": "2.2",
+  "domain": "Safety & Security (GPAI Code of Practice)",
+  "source": {
+    "document": "EU Code of Practice for General-Purpose AI Models \u2013 Safety and Security Chapter",
+    "commitment_count": 10,
+    "criterion_count": 32
+  },
+  "commitments": [
+    {
+      "id": "SS-1",
+      "title": "Safety & Security Framework",
+      "description": "Establish, implement, and maintain a comprehensive Safety & Security Framework",
+      "criteria": [
+        {
+          "id": "SS-1.1",
+          "short_name": "Create framework",
+          "title": "Create a Safety & Security Framework",
+          "requirement": "Create a state-of-the-art Safety & Security Framework covering systemic risk assessment and mitigation.",
+          "assessment_question": "Does the provider's Safety & Security Framework fully align with the Code's requirements for systemic risk assessment and mitigation strategy?",
+          "expected_evidence": [
+            "Framework definitions align with the Code's concepts for risk assessment.",
+            "Trigger point mechanisms are conceptually defined in alignment with risk thresholds.",
+            "Mitigation strategies are outlined to align with tiered acceptance levels.",
+            "The concept of external input is integrated into the framework.",
+            "Responsibility allocation is defined within the framework structure.",
+            "Update processes are conceptually established."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-1.2",
+          "short_name": "Implement framework",
+          "title": "Implement the Safety & Security Framework",
+          "requirement": "Implement the Framework continuously across the model lifecycle.",
+          "assessment_question": "Does the framework define an operational lifecycle that aligns with the Code's requirements for continuous monitoring and escalation?",
+          "expected_evidence": [
+            "Lifecycle risk procedures are conceptually defined.",
+            "The concept of trigger-point evaluation is integrated into the lifecycle.",
+            "Post-market monitoring strategies are defined.",
+            "Incident intake and triage mechanisms are conceptually established.",
+            "Escalation pathways are defined in alignment with risk levels."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-1.3",
+          "short_name": "Framework updates",
+          "title": "Framework updates",
+          "requirement": "Update and reassess the Framework periodically and when conditions indicate.",
+          "assessment_question": "Is the policy for framework updates and reassessments defined in alignment with the Code's requirements for periodicity and triggers?",
+          "expected_evidence": [
+            "The concept of periodic reassessment is defined.",
+            "Trigger criteria for updates are conceptually established.",
+            "Versioning and changelog policies are defined.",
+            "Remediation planning concepts are integrated into the update process."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-1.4",
+          "short_name": "AI Office notification",
+          "title": "AI Office notification",
+          "requirement": "Provide the AI Office with unredacted access to the Framework and updates.",
+          "assessment_question": "Does the notification policy align with the requirement to provide unredacted access to the AI Office within specified timelines?",
+          "expected_evidence": [
+            "Notification procedures for the AI Office are defined.",
+            "The concept of unredacted access is legally or procedurally acknowledged.",
+            "Timeline commitments (5 business days) are conceptually integrated into the policy."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-10",
+      "title": "Documentation & Transparency",
+      "description": "Maintain detailed documentation and provide appropriate public transparency",
+      "criteria": [
+        {
+          "id": "SS-10.1",
+          "short_name": "Additional documentation",
+          "title": "Additional documentation",
+          "requirement": "Maintain additional detailed documentation for the AI Office upon request.",
+          "assessment_question": "Does the documentation retention policy align with the Code's requirement to maintain detailed architecture and evaluation records for at least 10 years?",
+          "expected_evidence": [
+            "Policy defines the maintenance of detailed architecture documentation.",
+            "Retention periods (10 years) are conceptually established.",
+            "The concept of maintaining decision logs and justifications is defined.",
+            "Procedures for responding to AI Office requests are outlined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-10.2",
+          "short_name": "Public transparency",
+          "title": "Public transparency",
+          "requirement": "Publish appropriate public summaries of the Framework and Model Reports.",
+          "assessment_question": "Does the transparency policy align with the requirement to publish summaries while safeguarding sensitive information?",
+          "expected_evidence": [
+            "Policy defines the concept of public summaries for Framework and Model Reports.",
+            "Safeguards for sensitive information are conceptually defined.",
+            "The concept of documenting exceptions to transparency is established."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-2",
+      "title": "Systemic Risk Identification",
+      "description": "Identify and develop scenarios for systemic risks",
+      "criteria": [
+        {
+          "id": "SS-2.1",
+          "short_name": "Risk identification process",
+          "title": "Risk identification process",
+          "requirement": "Identify systemic risks using a structured process aligned with Appendix 1.",
+          "assessment_question": "Does the systemic risk identification methodology align with the structured process and inputs defined in Appendix 1?",
+          "expected_evidence": [
+            "Risk identification process is defined to include Appendix 1 risk types.",
+            "The concept of using multiple information sources (post-market, incidents) is integrated.",
+            "Methodology for justifying risk inclusion/exclusion is defined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-2.2",
+          "short_name": "Risk scenarios",
+          "title": "Risk scenarios",
+          "requirement": "Develop systemic risk scenarios for each identified systemic risk.",
+          "assessment_question": "Does the risk assessment framework define a requirement and method for developing detailed scenarios for each identified risk?",
+          "expected_evidence": [
+            "The concept of developing specific risk scenarios is defined.",
+            "Methodology requires linking scenarios to the risk register.",
+            "Guidelines for scenario detail and justification are conceptually established."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-3",
+      "title": "Systemic Risk Analysis",
+      "description": "Analyze systemic risks through model-independent information, evaluations, modelling, estimation, and monitoring",
+      "criteria": [
+        {
+          "id": "SS-3.1",
+          "short_name": "Model-independent information",
+          "title": "Model-independent information",
+          "requirement": "Gather model-independent information to support systemic risk analysis.",
+          "assessment_question": "Does the framework's approach to gathering model-independent information align with the Code's standards for breadth and depth?",
+          "expected_evidence": [
+            "The methodology for gathering model-independent information is defined.",
+            "The concept of using diverse sources (Literature, OSINT, Expert Panels) is integrated into the risk analysis process.",
+            "Decision-making processes allow for information integration."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-3.2",
+          "short_name": "Model evaluations",
+          "title": "Model evaluations",
+          "requirement": "Conduct state-of-the-art model evaluations to analyse systemic risks.",
+          "assessment_question": "Does the model evaluation protocol align with the Code's requirements for open-ended testing and mitigation effectiveness?",
+          "expected_evidence": [
+            "Evaluation protocols are conceptually defined to include open-ended and adversarial testing.",
+            "The concept of elicitation techniques is integrated into the evaluation strategy.",
+            "Mitigation effectiveness testing is a defined requirement."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-3.3",
+          "short_name": "Risk modelling",
+          "title": "Risk modelling",
+          "requirement": "Conduct systemic risk modelling using appropriate state-of-the-art methods.",
+          "assessment_question": "Does the risk modelling methodology align with the Code's requirement to be grounded in scenarios and identification outputs?",
+          "expected_evidence": [
+            "Risk modelling methods (pathways/causal chains) are conceptually defined.",
+            "The requirement to link models to specific scenarios is established.",
+            "Methodological assumptions are required to be documented."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-3.4",
+          "short_name": "Risk estimation",
+          "title": "Risk estimation",
+          "requirement": "Estimate probability and severity of systemic risks using appropriate methods.",
+          "assessment_question": "Does the risk estimation methodology align with the Code's requirement to represent probability and severity systematically?",
+          "expected_evidence": [
+            "The concept of estimating probability and severity for each risk is defined.",
+            "Methodologies for estimation (score/matrix) are conceptually established.",
+            "The policy requires using evaluation and incident inputs for estimation."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-3.5",
+          "short_name": "Post-market monitoring",
+          "title": "Post-market monitoring",
+          "requirement": "Conduct post-market monitoring and provide access to independent evaluators.",
+          "assessment_question": "Does the post-market monitoring policy align with the Code's requirements for evaluator access and feedback channels?",
+          "expected_evidence": [
+            "Monitoring plans and feedback channels are conceptually defined.",
+            "The concept of bug bounties or community programs is integrated.",
+            "Policies for independent evaluator access are established with appropriate safeguards.",
+            "Non-retaliation principles are conceptually adopted."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-4",
+      "title": "Risk Acceptance & Decisions",
+      "description": "Define acceptance criteria and make proceeding decisions based on risk acceptability",
+      "criteria": [
+        {
+          "id": "SS-4.1",
+          "short_name": "Acceptance criteria",
+          "title": "Acceptance criteria",
+          "requirement": "Define and apply systemic risk acceptance criteria/tiers with safety margins.",
+          "assessment_question": "Does the risk acceptance framework define specific criteria or tiers with safety margins as required by the Code?",
+          "expected_evidence": [
+            "The concept of acceptance tiers is defined per risk.",
+            "Safety margins are conceptually integrated into the acceptance logic.",
+            "The policy requires justifying acceptance decisions."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-4.2",
+          "short_name": "Proceeding decisions",
+          "title": "Proceeding decisions",
+          "requirement": "Proceed with development/market only when systemic risks are acceptable.",
+          "assessment_question": "Does the decision-making policy define go/no-go controls that align with the Code's requirements for risk acceptability?",
+          "expected_evidence": [
+            "Go/no-go gating mechanisms are conceptually defined.",
+            "Procedures for restriction or withdrawal are established.",
+            "The concept of mitigation/reassessment loops is integrated into the decision process."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-5",
+      "title": "Safety Mitigations",
+      "description": "Implement safety mitigations robust under adversarial pressure",
+      "criteria": [
+        {
+          "id": "SS-5.1",
+          "short_name": "Safety mitigations",
+          "title": "Safety mitigations",
+          "requirement": "Implement safety mitigations appropriate to systemic risks and robust under adversarial pressure.",
+          "assessment_question": "Does the strategy for safety mitigations align with the Code's requirement for robustness against adversarial pressure?",
+          "expected_evidence": [
+            "Mitigation strategies are defined to address identifying systemic risks.",
+            "The concept of adversarial robustness testing for mitigations is established.",
+            "Monitoring and filtering architecture concepts are defined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-6",
+      "title": "Security Protections",
+      "description": "Define security goals and implement appropriate security mitigations",
+      "criteria": [
+        {
+          "id": "SS-6.1",
+          "short_name": "Security goal",
+          "title": "Security goal",
+          "requirement": "Define a Security Goal specifying the threat actors.",
+          "assessment_question": "Does the Security Goal definition conceptually align with the Code's requirement to cover threat actors and capability levels?",
+          "expected_evidence": [
+            "The concept of a Security Goal is defined.",
+            "Scope definitions for threat actors (internal/external) are established.",
+            "Rationale based on model capabilities is required by the policy."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-6.2",
+          "short_name": "Security mitigations",
+          "title": "Security mitigations",
+          "requirement": "Implement appropriate security mitigations to meet the Security Goal.",
+          "assessment_question": "Does the security mitigation strategy align with Appendix 4 objectives and the defined Security Goal?",
+          "expected_evidence": [
+            "Security control frameworks are aligned with Appendix 4 objectives.",
+            "The concept of securing unreleased weights is defined.",
+            "Insider threat control concepts are established.",
+            "Security assurance mechanisms (Red-teaming/EDR) are conceptually integrated."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-7",
+      "title": "Model Reporting",
+      "description": "Create and maintain comprehensive Model Reports",
+      "criteria": [
+        {
+          "id": "SS-7.1",
+          "short_name": "Model description",
+          "title": "Model description",
+          "requirement": "Provide Model Report information describing the model and intended use.",
+          "assessment_question": "Does the Model Report template or standard align with the requirement to capture model description, intended use, and versioning?",
+          "expected_evidence": [
+            "Standard structure for Model Reports is defined.",
+            "The concept of documenting system prompts and refusal topics is established.",
+            "Version comparison requirements are defined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-7.2",
+          "short_name": "Reasons for proceeding",
+          "title": "Reasons for proceeding",
+          "requirement": "Justify proceeding based on acceptability determination.",
+          "assessment_question": "Does the reporting standard require explicit justification for proceeding, including undermining conditions?",
+          "expected_evidence": [
+            "The requirement to document acceptability justification is defined.",
+            "The concept of listing undermining conditions is established.",
+            "Decision record requirements are conceptually integrated."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-7.3",
+          "short_name": "Risk documentation",
+          "title": "Risk documentation",
+          "requirement": "Document systemic risk identification and analysis in the Model Report.",
+          "assessment_question": "Does the reporting standard align with the Code's requirement to comprehensively document risk analysis and mitigations?",
+          "expected_evidence": [
+            "Reporting standards require inclusion of the full risk documentation package.",
+            "The concept of documenting limitations and forward plans is defined.",
+            "Security goal mapping requirements are established."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-7.4",
+          "short_name": "External reports",
+          "title": "External reports",
+          "requirement": "Provide available independent external evaluator reports.",
+          "assessment_question": "Does the reporting policy align with the requirement to include or justify the absence of external evaluator reports?",
+          "expected_evidence": [
+            "The concept of including external evaluator reports is defined.",
+            "Justification requirements for absent reports are established.",
+            "Evaluator selection rationale is a defined reporting element."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-7.5",
+          "short_name": "Risk landscape changes",
+          "title": "Risk landscape changes",
+          "requirement": "Include information enabling understanding of material changes.",
+          "assessment_question": "Does the reporting standard require analysis of material changes to the systemic risk landscape?",
+          "expected_evidence": [
+            "The concept of material change analysis is defined.",
+            "Requirements to document architecture or training changes are established.",
+            "Mitigation effectiveness change analysis is a defined component."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-7.6",
+          "short_name": "Model report updates",
+          "title": "Model report updates",
+          "requirement": "Update the Model Report when acceptability justification is undermined.",
+          "assessment_question": "Does the policy for report updates align with the Code's triggers, including material undermining of acceptability?",
+          "expected_evidence": [
+            "Update triggers (including undermined justification) are conceptually defined.",
+            "Periodic update schedules are established.",
+            "The concept of release gating for deliberate changes is defined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-7.7",
+          "short_name": "AI Office notification",
+          "title": "AI Office notification",
+          "requirement": "Provide AI Office access to the Model Report by market placement.",
+          "assessment_question": "Does the access policy align with the Code's timelines for providing Model Reports to the AI Office?",
+          "expected_evidence": [
+            "Access provision procedures are defined.",
+            "Interim reporting concepts are established for delayed updates.",
+            "Policy aligns with market placement and 5-day update timelines."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-8",
+      "title": "Governance & Resources",
+      "description": "Establish governance, allocate resources, and promote healthy risk culture",
+      "criteria": [
+        {
+          "id": "SS-8.1",
+          "short_name": "Responsibilities",
+          "title": "Responsibilities",
+          "requirement": "Define and allocate responsibilities for systemic risk management.",
+          "assessment_question": "Does the governance structure align with the Code's requirement to clearly allocate responsibilities across all levels?",
+          "expected_evidence": [
+            "Governance structure (RACI/Committees) is defined.",
+            "The concept of allocating risk management roles is established.",
+            "Role descriptions are required to be defined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-8.2",
+          "short_name": "Resources",
+          "title": "Resources",
+          "requirement": "Ensure management oversight of allocating adequate resources.",
+          "assessment_question": "Does the resource allocation policy align with the Code's requirement for management oversight of people, budget, and compute?",
+          "expected_evidence": [
+            "The concept of adequate resource allocation (budget, compute) is defined.",
+            "Management oversight mechanisms are established.",
+            "Policy requires resource planning documentation."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-8.3",
+          "short_name": "Risk culture",
+          "title": "Risk culture",
+          "requirement": "Promote a healthy systemic risk culture.",
+          "assessment_question": "Does the organizational policy align with the Code's requirements for promoting a healthy risk culture and non-retaliation?",
+          "expected_evidence": [
+            "The concept of 'tone from the top' involves defined communication strategies.",
+            "Whistleblower and reporting channels are conceptually established.",
+            "Non-retaliation policies are defined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS-9",
+      "title": "Serious Incident Management",
+      "description": "Identify, document, report, and retain serious incident information",
+      "criteria": [
+        {
+          "id": "SS-9.1",
+          "short_name": "Incident identification",
+          "title": "Incident identification",
+          "requirement": "Use methods and channels to identify and track serious incidents.",
+          "assessment_question": "Does the incident identification policy align with the Code's requirement for internal and third-party reporting channels?",
+          "expected_evidence": [
+            "The concept of incident intake channels is defined.",
+            "External monitoring procedures are established.",
+            "Third-party reporting guidance is conceptually integrated."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-9.2",
+          "short_name": "Incident documentation",
+          "title": "Incident documentation",
+          "requirement": "Track/document/report serious incidents with the required minimum information set.",
+          "assessment_question": "Does the incident documentation standard align with the required minimum information set, including root cause analysis?",
+          "expected_evidence": [
+            "Incident reporting templates are defined to capture required info.",
+            "The concept of Root Cause Analysis (RCA) is established.",
+            "Requirements to document mitigation failures are defined."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-9.3",
+          "short_name": "Reporting timelines",
+          "title": "Reporting timelines",
+          "requirement": "Report serious incidents within specified timelines.",
+          "assessment_question": "Does the framework define a concept for reporting timelines that aligns with the required intervals for intermediate and final reports?",
+          "expected_evidence": [
+            "Documentation defines a timeline structure for reporting.",
+            "The concept of intermediate and final reporting is established in the policy.",
+            "Mechanisms for tracking reporting timestamps are defined conceptually."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        },
+        {
+          "id": "SS-9.4",
+          "short_name": "Retention",
+          "title": "Retention",
+          "requirement": "Retain serious-incident documentation for at least five years.",
+          "assessment_question": "Does the retention policy for incident documentation align with the 5-year requirement?",
+          "expected_evidence": [
+            "Retention policy is defined with a minimum 5-year threshold.",
+            "The concept of archival/storage is established.",
+            "Policy defines the triggering date for retention (incident vs documentation date)."
+          ],
+          "compliance_rubric": {
+            "COMPLIANT": "The documentation demonstrates full conceptual alignment with the framework's requirements. The approach described is capable of meeting the Code's objectives without material gaps.",
+            "PARTIALLY_COMPLIANT": "The documentation shows partial alignment. Some mechanisms diverge from the framework or lack the necessary conceptual detail to ensure full policy adherence.",
+            "NOT_COMPLIANT": "The documentation does not align with the framework or contradicts the required concepts.",
+            "NOT_EVIDENCED / UNKNOWN": "The documentation is insufficient to determine conceptual alignment."
+          }
+        }
+      ]
+    }
+  ]
+}

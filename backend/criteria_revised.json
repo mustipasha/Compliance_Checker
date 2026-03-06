@@ -1,0 +1,1044 @@
+{
+    "schema_version": "1.0.0",
+    "domain": "General-Purpose AI Models — Safety & Security",
+    "structure": {
+        "commitment": {
+            "fields": [
+                "id",
+                "title",
+                "measures"
+            ]
+        },
+        "measure": {
+            "fields": [
+                "id",
+                "short_name",
+                "title",
+                "requirement",
+                "assessment_question",
+                "compliance_rubric",
+                "expected_evidence",
+                "source_reference"
+            ]
+        }
+    },
+    "commitments": [
+        {
+            "id": "SS-1",
+            "title": "Commitment 1 – Safety & Security Framework",
+            "measures": [
+                {
+                    "id": "SS-1.1",
+                    "short_name": "Measure 1.1 Creation of the Framework",
+                    "title": "Creation of the Framework",
+                    "requirement": "Create a state-of-the-art Safety & Security Framework covering systemic risk assessment and mitigation, including trigger points, acceptance tiers, mitigation expectations, timelines, external input, responsibility allocation, and update process.",
+                    "assessment_question": "Is a complete and state-of-the-art Safety & Security Framework documented with all mandatory elements?",
+                    "keywords": [
+                        "Safety Framework",
+                        "Systemic Risk",
+                        "Trigger Points",
+                        "Mitigation"
+                    ],
+                    "atomic_checks": [
+                        {
+                            "id": "SS-1.1.1",
+                            "requirement": "Framework exists and covers systemic risk assessment.",
+                            "keywords": [
+                                "systemic risk",
+                                "framework",
+                                "assessment"
+                            ]
+                        },
+                        {
+                            "id": "SS-1.1.2",
+                            "requirement": "Explicitly defined trigger points for evaluations.",
+                            "keywords": [
+                                "trigger point",
+                                "threshold",
+                                "evaluation"
+                            ]
+                        },
+                        {
+                            "id": "SS-1.1.3",
+                            "requirement": "Explicitly defined systemic risk acceptance tiers.",
+                            "keywords": [
+                                "acceptance tier",
+                                "risk level",
+                                "classification"
+                            ]
+                        },
+                        {
+                            "id": "SS-1.1.4",
+                            "requirement": "Mitigation expectations for each tier.",
+                            "keywords": [
+                                "mitigation",
+                                "expectation",
+                                "measures"
+                            ]
+                        },
+                        {
+                            "id": "SS-1.1.5",
+                            "requirement": "Timelines for evaluation.",
+                            "keywords": [
+                                "timeline",
+                                "frequency",
+                                "schedule"
+                            ]
+                        },
+                        {
+                            "id": "SS-1.1.6",
+                            "requirement": "External input process.",
+                            "keywords": [
+                                "external input",
+                                "third party",
+                                "stakeholder"
+                            ]
+                        },
+                        {
+                            "id": "SS-1.1.7",
+                            "requirement": "Responsibility allocation.",
+                            "keywords": [
+                                "responsibility",
+                                "owner",
+                                "accountability"
+                            ]
+                        },
+                        {
+                            "id": "SS-1.1.8",
+                            "requirement": "Update process.",
+                            "keywords": [
+                                "update",
+                                "review",
+                                "maintenance"
+                            ]
+                        }
+                    ],
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Create a state-of-the-art Safety & Security Framework covering systemic risk assessment and mitigation, including trigger points, acceptance tiers, mitigation expectations, timelines, external input, responsibility allocation, and update process.",
+                        "Observable evidence: Documentation addresses: a description and justification of the trigger points and their usage, at which the Signatories will conduct additional lighter-touch model evaluations along the entire model lifecycle, as specified in Measure 1.2, second paragraph, point (1)(a).",
+                        "Observable evidence: Documentation addresses: for the Signatories’ determination of whether systemic risk is considered acceptable, as specified in Commitment 4: (a) a description and justification of the systemic risk acceptance criteria, including the systemic risk tiers, and their usage as specified in Measure 4.1; (b) a high-level description of what safety and security mitigations Signatories would need to implement once each systemic risk tier is reached; (c) for each systemic risk that Signatories defined systemic risk tiers for as specified in will have a model that exceeds the highest systemic risk tier already reached by any of their existing models. Such estimates: (i) may consist of time ranges or probability distributions; and (ii) may take into account aggregate forecasts, surveys, and other estimates produced with other providers. Further, such estimates will be supported by justifications, including underlying assumptions and uncertainties; and (d) a description of whether and, if so, by what process input from external actors, including governments, influences proceeding with the development, making available on the market, and/or use of the Signatories’ models as specified in.",
+                        "Observable evidence: Documentation addresses: a description of how systemic risk responsibility is allocated for the processes by which systemic risk is assessed and mitigated as specified in Commitment 8; and.",
+                        "Observable evidence: Documentation addresses: a description of the process by which Signatories will update the Framework, including how they will determine that an updated Framework is confirmed, as specified in Measure 1.3. Signatories will have confirmed the Framework no later than four weeks after having notified the Commission pursuant to Article 52(1) AI Act and no later than two weeks before placing the model on the market..",
+                        "Indicative terminology (non-mandatory): create, state-of-the-art, safety, security, framework, covering, systemic, risk, assessment, mitigation, trigger, points",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 1.1",
+                        "Appendix 1 (systemic risk concepts)"
+                    ]
+                },
+                {
+                    "id": "SS-1.2",
+                    "short_name": "Measure 1.2 Implementation of the Framework",
+                    "title": "Implementation of the Framework",
+                    "requirement": "Implement the Framework continuously across the model lifecycle, including trigger-point evaluations, post-market monitoring, incident inputs, and escalation to full systemic risk assessment.",
+                    "assessment_question": "Is the Framework implemented operationally across the model lifecycle with trigger points, monitoring, incident intake, and escalation to full assessment?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Implement the Framework continuously across the model lifecycle, including trigger-point evaluations, post-market monitoring, incident inputs, and escalation to full systemic risk assessment.",
+                        "Observable evidence: Documentation addresses: assess the systemic risks stemming from the model by: (a) conducting lighter-touch model evaluations that need not adhere to Appendix 3 (e.g. automated evaluations) at appropriate trigger points defined in terms of, e.g. time, training compute, development stages, user access, inference compute, and/or affordances; (b) conducting post-market monitoring after placing the model on the market, as specified in Measure 3.5; (c) taking into account relevant information about serious incidents (pursuant to Commitment 9); and (d) increasing the breadth and/or depth of assessment or conducting a full systemic risk assessment and mitigation process that is specified in the following paragraph, based on the results of points (a), (b), and (c); and.",
+                        "Observable evidence: Documentation addresses: implement systemic risk mitigations taking into account the results of point (1), including addressing serious incidents as appropriate. Figure 2. Illustrative timeline of systemic risk assessment and mitigation along the model lifecycle. The text of the Commitments and Measures takes precedence. In addition, Signatories will implement a full systemic risk assessment and mitigation process that involves four steps, without needing to duplicate parts of the model’s previous systemic risk assessments that are still appropriate:.",
+                        "Observable evidence: Documentation addresses: identifying the systemic risks stemming from the model as specified in Commitment 2.",
+                        "Observable evidence: Documentation addresses: analysing each identified systemic risk as specified in Commitment 3.",
+                        "Observable evidence: Documentation addresses: determining whether the systemic risks stemming from the model are acceptable as specified in Measure 4.1; and.",
+                        "Observable evidence: Documentation addresses: if the systemic risks stemming from the model are not determined to be acceptable, implementing safety and/or security mitigations as specified in Commitments 5 and 6, and re-assessing the systemic risks stemming from the model starting from point (1), as specified in Measure 4.2. Signatories will conduct such a full systemic risk assessment and mitigation process at least before placing the model on the market and whenever the conditions specified in Measure 7.6, first and third paragraph, are met. Signatories will report their implemented measures and processes to the AI Office as specified in Commitment 7. Figure 3. Full systemic risk assessment and mitigation process. The text of the Commitments and Measures takes precedence..",
+                        "Indicative terminology (non-mandatory): implement, framework, continuously, across, model, lifecycle, trigger-point, evaluations, post-market, monitoring, incident, inputs",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 1.2"
+                    ]
+                },
+                {
+                    "id": "SS-1.3",
+                    "short_name": "Measure 1.3 Framework updates",
+                    "title": "Framework updates",
+                    "requirement": "Update and reassess the Framework periodically and when conditions indicate, including versioning, changelogs, and remediation plans where needed.",
+                    "assessment_question": "Are Framework reassessments and updates defined (including periodicity/triggers), versioned, and followed by remediation plans when required?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Update and reassess the Framework periodically and when conditions indicate, including versioning, changelogs, and remediation plans where needed.",
+                        "Observable evidence: Documentation addresses: how the Signatories develop models will change materially, which can be reasonably foreseen to lead to the systemic risks stemming from at least one of their models not being acceptable.",
+                        "Observable evidence: Documentation addresses: serious incidents and/or near misses involving their models or similar models that are likely to indicate that the systemic risks stemming from at least one of their models are not acceptable have occurred; and/or.",
+                        "Observable evidence: Documentation addresses: the systemic risks stemming from at least one of their models have changed or are likely to change materially, e.g. safety and/or security mitigations have become or are likely to become materially less effective, or at least one of their models has developed or is likely to develop materially changed capabilities and/or propensities. A Framework assessment will include the following:.",
+                        "Observable evidence: Documentation addresses: Framework adequacy: An assessment of whether the processes and measures in the Framework are appropriate for the systemic risks stemming from the Signatories’ models. This assessment will take into account how the models are currently being developed, made available on the market, and/or used, and how they are expected to be developed, made available on the market, and/or used over the next 12 months..",
+                        "Observable evidence: Documentation addresses: Framework adherence: An assessment focused on the Signatories’ adherence to the Framework, including: (a) any instances of, and reasons for, non-adherence to the Framework since the last Framework assessment; and (b) any measures, including safety and secu rity mitigations, that need to be implemented to ensure continued adherence to the Framework. If point(s) (a) and/or (b) give rise to risks of future non-adherence, Signatories will make remediation plans as part of their Framework assessment..",
+                        "Indicative terminology (non-mandatory): update, reassess, framework, periodically, conditions, indicate, versioning, changelogs, remediation, plans, needed, assessment",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 1.3"
+                    ]
+                },
+                {
+                    "id": "SS-1.4",
+                    "short_name": "Measure 1.4 AI Office notification",
+                    "title": "AI Office notification",
+                    "requirement": "Provide the AI Office with unredacted access to the Framework and updates within five business days.",
+                    "assessment_question": "Is there evidence of timely AI Office notification/access within 5 business days of confirmation?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Provide the AI Office with unredacted access to the Framework and updates within five business days.",
+                        "Observable evidence: Documentation addresses: following a structured process to identify the systemic risks stemming from the model (as specified in Measure 2.1); and.",
+                        "Observable evidence: Documentation addresses: developing systemic risk scenarios for each identified systemic risk (as specified in Figure 4. Systemic risk identification process. The text of the Commitments and Measures takes precedence..",
+                        "Indicative terminology (non-mandatory): provide, office, unredacted, access, framework, updates, within, five, business, days, notification, sop",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 1.4"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-2",
+            "title": "Commitment 2 – Systemic Risk Identification",
+            "measures": [
+                {
+                    "id": "SS-2.1",
+                    "short_name": "Measure 2.1 Risk identification process",
+                    "title": "Risk identification process",
+                    "requirement": "Identify systemic risks using a structured process and inputs defined in Appendix 1 (risk types, nature, sources, specified risks).",
+                    "assessment_question": "Is there a documented systemic risk identification process aligned with Appendix 1 (types, sources, specified risks) and multiple information sources?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Identify systemic risks using a structured process and inputs defined in Appendix 1 (risk types, nature, sources, specified risks).",
+                        "Observable evidence: Documentation addresses: the systemic risks obtained through the following process: (a) compiling a list of risks that could stem from the model and be systemic, based on the types of risks in Appendix 1.1, taking into account: (i) model-independent information (pursuant to Measure 3.1); (ii) relevant information about the model and similar models, including information from post-market monitoring (pursuant to Measure 3.5), and information about serious incidents and near misses (pursuant to Commitment 9); and (iii) any other relevant information communicated directly or via public releases to the Signatory by the AI Office, the Scientific Panel of Independent Experts, or other initiatives, such as the International Network of AI Safety Institutes, endorsed for this purpose by the AI Office; (b) analysing relevant characteristics of the risks compiled pursuant to point (a), such as their nature (based on Appendix 1.2) and sources (based on Appendix 1.3); and (c) identifying, based on point (b), the systemic risks stemming from the model; and.",
+                        "Observable evidence: Documentation addresses: the specified systemic risks in Appendix 1.4..",
+                        "Indicative terminology (non-mandatory): identify, systemic, risks, using, structured, process, inputs, defined, appendix, risk, types, nature",
+                        "Not required: Appendix mappings or cross-references unless the appendix content is included in the provided documentation.",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented."
+                    ],
+                    "source_reference": [
+                        "Measure 2.1",
+                        "Appendix 1.1–1.4"
+                    ]
+                },
+                {
+                    "id": "SS-2.2",
+                    "short_name": "Measure 2.2 Risk scenarios",
+                    "title": "Risk scenarios",
+                    "requirement": "Develop systemic risk scenarios for each identified systemic risk.",
+                    "assessment_question": "Are systemic risk scenarios documented for all identified risks with adequate detail and linkage to the risk register?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Develop systemic risk scenarios for each identified systemic risk.",
+                        "Observable evidence: Documentation addresses: gathering model-independent information (as specified in Measure 3.1).",
+                        "Observable evidence: Documentation addresses: conducting model evaluations (as specified in Measure 3.2).",
+                        "Observable evidence: Documentation addresses: modelling the systemic risk (as specified in Measure 3.3); and.",
+                        "Observable evidence: Documentation addresses: estimating the systemic risk (as specified in Measure 3.4); while.",
+                        "Observable evidence: Documentation addresses: conducting post-market monitoring (as specified in Measure 3.5)..",
+                        "Indicative terminology (non-mandatory): develop, systemic, risk, scenarios, each, identified, scenario, documents, mapping, justification, number, detail",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 2.2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-3",
+            "title": "Commitment 3 – Systemic Risk Analysis",
+            "measures": [
+                {
+                    "id": "SS-3.1",
+                    "short_name": "Measure 3.1 Model-independent information",
+                    "title": "Model-independent information",
+                    "requirement": "Gather model-independent information to support systemic risk analysis using methods appropriate in breadth and depth.",
+                    "assessment_question": "Is model-independent information systematically gathered and used to inform evaluations, modelling, and estimation?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Gather model-independent information to support systemic risk analysis using methods appropriate in breadth and depth.",
+                        "Observable evidence: Documentation addresses: web searches (e.g. making use of open-source intelligence methods in collecting and analysing information gathered from open sources).",
+                        "Observable evidence: Documentation addresses: literature reviews.",
+                        "Observable evidence: Documentation addresses: market analyses (e.g. focused on capabilities of other models available on the market).",
+                        "Observable evidence: Documentation addresses: reviews of training data (e.g. for indications of data poisoning or tampering).",
+                        "Observable evidence: Documentation addresses: reviewing and analysing historical incident data and incident databases.",
+                        "Observable evidence: Documentation addresses: forecasting of general trends (e.g. forecasts concerning the development of algorithmic efficiency, compute use, data availability, and energy use).",
+                        "Observable evidence: Documentation addresses: expert interviews and/or panels; and/or.",
+                        "Observable evidence: Documentation addresses: lay interviews, surveys, community consultations, or other participatory research methods investigating, e.g. the effects of models on natural persons, including vulnerable groups..",
+                        "Indicative terminology (non-mandatory): gather, model-independent, information, support, systemic, risk, analysis, using, methods, appropriate, breadth, depth",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 3.1"
+                    ]
+                },
+                {
+                    "id": "SS-3.2",
+                    "short_name": "Measure 3.2 Model evaluations",
+                    "title": "Model evaluations",
+                    "requirement": "Conduct state-of-the-art model evaluations to analyse systemic risks, including open-ended testing and appropriate elicitation and mitigation-effectiveness assessment.",
+                    "assessment_question": "Are state-of-the-art model evaluations conducted and documented according to Appendix 3 guidance?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Conduct state-of-the-art model evaluations to analyse systemic risks, including open-ended testing and appropriate elicitation and mitigation-effectiveness assessment.",
+                        "Observable evidence: Documentation contains a section explicitly addressing this measure and describing how it is implemented.",
+                        "Indicative terminology (non-mandatory): conduct, state-of-the-art, model, evaluations, analyse, systemic, risks, open-ended, testing, appropriate, elicitation, mitigation-effectiveness",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 3.2",
+                        "Appendix 3.1–3.5"
+                    ]
+                },
+                {
+                    "id": "SS-3.3",
+                    "short_name": "Measure 3.3 Risk modelling",
+                    "title": "Risk modelling",
+                    "requirement": "Conduct systemic risk modelling using appropriate state-of-the-art methods grounded in scenarios and identification outputs.",
+                    "assessment_question": "Is systemic risk modelling documented and linked to scenarios and identified risk sources?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Conduct systemic risk modelling using appropriate state-of-the-art methods grounded in scenarios and identification outputs.",
+                        "Observable evidence: Documentation addresses: use at least state-of-the-art risk modelling methods.",
+                        "Observable evidence: Documentation addresses: build on the systemic risk scenarios developed pursuant to Measure 2.2; and.",
+                        "Observable evidence: Documentation addresses: take into account at least the information gathered pursuant to Measure 2.1 and this Commitment..",
+                        "Indicative terminology (non-mandatory): conduct, systemic, risk, modelling, using, appropriate, state-of-the-art, methods, grounded, scenarios, identification, outputs",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 3.3"
+                    ]
+                },
+                {
+                    "id": "SS-3.4",
+                    "short_name": "Measure 3.4 Risk estimation",
+                    "title": "Risk estimation",
+                    "requirement": "Estimate probability and severity of systemic risks using appropriate methods and represent results (score/matrix/distribution).",
+                    "assessment_question": "Are probability and severity estimates documented for each systemic risk with methods and assumptions?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Estimate probability and severity of systemic risks using appropriate methods and represent results (score/matrix/distribution).",
+                        "Observable evidence: Documentation addresses: a qu alitative systemic risk matrix (e.g. “probability: unlikely” x “impact: high”); and/or (3) a quantitative systemic risk matrix (e.g. “X-Y%” x “X-Y EUR damage”)..",
+                        "Indicative terminology (non-mandatory): estimate, probability, severity, systemic, risks, using, appropriate, methods, represent, results, score, matrix",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 3.4"
+                    ]
+                },
+                {
+                    "id": "SS-3.5",
+                    "short_name": "Measure 3.5 Post-market monitoring",
+                    "title": "Post-market monitoring",
+                    "requirement": "Conduct post-market monitoring and (where required) provide adequate access to independent external evaluators under appropriate safeguards.",
+                    "assessment_question": "Is there a post-market monitoring program and, where applicable, an independent external evaluator access process with safeguards?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Conduct post-market monitoring and (where required) provide adequate access to independent external evaluators under appropriate safeguards.",
+                        "Observable evidence: Documentation addresses: gather information about the model’s capabilities, propensities, affordances, and/or effects.",
+                        "Observable evidence: Documentation addresses: take into account the exemplary methods listed below; and.",
+                        "Observable evidence: Documentation addresses: if Signatories themselves provide and/or deploy AI systems that integrate their own model, include monitoring the model as part of these AI systems. The following are examples of post-market monitoring methods for the purpose of point (2) above:.",
+                        "Observable evidence: Documentation addresses: collecting end-user feedback.",
+                        "Observable evidence: Documentation addresses: providing (anonymous) reporting channels.",
+                        "Observable evidence: Documentation addresses: providing (serious) incident reporting forms.",
+                        "Observable evidence: Documentation addresses: providing bug bounties.",
+                        "Observable evidence: Documentation addresses: establishing community-driven model evaluations and public leaderboards.",
+                        "Indicative terminology (non-mandatory): conduct, post-market, monitoring, required, provide, adequate, access, independent, external, evaluators, under, appropriate",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 3.5"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-4",
+            "title": "Commitment 4 – Risk Acceptance",
+            "measures": [
+                {
+                    "id": "SS-4.1",
+                    "short_name": "Measure 4.1 Acceptance criteria",
+                    "title": "Acceptance criteria",
+                    "requirement": "Define and apply systemic risk acceptance criteria/tiers with safety margins, and use them to determine acceptability per risk and overall.",
+                    "assessment_question": "Are acceptance criteria/tiers (measurable) defined per systemic risk and applied with safety margins to determine acceptability?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Define and apply systemic risk acceptance criteria/tiers with safety margins, and use them to determine acceptability per risk and overall.",
+                        "Observable evidence: Documentation addresses: for each identified systemic risk (pursuant to Measure 2.1), at least: (a) define appropriate systemic risk tiers that: (i) are defined in terms of model capabilities, and may additionally incorporate model propensities, risk estimates, and/or other suitable metrics; (ii) are measurable; and (iii) comprise at least one systemic risk tier that has not been reached by the model; or (b) define other appropriate systemic risk acceptance criteria, if systemic risk tiers are not suitable for the systemic risk and the systemic risk is not a specified systemic risk (pursuant to Appendix 1.4).",
+                        "Observable evidence: Documentation addresses: describe how they will use these tiers and/or other criteria to determine whether each identified systemic risk (pursuant to Measure 2.1) and the overall systemic risk are acceptable; and.",
+                        "Observable evidence: Documentation addresses: justify how the use of these tiers and/or other criteria pursuant to point (2) ensures that each identified systemic risk (pursuant to Measure 2.1) and the overall systemic risk are acceptable. Signatories will apply the systemic risk acceptance criteria to each identified systemic risk (pursuant to Measure 2.1), incorporating a safety margin (as specified in the following paragraph), to determine whether each identified systemic risk (pursuant to Measure 2.1) and the overall systemic risk are acceptable. This acceptance determination will take into account at least the information gathered via systemic risk identification and analysis (pursuant to Commitments 2 and 3). The safety margin will:.",
+                        "Observable evidence: Documentation addresses: be appropriate for the systemic risk; and.",
+                        "Observable evidence: Documentation addresses: take into account potential limitations, changes, and uncertainties of: (a) systemic risk sources (e.g. capability improvements after the time of assessment); (b) systemic risk assessments (e.g. under-elicitation of model evaluations or historical accuracy of similar assessments); and (c) the effectiveness of safety and security mitigations (e.g. mitigations being circumvented, deactivated, or subverted)..",
+                        "Indicative terminology (non-mandatory): define, apply, systemic, risk, acceptance, criteria, tiers, safety, margins, use, them, determine",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 4.1"
+                    ]
+                },
+                {
+                    "id": "SS-4.2",
+                    "short_name": "Measure 4.2 Proceeding decisions",
+                    "title": "Proceeding decisions",
+                    "requirement": "Proceed with development/market/use only when systemic risks are acceptable; otherwise restrict/withdraw/recall as needed, implement mitigations, and repeat assessment steps.",
+                    "assessment_question": "Are go/no-go controls defined and enforced, with defined actions and reassessment loops when risks are unacceptable or likely to become unacceptable?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Proceed with development/market/use only when systemic risks are acceptable; otherwise restrict/withdraw/recall as needed, implement mitigations, and repeat assessment steps.",
+                        "Observable evidence: Documentation addresses: not make the model available on the market, restrict the making available on the market (e.g. via adjusting licenses or usage restrictions), withdraw, or recall the model, as necessary.",
+                        "Observable evidence: Documentation addresses: implement safety and/or security mitigations (pursuant to Commitments 5 and 6); and.",
+                        "Observable evidence: Documentation addresses: conduct another round of systemic risk identification (pursuant to Commitment 2), systemic risk analysis (pursuant to Commitment 3), and systemic risk acceptance determination (pursuant to this Commitment). Commitment 5 Safety mitigations LEGAL TEXT: Article 55(1) and recital 114 AI Act Signatories commit to implementing appropriate safety mitigations along the entire model lifecycle, as specified in the Measure for this Commitment, to ensure the systemic risks stemming from the model are acceptable (pursuant to Commitment 4)..",
+                        "Indicative terminology (non-mandatory): proceed, development, market, use, systemic, risks, acceptable, otherwise, restrict, withdraw, recall, needed",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 4.2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-5",
+            "title": "Commitment 5 – Safety Mitigations",
+            "measures": [
+                {
+                    "id": "SS-5.1",
+                    "short_name": "Measure 5.1 Safety mitigations",
+                    "title": "Safety mitigations",
+                    "requirement": "Implement safety mitigations appropriate to systemic risks and robust under adversarial pressure, aligned with release/distribution strategy.",
+                    "assessment_question": "Are safety mitigations documented, implemented, and tested for robustness against adversarial pressure?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Implement safety mitigations appropriate to systemic risks and robust under adversarial pressure, aligned with release/distribution strategy.",
+                        "Observable evidence: Documentation addresses: filtering and cleaning training data, e.g. data that might result in undesirable model propensities such as unfaithful chain-of-thought traces.",
+                        "Observable evidence: Documentation addresses: monitoring and filtering the model’s inputs and/or outputs.",
+                        "Observable evidence: Documentation addresses: changing the model behaviour in the interests of safety, such as fine-tuning the model to refuse certain requests or provide unhelpful responses.",
+                        "Observable evidence: Documentation addresses: staging the access to the model, e.g. by limiting API access to vetted users, gradually expanding access based on post-market monitoring, and/or not making the model parameters publicly available for download initially.",
+                        "Observable evidence: Documentation addresses: offering tools for other actors to use to mitigate the systemic risks stemming from the model.",
+                        "Observable evidence: Documentation addresses: techniques that provide high-assurance quantitative safety guarantees concerning the model’s behaviour.",
+                        "Observable evidence: Documentation addresses: techniques to enable safe ecosystems of AI agents, such as model identifications, specialised communication protocols, or incident monitoring tools; and/or.",
+                        "Observable evidence: Documentation addresses: other emerging safety mitigations, such as for achieving transparency into chain-of-thought reasoning or defending against a model’s ability to subvert its other safety mitigations. Commitment 6 Security mitigations LEGAL TEXT: Article 55(1), and recitals 114 and 115 AI Act Signatories commit to implementing an adequate level of cybersecurity protection for their models and their physical infrastructure along the entire model lifecycle, as specified in the Measures for this Commitment, to ensure the systemic risks stemming fr om their models that could arise from unauthorised releases, unauthorised access, and/or model theft are acceptable (pursuant to Commitment 4). A model is exempt from this Commitment if the model’s capabilities are inferior to the capabilities of at least one model for which the parameters are publicly available for download. Signatories will implement these security mitigations for a model until its parameters are made publicly available for download or securely deleted..",
+                        "Indicative terminology (non-mandatory): implement, safety, mitigations, appropriate, systemic, risks, robust, under, adversarial, pressure, aligned, release",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 5.1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-6",
+            "title": "Commitment 6 – Security Mitigations",
+            "measures": [
+                {
+                    "id": "SS-6.1",
+                    "short_name": "Measure 6.1 Security goal",
+                    "title": "Security goal",
+                    "requirement": "Define a Security Goal specifying the threat actors the security mitigations protect against, considering current and expected model capabilities.",
+                    "assessment_question": "Is a Security Goal explicitly defined (including external and insider threat actors) and capability-informed?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Define a Security Goal specifying the threat actors the security mitigations protect against, considering current and expected model capabilities.",
+                        "Observable evidence: Documentation contains a section explicitly addressing this measure and describing how it is implemented.",
+                        "Indicative terminology (non-mandatory): define, security, goal, specifying, threat, actors, mitigations, protect, against, considering, current, expected",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 6.1"
+                    ]
+                },
+                {
+                    "id": "SS-6.2",
+                    "short_name": "Measure 6.2 Security mitigations",
+                    "title": "Security mitigations",
+                    "requirement": "Implement appropriate security mitigations to meet the Security Goal, including measures aligned with Appendix 4 objectives (or justified alternatives) and staged implementation if needed.",
+                    "assessment_question": "Are security mitigations implemented and mapped to objectives (Appendix 4) or justified equivalents, with staging documented where relevant?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Implement appropriate security mitigations to meet the Security Goal, including measures aligned with Appendix 4 objectives (or justified alternatives) and staged implementation if needed.",
+                        "Observable evidence: Documentation contains a section explicitly addressing this measure and describing how it is implemented.",
+                        "Indicative terminology (non-mandatory): implement, appropriate, security, mitigations, meet, goal, measures, aligned, appendix, objectives, justified, alternatives",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 6.2",
+                        "Appendix 4.1–4.5"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-7",
+            "title": "Commitment 7 – Model Reports",
+            "measures": [
+                {
+                    "id": "SS-7.1",
+                    "short_name": "Measure 7.1 Model description",
+                    "title": "Model description",
+                    "requirement": "Provide Model Report information describing the model, intended use, version differences, and model specification (including system prompt and refusal topics).",
+                    "assessment_question": "Does the Model Report include the required model description, intended use, version differences, and specification?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Provide Model Report information describing the model, intended use, version differences, and model specification (including system prompt and refusal topics).",
+                        "Observable evidence: Documentation addresses: a high-level description of the model’s architecture, capabilities, propensities, and affordances, and how the model has been developed, including its training method and data, as well as how these differ from other models they have made available on the market.",
+                        "Observable evidence: Documentation addresses: a description of how the model has been used and is expected to be used, including its use in the development, oversight, and/or evaluation of models.",
+                        "Observable evidence: Documentation addresses: a description of the model versions that are going to be made or are currently made available on the market and/or used, including differences in systemic risk mitigations and systemic risks; and.",
+                        "Observable evidence: Documentation addresses: a specification (e.g. via valid hyperlinks) of how Signatories intend the model to operate (often known as a “model specification”), including by: (a) specifying the principles that the model is intended to follow; (b) stating how the model is intended to prioritise different kinds of principles and instructions; (c) listing topics on which the model is intended to refuse instructions; and (d) providing the system prompt..",
+                        "Indicative terminology (non-mandatory): provide, model, report, information, describing, intended, use, version, differences, specification, system, prompt",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 7.1"
+                    ]
+                },
+                {
+                    "id": "SS-7.2",
+                    "short_name": "Measure 7.2 Reasons for proceeding",
+                    "title": "Reasons for proceeding",
+                    "requirement": "Justify proceeding based on acceptability determination (incl. safety margins), define foreseeable undermining conditions, and describe decision-making and external inputs.",
+                    "assessment_question": "Does the Model Report justify proceeding, list undermining conditions, and describe decision process and inputs?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Justify proceeding based on acceptability determination (incl. safety margins), define foreseeable undermining conditions, and describe decision-making and external inputs.",
+                        "Observable evidence: Documentation addresses: a detailed justification for why the systemic risks stemming from the model are acceptable, including details of the safety margins incorporated (pursuant to Measure 4.1).",
+                        "Observable evidence: Documentation addresses: the reasonably foreseeable conditions under which the justification in point (1) would no longer hold; and.",
+                        "Observable evidence: Documentation addresses: a description of how the decision to proceed with the development, making available on the market, and/or use (pursuant to Measure 4.2) was made, including whether input from external actors informed such a decision (pursuant to Measure 1.1, point (2)(d)), and whether and how input from independent external evaluators pursuant to Appendix 3.5 informed such a decision..",
+                        "Indicative terminology (non-mandatory): justify, proceeding, based, acceptability, determination, incl, safety, margins, define, foreseeable, undermining, conditions",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 7.2"
+                    ]
+                },
+                {
+                    "id": "SS-7.3",
+                    "short_name": "Measure 7.3 Risk documentation",
+                    "title": "Risk documentation",
+                    "requirement": "Document systemic risk identification, analysis, estimation, evaluations, mitigations (safety & security), limitations, and forward-looking plans in the Model Report.",
+                    "assessment_question": "Is comprehensive documentation of identification/analysis/mitigation present in the Model Report with sufficient detail and traceability?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Document systemic risk identification, analysis, estimation, evaluations, mitigations (safety & security), limitations, and forward-looking plans in the Model Report.",
+                        "Observable evidence: Documentation addresses: a description of the results of their systemic risk identification and analysis and any information relevant to understanding them including: (a) a description of their systemic risk identification process for risks belonging to the types of risks in Appendix 1.1 (pursuant to Measure 2.1, point (1)); (b) explanations of uncertainties and assumptions about how the model would be used and integrated into AI systems; (c) a description of the results of their systemic risk modelling for the systemic risks (pursuant to Measure 3.3); (d) a description of the systemic risks stemming from the model and a justification therefor, including: (i) the systemic risk estimates (pursuant to Measure 3.4); and (ii) a comparison between systemic risks with safety and security mitigations implemented and with the model fully elicited (pursuant to Appendix 3.2); (e) all results of model evaluations relevant to understanding the systemic risks stemming from the model and descriptions of: (i) how the evaluations were conducted; (ii) the tests and tasks involved in the model evaluations; (iii) how the model evaluations w ere scored; (iv) how the model was elicited (pursuant to Appendix 3.2); (v) how the scores compare to human baselines (where applicable), across the model versions, and across the evaluation settings; (f) at least five, random samples of inputs and outputs from each relevant model evaluation, such as completions, generations, and/or trajectories, to facilitate independent interpretation of the model evaluation results and understanding of the systemic risks stemming from the model. If particular trajectories materially inform the understanding of a systemic risk, such trajectories will also be provided. Further, Signatories will provide a sufficiently large number of random samples of inputs and outputs from a relevant model evaluation if subsequently asked by the AI Office; (g) a description of the access and other resources provided to: (i) internal model evaluation teams (pursuant to Appendix 3.4); and (ii) independent external evaluators pursuant to Appendix 3.5. Alternatively to the preceding point (ii), Signatories will procure any such independent external evaluators to provide the requisite information directly to the AI Office at the same time that the Signatory supplies its Model Report to the AI Office; and (h) if they make use of the “similarly safe or safer model” concept pursuant to Appendix 2, provide a justification of how the criteria for “safe reference model” (pursuant to Appendix 2.1) and the criteria for “similarly safe or safer model” (pursuant to Appendix 2.2) are fulfilled.",
+                        "Observable evidence: Documentation addresses: a description of: (a) all safety mitigations implemented (pursuant to Commitment 5); (b) how they fulfil the requirements of Measure 5.1; and (c) their limitations (e.g. if training on examples of undesirable model behaviour makes identifying future instances of such behaviour more difficult).",
+                        "Observable evidence: Documentation addresses: a description of: (a) the Security Goal (pursuant to Measure 6.1); (b) all security mitigations implemented (pursuant to Measure 6.2); (c) how the mitigations meet the Security Goal, including the extent to which they align with relevant international standards or other relevant guidance (such as the RAND Securing AI Model Weights report); and (d) if Signatories have deviated from a listed security mitigation in one (or more) of Append ices 4.1 to 4.5, points (a), a justification for how the alternative security mitigations they have implemented achieve the respective mitigation objectives; and.",
+                        "Observable evidence: Documentation addresses: a high-level description of: (a) the techniques and assets they intend to use to further develop the model over the next six months, including through the use of other AI models and/or AI systems; (b) how such future versions and more advanced models may d iffer from the Signatory’s current ones, in terms of capabilities and propensities; and (c) any new or materially updated safety and security mitigations that they intend to implement for such models..",
+                        "Indicative terminology (non-mandatory): document, systemic, risk, identification, analysis, estimation, evaluations, mitigations, safety, security, limitations, forward-looking",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 7.3"
+                    ]
+                },
+                {
+                    "id": "SS-7.4",
+                    "short_name": "Measure 7.4 External reports",
+                    "title": "External reports",
+                    "requirement": "Provide available independent external evaluator reports and independent security review reports (or justify absence) consistent with confidentiality constraints.",
+                    "assessment_question": "Are external evaluation/security review reports included or the absence justified, and is evaluator selection explained when applicable?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Provide available independent external evaluator reports and independent security review reports (or justify absence) consistent with confidentiality constraints.",
+                        "Observable evidence: Documentation addresses: any available reports (e.g. via valid hyperlinks) from: (a) independent external evaluators involved in model evaluations pursuant to Appendix 3.5; and (b) security reviews undertaken by an independent external party pursuant to Appendix 4.5; to the extent that respects existing confidentiality (including commercial confidentiality) obligations and allows such external evaluators or parties to maintain control over the publication of their findings, without implicit endorsement by the Signatories of the content of such reports.",
+                        "Observable evidence: Documentation addresses: if no independent external evaluator was involved in model evaluations pursuant to Appendix 3.5, a justification of how the conditions in Appendix 3.5, first paragraph, points (1) or (2) were met; and.",
+                        "Observable evidence: Documentation addresses: if at least one independent external evaluator was involved in model evaluations pursuant to Appendix 3.5, an explanation of the choice of evaluator based on the qualification criteria..",
+                        "Indicative terminology (non-mandatory): provide, available, independent, external, evaluator, reports, security, review, justify, absence, consistent, confidentiality",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 7.4"
+                    ]
+                },
+                {
+                    "id": "SS-7.5",
+                    "short_name": "Measure 7.5 Risk landscape changes",
+                    "title": "Risk landscape changes",
+                    "requirement": "Include information enabling understanding of material changes to the systemic risk landscape (e.g., scaling, architectures, training techniques, mitigation effectiveness).",
+                    "assessment_question": "Does the Model Report describe relevant material changes to the systemic risk landscape and implications?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Include information enabling understanding of material changes to the systemic risk landscape (e.g., scaling, architectures, training techniques, mitigation effectiveness).",
+                        "Observable evidence: Documentation addresses: a description of scaling laws that suggest novel ways of improving model capabilities.",
+                        "Observable evidence: Documentation addresses: a summary of the characteristics of novel architectures that materially improve the state of the art in computational efficiency or model capabilities.",
+                        "Observable evidence: Documentation addresses: a description of information relevant to assessing the effectiveness of mitigations, e.g. if the model’s chain-of-thought is less legible by humans; and/or.",
+                        "Observable evidence: Documentation addresses: a description of training techniques that materially improve the efficiency or feasibility of distributed training..",
+                        "Indicative terminology (non-mandatory): information, enabling, understanding, material, changes, systemic, risk, landscape, scaling, architectures, training, techniques",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 7.5"
+                    ]
+                },
+                {
+                    "id": "SS-7.6",
+                    "short_name": "Measure 7.6 Model report updates",
+                    "title": "Model report updates",
+                    "requirement": "Update the Model Report when acceptability justification is materially undermined and periodically for most capable models, with versioning and changelogs.",
+                    "assessment_question": "Are update triggers, timing controls, periodicity rules, and versioned changelogs defined and evidenced?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Update the Model Report when acceptability justification is materially undermined and periodically for most capable models, with versioning and changelogs.",
+                        "Observable evidence: Documentation addresses: one of the conditions listed pursuant to Measure 7.2, point (2), has materialised.",
+                        "Observable evidence: Documentation addresses: the model’s capabilities, propensities, and/or affordances have changed or will change materially, such as through further post-training, access to additional tools, or increase in inference compute.",
+                        "Observable evidence: Documentation addresses: the model’s use and/or integrations into AI systems have changed or will change materially.",
+                        "Observable evidence: Documentation addresses: serious incidents and/or near misses involving the model or a similar model have occurred; and/or.",
+                        "Observable evidence: Documentation addresses: developments have occurred that materially undermine the external validity of model evaluations conducted, materially improve the state of the art of model evaluation methods, and/or for other reasons suggest that the systemic risk assessment conducted is materially inaccurate. Model Report updates should be completed within a reasonable amount of time after the Signatory becomes aware of the grounds that necessitate an update, e.g. after discovering them as part of their continuous systemic risk assessment and mitigation (pursuant to Measure 1.2, second paragraph). If a Model Report update is triggered by a deliberate change to a model and that change is made available on the market, the Model Report update and the underlying full systemic risk assessment and mitigation process (pursuant to Measure 1.2, third paragraph) need to be completed before the change is made available on the market. Further, if the model is amongst their respective most capable models available on the market, Signatories will provide the AI Office with an updated Model Report at least every six months. Signatories do not need to do so if: (1) the model’s capabilities, propensities, and/or affordances have not changed since they have last provided the AI Office with the Model Report, or update thereof; (2) they will place a more capable model on the market in less than a month; and/or (3) the model is considered similar ly safe or safer (pursuant to Appendix 2.2) for each identified systemic risk (pursuant to Measure 2.1). The updated Model Report will contain:.",
+                        "Observable evidence: Documentation addresses: the updated information specified in Measures 7.1 to 7.5 based on the results of the full systemic risk assessment and mitigation process (pursuant to Measure 1.2, third paragraph); and.",
+                        "Observable evidence: Documentation addresses: a changelog, describing how and why the Model Report has been updated, along with a version number and the date of change..",
+                        "Indicative terminology (non-mandatory): update, model, report, acceptability, justification, materially, undermined, periodically, most, capable, models, versioning",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 7.6"
+                    ]
+                },
+                {
+                    "id": "SS-7.7",
+                    "short_name": "Measure 7.7 AI Office notification",
+                    "title": "AI Office notification",
+                    "requirement": "Provide AI Office access to the Model Report by market placement and provide access to updates within five business days (with interim reporting rules where delays apply).",
+                    "assessment_question": "Is there evidence of providing AI Office access at market placement and timely access to updates (incl. interim reporting if delayed)?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Provide AI Office access to the Model Report by market placement and provide access to updates within five business days (with interim reporting rules where delays apply).",
+                        "Observable evidence: Documentation contains a section explicitly addressing this measure and describing how it is implemented.",
+                        "Indicative terminology (non-mandatory): provide, office, access, model, report, market, placement, updates, within, five, business, days",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 7.7"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-8",
+            "title": "Commitment 8 – Responsibility Allocation",
+            "measures": [
+                {
+                    "id": "SS-8.1",
+                    "short_name": "Measure 8.1 Responsibilities",
+                    "title": "Responsibilities",
+                    "requirement": "Define and allocate responsibilities for systemic risk management across governance levels (oversight, ownership, support/monitoring, assurance).",
+                    "assessment_question": "Are responsibilities clearly allocated across governance levels with role holders and independence where needed?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Define and allocate responsibilities for systemic risk management across governance levels (oversight, ownership, support/monitoring, assurance).",
+                        "Observable evidence: Documentation addresses: Systemic risk oversight: Overseeing the Signatories’ systemic risk assessment and mitigation processes and measures..",
+                        "Observable evidence: Documentation addresses: Systemic risk ownership: Managing systemic risks stemming from Signatories’ models, including the systemic risk assessment and mitigation processes and measures, and managing the response to serious incidents..",
+                        "Observable evidence: Documentation addresses: Systemic risk support and monitoring: Supporting and monitoring the Signatories’ systemic risk assessment and mitigation processes and measures..",
+                        "Observable evidence: Documentation addresses: Systemic risk assurance: Providing internal and, as appropriate, external assurance about the adequacy of the Signatories’ systemic risk assessment and mitigation processes and measures to the management body in its supervisory function or another suitable independent body (such as a council or board). Signatories will allocate these responsibilities, as suitable for the Signatories’ governance structure and organisational complexity, across the following levels of their organisation:.",
+                        "Observable evidence: Documentation addresses: the management body in its supervisory function or another suitable independent body (such as a council or board).",
+                        "Observable evidence: Documentation addresses: the management body in its executive function.",
+                        "Observable evidence: Documentation addresses: relevant operational teams.",
+                        "Observable evidence: Documentation addresses: if available, internal assurance providers (e.g. an internal audit function); and.",
+                        "Indicative terminology (non-mandatory): define, allocate, responsibilities, systemic, risk, management, across, governance, levels, oversight, ownership, support",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 8.1"
+                    ]
+                },
+                {
+                    "id": "SS-8.2",
+                    "short_name": "Measure 8.2 Resources",
+                    "title": "Resources",
+                    "requirement": "Ensure management oversight of allocating adequate resources (people, budget, info, compute) for systemic risk responsibilities.",
+                    "assessment_question": "Is there evidence of management oversight and allocation of adequate resources for systemic risk work?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Ensure management oversight of allocating adequate resources (people, budget, info, compute) for systemic risk responsibilities.",
+                        "Observable evidence: Documentation addresses: human resources.",
+                        "Observable evidence: Documentation addresses: financial resources.",
+                        "Observable evidence: Documentation addresses: access to information and knowledge; and.",
+                        "Observable evidence: Documentation addresses: computational resources..",
+                        "Indicative terminology (non-mandatory): ensure, management, oversight, allocating, adequate, resources, people, budget, info, compute, systemic, risk",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 8.2"
+                    ]
+                },
+                {
+                    "id": "SS-8.3",
+                    "short_name": "Measure 8.3 Risk culture",
+                    "title": "Risk culture",
+                    "requirement": "Promote a healthy systemic risk culture (tone from top, challenge mechanisms, reporting channels, whistleblower protections, non-retaliation).",
+                    "assessment_question": "Are mechanisms and evidence present to promote a healthy systemic risk culture?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Promote a healthy systemic risk culture (tone from top, challenge mechanisms, reporting channels, whistleblower protections, non-retaliation).",
+                        "Observable evidence: Documentation addresses: setting the tone for a healthy systemic risk culture from the top, e.g. by the leadership clearly communicating the Signatory’s Framework to staff.",
+                        "Observable evidence: Documentation addresses: allowing clear communication and challenge of decisions concerning systemic risk.",
+                        "Observable evidence: Documentation addresses: setting incentives and affording sufficient independence of staff involved in systemic risk assessment and mitigation to discourage excessive systemic-risk-taking and encourage an unbiased assessment of the systemic risks stemming from their models.",
+                        "Observable evidence: Documentation addresses: anonymous surveys find that staff are comfortable raising concerns about systemic risks, are aware of channels for doing so, and understand the Signatory’s Framework.",
+                        "Observable evidence: Documentation addresses: internal reporting channels are actively used and reports are acted upon appropriately.",
+                        "Observable evidence: Documentation addresses: annually informing workers of the Signatory’s whistleblower protection policy and making such policy readily available to workers such as by publishing it on their website; and/or.",
+                        "Observable evidence: Documentation addresses: not retaliating in any form, including any direct or indirect detrimental action such as termination, demotion, legal action, negative evaluations, or creation of hostile work environments, against any person publishing or providing information acquired in the context of work-related activities performed for the Signatory to competent authorities about systemic risks stemming from their models for which the person has reasonable grounds to believe its veracity. Commitment 9 Serious incident reporting LEGAL TEXT: Article 55(1), and recitals 114 and 115 AI Act Signatories commit to implementing appropriate processes and measures for keeping track of, documenting, and reporting to the AI Office and, as applicable, to national competent authorities, without undue delay relevant information about serious incidents along the entire model lifecycle and possible corrective measures to address them, as specified in the Measures of this Commitment. Further, Signatories commit to providing resourcing of such processes and measures appropriate for the severity of the serious incident and the degree of involvement of their model..",
+                        "Indicative terminology (non-mandatory): promote, healthy, systemic, risk, culture, tone, top, challenge, mechanisms, reporting, channels, whistleblower",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 8.3"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-9",
+            "title": "Commitment 9 – Serious Incident Reporting",
+            "measures": [
+                {
+                    "id": "SS-9.1",
+                    "short_name": "Measure 9.1 Incident identification",
+                    "title": "Incident identification",
+                    "requirement": "Use methods and channels to identify and track serious incidents, including monitoring external sources and facilitating third-party reporting.",
+                    "assessment_question": "Are serious incident identification methods and reporting channels (incl. third-party) documented and operational?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Use methods and channels to identify and track serious incidents, including monitoring external sources and facilitating third-party reporting.",
+                        "Observable evidence: Documentation addresses: review other sources of information, such as police and media reports, posts on social media, research papers, and incident databases; and.",
+                        "Observable evidence: Documentation addresses: facilitate the reporting of relevant information about serious incidents by downstream modifiers, downstream providers, users, and other third parties to: (a) the Signatory; or (b) the AI Office and, as applicable, national competent authorities; by informing such third parties of direct reporting channels, if available, without prejudice to any of their reporting obligations under Article 73 AI Act..",
+                        "Indicative terminology (non-mandatory): use, methods, channels, identify, track, serious, incidents, monitoring, external, sources, facilitating, third-party",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 9.1"
+                    ]
+                },
+                {
+                    "id": "SS-9.2",
+                    "short_name": "Measure 9.2 Incident documentation",
+                    "title": "Incident documentation",
+                    "requirement": "Track/document/report serious incidents with the required minimum information set, including root cause analysis and mitigation failures/circumvention.",
+                    "assessment_question": "Do incident reports capture the required information set and document missing information appropriately?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Track/document/report serious incidents with the required minimum information set, including root cause analysis and mitigation failures/circumvention.",
+                        "Observable evidence: Documentation addresses: the start and end dates of the serious incident, or best approximations thereof if the precise dates are unclear.",
+                        "Observable evidence: Documentation addresses: the resulting harm and the victim or affected group of the serious incident.",
+                        "Observable evidence: Documentation addresses: the chain of events that (directly or indirectly) led to the serious incident.",
+                        "Observable evidence: Documentation addresses: the model involved in the serious incident.",
+                        "Observable evidence: Documentation addresses: a description of material available setting out the model’s involvement in the serious incident.",
+                        "Observable evidence: Documentation addresses: what, if anything, the Signatory intends to do or has done in response to the serious incident.",
+                        "Observable evidence: Documentation addresses: what, if anything, the Signatory recommends the AI Office and, as applicable, national competent authorities to do in response to the serious incident.",
+                        "Observable evidence: Documentation addresses: a root cause analysis with a description of the model’s outputs that (directly or indirectly) led to the serious incident and the factors that contributed to their generation, including the inputs used and any failures or circumventions of systemic risk mitigations; and.",
+                        "Indicative terminology (non-mandatory): track, document, report, serious, incidents, required, minimum, information, set, root, cause, analysis",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 9.2"
+                    ]
+                },
+                {
+                    "id": "SS-9.3",
+                    "short_name": "Measure 9.3 Reporting timelines",
+                    "title": "Reporting timelines",
+                    "requirement": "Report serious incidents within specified timelines and provide intermediate and final reports as required.",
+                    "assessment_question": "Are incident reporting timelines defined and adhered to (initial/intermediate/final)?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Report serious incidents within specified timelines and provide intermediate and final reports as required.",
+                        "Observable evidence: Documentation addresses: a serious and irreversible disruption of the management or operation of critical infrastructure, or if the Signatories establish or suspect with reasonable likelihood such a causal relationship between their model and the disruption, not later than two days after the Signatories become aware of the involvement of their model in the incident.",
+                        "Observable evidence: Documentation addresses: a serious cybersecurity breach, including the (self-)exfiltration of model weights and cyberattacks, or if the Signatories establish or suspect with reasonable likelihood such a causal relationship between their model and the breach, not later than five da ys after the Signatories become aware of the involvement of their model in the incident.",
+                        "Observable evidence: Documentation addresses: a death of a person, or if the Signatories establish or suspect with reasonable likelihood such a causal relationship between their model and the death, not later than 10 days after the Signatories become aware of the involvement of their model in the incident; and.",
+                        "Observable evidence: Documentation addresses: serious harm to a person’s health (mental and/or physical), an infringement of obligations under Union law intended to protect fundamental rights, and/or serious harm to property or the environment, or if the Signatories establish or suspect with reasonable likelihood such a causal relationship between their model and the harms or infringements, not later than 15 days after the Signatories become aware of the involvement of their model in the incident. For unresolved serious incidents, Signatories will update the information in their initial report and add further information required by Measure 9.2, as available, in an intermediate report that is submitted to the AI Office and, as applicable, to national competent authorities, at least every four weeks after the initial report. Signatories will submit a final report, covering all the information required by Measure 9.2, to the AI Office and, as applicable, to national competent authorities, not later than 60 days after the serious incident has been resolved. If multiple similar serious incidents occur within the reporting timelines, Signatories may include them in the report(s) of the first serious incident, while respecting the timelines for reporting for the first serious incident..",
+                        "Indicative terminology (non-mandatory): report, serious, incidents, within, specified, timelines, provide, intermediate, final, reports, required, timeline",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 9.3"
+                    ]
+                },
+                {
+                    "id": "SS-9.4",
+                    "short_name": "Measure 9.4 Retention",
+                    "title": "Retention",
+                    "requirement": "Retain serious-incident documentation for at least five years from the later of documentation date or incident date.",
+                    "assessment_question": "Is a retention policy implemented that meets or exceeds the 5-year requirement?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Retain serious-incident documentation for at least five years from the later of documentation date or incident date.",
+                        "Observable evidence: Documentation contains a section explicitly addressing this measure and describing how it is implemented.",
+                        "Indicative terminology (non-mandatory): retain, serious-incident, documentation, least, five, years, later, date, incident, retention, policy, archival",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 9.4"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "SS-10",
+            "title": "Commitment 10 – Documentation & Transparency",
+            "measures": [
+                {
+                    "id": "SS-10.1",
+                    "short_name": "Measure 10.1 Additional documentation",
+                    "title": "Additional documentation",
+                    "requirement": "Maintain additional detailed documentation (architecture, integration, evaluations, mitigations) for the AI Office upon request and retain it for at least 10 years after market placement; track key decisions and justifications.",
+                    "assessment_question": "Is additional documentation maintained, traceable, and retained for at least 10 years?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Maintain additional detailed documentation (architecture, integration, evaluations, mitigations) for the AI Office upon request and retain it for at least 10 years after market placement; track key decisions and justifications.",
+                        "Observable evidence: Documentation addresses: a detailed description of the model’s architecture.",
+                        "Observable evidence: Documentation addresses: a detailed description of how the model is integrated into AI systems, explaining how software components build or feed into each other and integrate into the overall processing, insofar as the Signatory is aware of such information.",
+                        "Observable evidence: Documentation addresses: a detailed description of the model evaluations conducted pursuant to this Chapter, including their results and strategies; and.",
+                        "Observable evidence: Documentation addresses: a detailed description of the safety mitigations implemented (pursuant to Commitment 5). Documentation will be retained at least 10 years after the model has been placed on the market. Further, Signatories will keep track of the following information, to the extent it is not already covered by the first paragraph, for the purpose of evidencing adherence to this Chapter to the AI Office upon request:.",
+                        "Observable evidence: Documentation addresses: their processes, measures, and key decisions that form part of their systemic risk assessment and mitigation; and.",
+                        "Observable evidence: Documentation addresses: justifications for choices of a particular best practice, state-of-the-art, or other more innovative process or measure if a Signatory relies upon it for adherence to this Chapter. Signatories need not collect the information of the third paragraph in one medium or place but may compile it upon the AI Office’s request..",
+                        "Indicative terminology (non-mandatory): maintain, additional, detailed, documentation, architecture, integration, evaluations, mitigations, office, upon, request, retain",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 10.1"
+                    ]
+                },
+                {
+                    "id": "SS-10.2",
+                    "short_name": "Measure 10.2 Public transparency",
+                    "title": "Public transparency",
+                    "requirement": "Publish appropriate public summaries of the Framework and Model Reports when necessary for systemic risk assessment/mitigation, with safeguards for sensitive info and mitigation effectiveness; document exceptions.",
+                    "assessment_question": "Are public transparency summaries provided when necessary, with safeguards and documented exceptions?",
+                    "compliance_rubric": {
+                        "compliant": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "partially_compliant": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure’s expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "not_compliant": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "unknown_or_not_evidenced": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    },
+                    "expected_evidence": [
+                        "Core intent: The documentation should demonstrate that the organisation addresses this measure by: Publish appropriate public summaries of the Framework and Model Reports when necessary for systemic risk assessment/mitigation, with safeguards for sensitive info and mitigation effectiveness; document exceptions.",
+                        "Observable evidence: Documentation addresses: Risks to public health..",
+                        "Observable evidence: Documentation addresses: Risks to safety..",
+                        "Observable evidence: Documentation addresses: Risks to public security..",
+                        "Observable evidence: Documentation addresses: Risks to fundamental rights..",
+                        "Observable evidence: Documentation addresses: Risks to society as a whole. Based on these types of risks, a list of specified systemic risks is provided in Appendix 1.4. As part of the systemic risk identification process that Signatories will conduct, examples of risks falling under the five types of risks above that they will draw upon when compiling the list of risks in mental health, freedom of expression and information, non-discrimination, privacy and the protection of personal data, the environment, non-human welfare, economic security, and democratic processes; and risks from concentration of power and illegal, violent, hateful, radicalising, or false content, including risks from child sexual abuse material (CSAM) and non-consensual intimate images (NCII). Appendix 1.2 Nature of systemic risks The considerations below concerning the nature of systemic risks inform systemic risk identification (pursuant to Commitment 2). The considerations distinguish between essential characteristics of the nature of systemic risks (Appendix 1.2.1) and contributing characteristics (Appendix 1.2.2). Appendix 1.2.1 Essential characteristics.",
+                        "Observable evidence: Documentation addresses: The risk is specific to high-impact capabilities pursuant to Article 3(65) and Article 3(64) AI Act..",
+                        "Observable evidence: Documentation addresses: The risk has significant impact on the Union market pursuant to Article 3(65) AI Act..",
+                        "Observable evidence: Documentation addresses: Said impact can be propagated at scale across the value chain pursuant to Article 3(65) AI Act. Appendix 1.2.2 Contributing characteristics.",
+                        "Indicative terminology (non-mandatory): publish, appropriate, public, summaries, framework, model, reports, necessary, systemic, risk, assessment, mitigation",
+                        "Not required: Explicit references to external appendices, unless included in the provided documentation.",
+                        "Not required: Proof of full operational effectiveness beyond what is documented.",
+                        "Not required: Quantitative completeness (e.g., exhaustive lists), unless the measure explicitly requires it."
+                    ],
+                    "source_reference": [
+                        "Measure 10.2"
+                    ]
+                }
+            ]
+        }
+    ]
+}

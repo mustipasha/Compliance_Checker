@@ -1,0 +1,43 @@
+# ==========================================
+# Compliance Checker Tool - Git Ignore
+# ==========================================
+
+# 1. Python & Backend Environment
+backend/__pycache__/
+backend/.venv/
+*.py[cod]
+*$py.class
+backend/.env
+
+# 2. Database & Uploaded Data
+# Ignore ChromaDB Vector Store
+backend/chroma_db/
+# Ignore locally uploaded files from users
+backend/uploaded_files/
+# Ignore past assessment history and saved reports
+backend/assessment_history/
+# Ignore top level assessment dump
+backend/assessment_result.json
+
+# 3. Node & Frontend Environment
+frontend/node_modules/
+frontend/dist/
+frontend/.npm/
+npm-debug.log*
+
+# 4. Large Files / Thesis Documents
+# Ignore PDF Frameworks and Thesis items
+*.pdf
+*.zip
+Thesis_Extracted/
+measure_dump.txt
+criteria.txt
+
+# 5. OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

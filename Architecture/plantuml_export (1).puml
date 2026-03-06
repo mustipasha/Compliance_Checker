@@ -1,0 +1,57 @@
+@startuml
+' Logical View - Simplified & clearer naming
+
+package "User & Entry" {
+  [User] as U
+  [UI / API] as UI
+}
+
+package "Compliance Checker Core" {
+  [Assessment Runner\n(Workflow Controller)] as RUN
+  [Criteria Store\n(Safety & Security Criteria + Rubrics)] as CRIT
+  [Retriever] as RET
+  [LLM Evaluator\n(Decision + Evidence Quotes)] as LLM
+  [Report Generator\n(Compliance Matrix)] as REP
+}
+
+package "Evidence & Storage" {
+  [Document Ingestion\n(Parse + Chunk)] as ING
+  [Embedding Service] as EMB
+  [Vector DB\n(System Evidence Index)] as VDB
+  [Uploaded Documents\n(File Store)] as FILES
+}
+
+package "Cross-cutting" {
+  [Security & Access Control] as SEC
+  [Logging & Monitoring] as LOG
+  [Configuration\n(models, k, thresholds)] as CFG
+}
+
+U --> UI : upload docs / start run
+UI --> RUN : trigger assessment
+
+RUN --> ING : ingest uploaded docs
+ING --> FILES : store originals
+ING --> EMB : embed chunks
+EMB --> VDB : store vectors + metadata
+
+RUN --> CRIT : load criteria
+RUN --> RET : retrieve evidence per criterion
+RET --> VDB : similarity search\n(filter doc_type=system)
+
+RUN --> LLM : send criterion + evidence\n-> decision JSON
+LLM --> RUN : results
+
+RUN --> REP : compile report
+REP --> UI : export / download
+
+SEC -[dashed]- UI
+SEC -[dashed]- FILES
+SEC -[dashed]- VDB
+LOG -[dashed]- RUN
+LOG -[dashed]- LLM
+CFG -[dashed]- RUN
+CFG -[dashed]- RET
+CFG -[dashed]- LLM
+
+@enduml

@@ -1,0 +1,56 @@
+@startuml
+' Physical View – UML 2.0 Deployment Diagram (with key artifacts)
+
+node "User Workstation" as USER {
+  component "User Interface\n(Web UI / CLI)" as UI
+}
+
+node "Application Runtime\n(Local Server / VM)" as APPNODE {
+  component "Compliance Checker Application" as APP
+  component "Assessment Runner" as RUN
+  component "Evidence Retrieval Service" as RET
+  component "LLM Assessment Service" as LLM
+  component "Report Generation Service" as REP
+
+  artifact "Criteria Set\n(safety_security_criteria.json)" as A_CRIT
+  artifact "Regulation Snapshot\n(safety_security_chapter.pdf/text)" as A_REG
+  artifact "Run Logs\n(run_logs.json)" as A_LOG
+  artifact "Compliance Report\n(report.pdf / report.json)" as A_REP
+}
+
+node "Vector Database Node" as VDBNODE {
+  component "Vector Database\n(Evidence Index)" as VDB
+  artifact "Embedding Index\n(persisted vectors)" as A_INDEX
+}
+
+node "Document Storage Node" as DOCNODE {
+  component "System Documentation Store" as DOCS
+  artifact "Uploaded System Docs\n(PDF/DOCX/TXT)" as A_DOCS
+}
+
+node "External LLM Service" as LLMNODE {
+  component "LLM Inference API" as LLMAPI
+}
+
+' Communication paths
+UI --> APP : HTTP / local call
+
+APP --> RUN
+RUN --> RET
+RUN --> LLM
+RUN --> REP
+
+RET --> VDB : similarity search
+APP --> DOCS : read/write docs
+LLM --> LLMAPI : API call
+
+' Artifact usage (dashed = dependency / deployed or used)
+RUN ..> A_CRIT : loads
+RUN ..> A_REG : references
+APP ..> A_LOG : writes
+REP ..> A_REP : writes
+
+VDB ..> A_INDEX : persists
+DOCS ..> A_DOCS : stores
+
+@enduml

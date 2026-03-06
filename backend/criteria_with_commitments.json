@@ -1,0 +1,41 @@
+{
+    "schema_version": "2.1",
+    "domain": "Safety & Security (GPAI Code of Practice)",
+    "source": {
+        "document": "EU Code of Practice for General-Purpose AI Models – Safety and Security Chapter",
+        "commitment_count": 10,
+        "criterion_count": 32
+    },
+    "commitments": [
+        {
+            "id": "SS-1",
+            "title": "Safety & Security Framework",
+            "description": "Establish, implement, and maintain a comprehensive Safety & Security Framework",
+            "criteria": [
+                {
+                    "id": "SS-1.1",
+                    "short_name": "Create framework",
+                    "title": "Create a Safety & Security Framework",
+                    "requirement": "Create a state-of-the-art Safety & Security Framework covering systemic risk assessment and mitigation, including trigger points, acceptance tiers, mitigation expectations, timelines, external input, responsibility allocation, and update process.",
+                    "assessment_question": "Has the provider created a documented safety and security framework that covers the required elements of the Code's Safety & Security Framework?",
+                    "expected_evidence": [
+                        "Documentation includes Framework document (versioned).",
+                        "Documentation includes Trigger points definition.",
+                        "Documentation includes Acceptance tiers + justification.",
+                        "Documentation includes Mitigation expectations per tier.",
+                        "Documentation includes External input process.",
+                        "Documentation includes Responsibility allocation.",
+                        "Documentation includes Update process + changelog approach.",
+                        "Indicative keywords/phrases: create, state-of-the-art, safety, security, framework, covering, systemic, risk, assessment, mitigation, trigger, points"
+                    ],
+                    "compliance_rubric": {
+                        "COMPLIANT": "Clear and explicit evidence in the provided documentation shows that all required concepts and elements of the measure are addressed in a concrete and unambiguous manner. The requirement can reasonably be considered defined at a documentation level (i.e., sufficiently specified to guide implementation), with no material gaps.",
+                        "PARTIALLY_COMPLIANT": "Some relevant concepts or elements required by the measure are present, but they are incomplete, implicit, vaguely described, not clearly delineated, or only partially mapped to the measure's expected evidence. As a result, the measure is only partially addressed at a documentation level.",
+                        "NOT_COMPLIANT": "No meaningful evidence addressing the requirement is present in the provided documentation, or the documentation contradicts the requirement.",
+                        "NOT_EVIDENCED / UNKNOWN": "The provided documentation is insufficient to determine whether the requirement is addressed (e.g., missing sections, inaccessible content, or lack of verifiable references)."
+                    }
+                }
+            ]
+        }
+    ]
+}

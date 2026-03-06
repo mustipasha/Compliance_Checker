@@ -1,0 +1,647 @@
+Version 07.02.2026
+
+
+
+from langchain_core.prompts import ChatPromptTemplate
+
+# --- 1. AUDITOR AGENT (First-Pass Evaluator) ---
+# Replaces old COMPLIANCE_ANALYST.
+# New Role: Determine satisfaction of requirement with strict evidence.
+
+# --- 1. ALIGNMENT AGENT (Conceptual Overlap) ---
+# Goal: Identify what is covered. Do not look for gaps.
+
+ALIGNMENT_PROMPT = """
+You are an expert in AI alignment, AI governance, and safety frameworks.
+
+Your task is to identify and explain how an external framework or standard
+CONCEPTUALLY ALIGNS with the specified EU Code of Practice requirement.
+This task operates strictly at the level of framework principles, governance concepts,
+and documented intentions — not implementation or operational evidence.
+
+INPUTS:
+Criterion ID: "{criterion_id}"
+
+EU Requirement (Conceptual Intent):
+"{criterion_requirement}"
+
+Expected EU Evidence (Conceptual Indicators, not implementation proof):
+{expected_evidence_list}
+
+Retrieved Framework Context:
+{evidence_text}
+
+INSTRUCTIONS:
+1. Analyze the retrieved context for CONCEPTUAL OVERLAP with the EU requirement.
+2. Focus on shared intent, objectives, principles, risk concepts, or governance mechanisms.
+3. Treat different terminology as potentially equivalent if the underlying concept or goal matches.
+4. Explicitly map EU concepts to corresponding concepts in the external framework.
+5. Do NOT assess sufficiency, completeness, or gaps — only identify alignment.
+6. It is acceptable to identify limited, partial, or no meaningful alignment if appropriate.
+7. Avoid speculative claims not grounded in the retrieved text.
+
+OUTPUT JSON:
+{
+  "criterion_id": "{criterion_id}",
+  "alignment_summary": "Brief explanation of how and to what extent the external framework conceptually aligns with the EU requirement.",
+  "key_aligned_concepts": [
+    "Concept A",
+    "Concept B"
+  ],
+  "evidence_citations": [
+    {
+      "chunk_id": "...",
+      "quote": "...",
+      "why_it_matters": "Explains how this passage reflects the same intent or principle as the EU requirement."
+    }
+  ],
+  "assumptions": [
+    "Assuming concept X in the external framework corresponds to EU concept Y because they address the same risk or governance objective."
+  ]
+}
+"""
+
+# --- 2. GAP AGENT (Divergence Analysis) ---
+# Goal: Identify what is missing or different.
+
+GAP_PROMPT = """
+You are an expert in regulatory and framework-level gap analysis.
+
+Your task is to identify where an external framework or standard
+DOES NOT FULLY COVER, DIFFERS FROM, or IS WEAKER THAN
+the specified EU Code of Practice requirement, at a CONCEPTUAL and GOVERNANCE level.
+
+INPUTS:
+Criterion ID: "{criterion_id}"
+
+EU Requirement (Conceptual Intent):
+"{criterion_requirement}"
+
+Alignment Findings (from prior step):
+{alignment_json}
+
+Retrieved Framework Context:
+{evidence_text}
+
+INSTRUCTIONS:
+1. Treat the Alignment Findings as established context; do not re-evaluate alignment.
+2. Compare the EU requirement against what is explicitly present or implied in the retrieved context.
+3. Identify:
+   a) MISSING ELEMENTS — EU-required concepts or expectations not addressed by the external framework.
+   b) WEAKER AREAS — concepts that are present but less specific, less binding, or less robust than in the EU requirement.
+   c) SCOPE DIVERGENCES — differences in focus (e.g., systemic vs local risk, provider vs user responsibility).
+4. Focus on conceptual, governance, and policy-level gaps — not implementation or tooling gaps.
+5. Avoid normative or judgmental language. Use descriptive phrasing (e.g., "does not address", "is less explicit").
+6. If the retrieved context is insufficient to assess a point, explicitly state that uncertainty.
+7. Do not infer gaps beyond what can be reasonably supported by the retrieved text.
+
+OUTPUT JSON:
+{
+  "criterion_id": "{criterion_id}",
+  "gap_summary": "Concise explanation of the main conceptual or governance gaps relative to the EU requirement.",
+  "missing_elements": [
+    "EU-required concept not addressed in the external framework"
+  ],
+  "weaker_areas": [
+    "Concept addressed in a less explicit or less binding manner"
+  ],
+  "scope_divergences": [
+    "Difference in regulatory focus or responsibility allocation"
+  ],
+  "uncertainties": [
+    "Aspects that cannot be assessed due to limited or absent information in the retrieved context"
+  ]
+}
+"""
+
+# --- 3. SYNTHESIS AGENT (Neutral Arbiter) ---
+# Goal: Combine views and assign rubric classification based on definition.
+
+SYNTHESIS_PROMPT = """
+You are a neutral compliance synthesis agent.
+
+Your task is to produce a final, reasoned assessment of CONCEPTUAL ALIGNMENT
+between an external framework and a specific EU Code of Practice criterion,
+based solely on prior Alignment and Gap analyses.
+
+INPUTS:
+Criterion ID: "{criterion_id}"
+
+EU Requirement (Conceptual Intent):
+"{criterion_requirement}"
+
+Compliance Rubric Definitions:
+{compliance_rubric_json}
+
+Alignment Analysis:
+{alignment_json}
+
+Gap Analysis:
+{gap_json}
+
+INSTRUCTIONS:
+1. Synthesize the Alignment and Gap analyses into a coherent, structured assessment.
+2. Do NOT introduce new alignments, gaps, or assumptions beyond those explicitly stated in the inputs.
+3. Evaluate the overall relationship between the external framework and the EU requirement at a CONCEPTUAL and GOVERNANCE level.
+4. Assign ONE classification strictly according to the provided compliance rubric definitions:
+   - COMPLIANT
+   - PARTIALLY_COMPLIANT
+   - NOT_COMPLIANT
+   - NOT_EVIDENCED / UNKNOWN
+5. Base the classification decision on:
+   - the presence or absence of core concepts,
+   - the significance of missing elements,
+   - the materiality of scope divergences,
+   - and the degree of ambiguity or uncertainty.
+6. Explicitly justify the classification by referencing:
+   - key aligned concepts,
+   - decisive gaps or divergences,
+   - and how these map to the rubric conditions.
+7. Highlight any terminological, conceptual, or scope-related ambiguities that complicate direct comparison.
+8. Provide a confidence score reflecting the clarity and completeness of the available evidence
+   (high confidence = clear evidence and low ambiguity; low confidence = sparse or ambiguous evidence).
+
+OUTPUT JSON:
+{
+  "criterion_id": "{criterion_id}",
+  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN",
+  "justification": "Structured explanation of why this classification applies, explicitly grounded in the rubric and the alignment/gap findings.",
+  "key_aligned_concepts": [
+    "Concepts from the alignment analysis that materially support compliance"
+  ],
+  "decisive_gaps_or_divergences": [
+    "Gaps or divergences that most strongly influenced the classification"
+  ],
+  "tensions_or_ambiguities": [
+    "Conceptual or terminological issues that limit direct comparability"
+  ],
+  "confidence": 0.0
+}
+"""
+
+# --- 3-in-1 SYNTHESIS AGENT (Single Agent Mode) ---
+# Does all three steps in one pass.
+
+SYNTHESIS_ALL_IN_ONE_PROMPT = """
+You are an expert AI Alignment Assessor.
+Your task is to perform a complete CONCEPTUAL ALIGNMENT ASSESSMENT between an external standard and an EU Code of Practice requirement.
+You must identify alignment, gaps, and produce a final synthesis.
+
+INPUTS:
+Criterion ID: "{criterion_id}"
+EU Requirement: "{criterion_requirement}"
+Expected EU Evidence (Conceptual):
+{expected_evidence_list}
+
+Retrieved Context:
+{evidence_text}
+
+INSTRUCTIONS:
+1. ALIGNMENT: Identify conceptual overlap (intent, principles, governance).
+2. GAPS: Identify missing elements, weaker areas, or scope divergences.
+3. SYNTHESIS: Combine these into a neutral assessment.
+4. CLASSIFY based on:
+   - COMPLIANT: Full conceptual overlap.
+   - PARTIALLY_COMPLIANT: Strong overlap but narrower scope/mechanisms.
+   - NOT_COMPLIANT: Fundamental divergence/absence.
+   - NOT_APPLICABLE: Out of scope.
+
+OUTPUT JSON:
+{{
+  "criterion_id": "{criterion_id}",
+  "alignment_summary": "...",
+  "key_aligned_concepts": ["..."],
+  "evidence_citations": [
+    {{"chunk_id":"...", "quote":"...", "why_it_matters":"..."}}
+  ],
+  "gap_summary": "...",
+  "missing_elements": ["..."],
+  "weaker_areas": ["..."],
+  "scope_divergences": ["..."],
+  "classification": "COMPLIANT" | "PARTIALLY_COMPLIANT" | "NOT_COMPLIANT" | "NOT_APPLICABLE",
+  "justification": "...",
+  "tensions_or_ambiguities": ["..."],
+  "confidence": <0.0-1.0>
+}}
+"""
+
+
+#####################################################################################
+
+
+
+
+ALIGNMENT_PROMPT = """
+You are an expert in AI alignment, AI governance, and safety frameworks.
+
+Your task is to identify and explain how an external framework or standard
+CONCEPTUALLY ALIGNS with the specified EU Code of Practice requirement.
+This task operates strictly at the level of framework principles, governance concepts,
+and documented intentions — not implementation or operational evidence.
+
+INPUTS:
+Criterion ID: "{criterion_id}"
+
+EU Requirement (Conceptual Intent):
+"{criterion_requirement}"
+
+Expected EU Evidence (Conceptual Indicators, not implementation proof):
+{expected_evidence_list}
+
+Retrieved Framework Context:
+{evidence_text}
+
+INSTRUCTIONS:
+1. Analyze the retrieved context for CONCEPTUAL OVERLAP with the EU requirement.
+2. Focus on shared intent, objectives, principles, risk concepts, or governance mechanisms.
+3. Treat different terminology as potentially equivalent if the underlying concept or goal matches.
+4. Explicitly map EU concepts to corresponding concepts in the external framework.
+5. Do NOT assess sufficiency, completeness, or gaps — only identify alignment.
+6. It is acceptable to identify limited, partial, or no meaningful alignment if appropriate.
+7. Avoid speculative claims not grounded in the retrieved text.
+
+OUTPUT JSON:
+{{
+  "criterion_id": "{criterion_id}",
+  "alignment_summary": "Brief explanation of how and to what extent the external framework conceptually aligns with the EU requirement.",
+  "key_aligned_concepts": [
+    "Concept A",
+    "Concept B"
+  ],
+  "evidence_citations": [
+    {{
+      "chunk_id": "...",
+      "quote": "...",
+      "why_it_matters": "Explains how this passage reflects the same intent or principle as the EU requirement."
+    }}
+  ],
+  "assumptions": [
+    "Assuming concept X in the external framework corresponds to EU concept Y because they address the same risk or governance objective."
+  ]
+}}
+"""
+
+# --- 2. GAP AGENT (Divergence Analysis) ---
+# Goal: Identify what is missing or different.
+
+GAP_PROMPT = """
+You are an expert in regulatory and framework-level gap analysis.
+
+Your task is to identify where an external framework or standard
+DOES NOT FULLY COVER, DIFFERS FROM, or IS WEAKER THAN
+the specified EU Code of Practice requirement, strictly at the level of the criterion’s
+explicit normative commitments (conceptual intent), and NOT at the level of broader
+regulatory governance, enforcement, or oversight design.
+
+INPUTS:
+Criterion ID: "{criterion_id}"
+
+EU Requirement (Conceptual Intent):
+"{criterion_requirement}"
+
+Alignment Findings (from prior step):
+{alignment_json}
+
+Retrieved Framework Context:
+{evidence_text}
+
+INSTRUCTIONS:
+1. Treat the Alignment Findings as established context; do not re-evaluate alignment.
+2. Compare the EU requirement against what is explicitly present or implied in the retrieved context.
+3. Identify:
+   a) MISSING ELEMENTS — EU-required concepts or expectations not addressed by the external framework.
+   b) WEAKER AREAS — concepts that are present but less specific, less binding, or less robust than in the EU requirement.
+   c) SCOPE DIVERGENCES — differences in focus (e.g., systemic vs local risk, provider vs user responsibility).
+4. Do not infer gaps beyond what can be reasonably supported by the retrieved text nor invent gaps.
+5. Focus on conceptual, governance, and policy-level gaps — not implementation or tooling gaps.
+6. Avoid normative or judgmental language. Use descriptive phrasing (e.g., "does not address", "is less explicit").
+7. If the retrieved context is insufficient to assess a point, explicitly state that uncertainty.
+
+GENERAL SCOPE CONSTRAINTS (APPLY TO ALL CRITERIA):
+- Identify gaps ONLY if an explicit concept, obligation, or element required by the specific EU criterion is missing, contradicted, or materially weakened.
+- Do NOT introduce additional expectations based on:
+  • regulatory best practices,
+  • governance completeness,
+  • enforcement mechanisms,
+  • sanctions or consequences,
+  • internal procedures or operational details,
+  unless these are explicitly required by the criterion itself.
+- Do NOT treat the absence of detail on “how” an obligation is implemented as a gap if the criterion only requires that the obligation be acknowledged or defined.
+- Only identify gaps that are explicitly required by the criterion itself.
+
+OUTPUT JSON:
+{{
+  "criterion_id": "{criterion_id}",
+  "gap_summary": "Concise explanation of the main conceptual or governance gaps relative to the EU requirement.",
+  "missing_elements": [
+    "EU-required concept not addressed in the external framework"
+  ],
+  "weaker_areas": [
+    "Concept addressed in a less explicit or less binding manner"
+  ],
+  "scope_divergences": [
+    "Difference in regulatory focus or responsibility allocation"
+  ],
+  "uncertainties": [
+    "Aspects that cannot be assessed due to limited or absent information in the retrieved context"
+  ]
+}}
+"""
+
+# --- 3. SYNTHESIS AGENT (Neutral Arbiter) ---
+# Goal: Combine views and assign rubric classification based on definition.
+
+SYNTHESIS_PROMPT = """
+You are a neutral compliance synthesis agent.
+
+Your task is to produce a final, reasoned assessment of CONCEPTUAL ALIGNMENT
+between an external framework and a specific EU Code of Practice criterion,
+based solely on prior Alignment and Gap analyses.
+
+INPUTS:
+Criterion ID: "{criterion_id}"
+
+EU Requirement (Conceptual Intent):
+"{criterion_requirement}"
+
+Compliance Rubric Definitions:
+{compliance_rubric_json}
+
+Alignment Analysis:
+{alignment_json}
+
+Gap Analysis:
+{gap_json}
+
+INSTRUCTIONS:
+1. Synthesize the Alignment and Gap analyses into a coherent, structured assessment.
+2. Do NOT introduce new alignments, gaps, or assumptions beyond those explicitly stated in the inputs.
+3. Assign ONE classification strictly according to the provided compliance rubric definitions and the above given analysis:
+   - COMPLIANT
+   - PARTIALLY_COMPLIANT
+   - NOT_COMPLIANT
+   - NOT_EVIDENCED / UNKNOWN
+4. Base the classification decision on:
+   - the presence or absence of core concepts,
+   - the significance of missing elements,
+   - the materiality of scope divergences,
+   - and the degree of ambiguity or uncertainty.
+5. Explicitly justify the classification by referencing:
+   - key aligned concepts,
+   - decisive gaps or divergences,
+   - and how these map to the rubric conditions.
+6. Highlight any terminological, conceptual, or scope-related ambiguities that complicate direct comparison.
+7. Provide a confidence score reflecting the clarity and completeness of the available evidence
+   (high confidence = clear evidence and low ambiguity; low confidence = sparse or ambiguous evidence).
+
+OUTPUT JSON:
+{{
+  "criterion_id": "{criterion_id}",
+  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN",
+  "justification": "Structured explanation of why this classification applies, explicitly grounded in the rubric and the alignment/gap findings.",
+  "key_aligned_concepts": [
+    "Concepts from the alignment analysis that materially support compliance"
+  ],
+  "decisive_gaps_or_divergences": [
+    "Gaps or divergences that most strongly influenced the classification"
+  ],
+  "tensions_or_ambiguities": [
+    "Conceptual or terminological issues that limit direct comparability"
+  ],
+  "confidence": 0.0-1.0
+}}
+"""
+
+# --- 3-in-1 SYNTHESIS AGENT (Single Agent Mode) ---
+# Does all three steps in one pass.
+
+SYNTHESIS_ALL_IN_ONE_PROMPT = """
+You are a neutral compliance analysis assistant evaluating alignment between a regulatory framework document and a specific compliance criterion from the Safety and Security Chapter of the Code of Practice for General-Purpose AI Models.
+
+Context:
+Criterion ID: "{criterion_id}"
+EU Requirement: "{criterion_requirement}"
+Expected EU Evidence (Conceptual):
+{expected_evidence_list}
+
+Retrieved Context:
+{evidence_text}
+
+Task
+Analyze the retrieved evidence in relation to the criterion by:
+	1.	Interpreting the regulatory intent of the requirement and assessment question.
+	2.	Evaluating whether the retrieved evidence explicitly, implicitly, or not at all addresses the core concepts defined in the expected evidence.
+	3.	Distinguishing between:
+	•	clear and explicit acknowledgement,
+	•	partial or high-level recognition,
+	•	and absence or divergence from the criterion’s intent.
+
+Evaluation Logic
+	•	Base your assessment only on the retrieved evidence, not on assumptions or external knowledge.
+	•	Do not infer compliance from general regulatory language unless it directly relates to the criterion’s core concepts.
+	•	Where timing, scope, or notification duties are part of the requirement, assess whether these are clearly defined, vaguely indicated, or not addressed.
+
+Compliance Determination
+Assign one compliance outcome using the provided rubric:
+	•	Compliant: All core concepts of the criterion are explicitly and clearly addressed at a conceptual and structural level in the framework.
+	•	Partially compliant: Some relevant concepts are addressed, but coverage is incomplete, implicit, or missing important aspects.
+	•	Not compliant: The framework does not meaningfully address the criterion’s intent or clearly diverges from it.
+	•	Not evidenced / unknown: The available evidence is insufficient to determine alignment.
+
+Justification
+Provide a concise, reasoned explanation that:
+	•	links specific elements of the retrieved evidence to the criterion’s expected evidence, and
+	•	explains why the selected compliance outcome is appropriate under the rubric.
+
+Remain neutral, analytical, and precise. Avoid legal conclusions or normative judgments beyond the scope of the provided criterion
+
+OUTPUT JSON:
+{{
+  "criterion_id": "{criterion_id}",
+  "alignment_summary": "...",
+  "key_aligned_concepts": ["..."],
+  "evidence_citations": [
+    {{"chunk_id":"...", "quote":"...", "why_it_matters":"..."}}
+  ],
+  "gap_summary": "...",
+  "missing_elements": ["..."],
+  "weaker_areas": ["..."],
+  "scope_divergences": ["..."],
+  "classification": "COMPLIANT" | "PARTIALLY_COMPLIANT" | "NOT_COMPLIANT" | "NOT_APPLICABLE",
+  "justification": "...",
+  "decisive_gaps_or_divergences": ["..."],
+  "tensions_or_ambiguities": ["..."],
+  "confidence": <0.0-1.0>
+}}
+"""
+
+
+
+
+
+#############################################################################
+
+
+
+
+from langchain_core.prompts import ChatPromptTemplate
+
+# --- 1. ALIGNMENT AGENT (Conceptual Overlap) ---
+# Goal: Identify what is covered. Do not look for gaps.
+
+ALIGNMENT_PROMPT = """
+You are an expert in AI safety governance.
+Task: "Identify conceptual alignment between an external framework and an EU Code of Practice requirement. 
+You will be given below the EU requirement, the expected evidence (indicators), and the retrieved text."
+
+Context:
+- Criterion ID: "{criterion_id}"
+- EU Requirement: "{criterion_requirement}"
+- Expected Evidence (Indicators): {expected_evidence_list}
+- Retrieved Text: {evidence_text}
+
+Instructions:
+1. Analyze the text for CONCEPTUAL OVERLAP with the EU requirement (intent, principles, governance).
+2. Treat similar terminology as equivalent if the goal matches.
+3. Ignore implementation details; focus on commitment/policy, on concepts that need to be covered given the requirement.
+4. Output STRICT JSON only.
+
+OUTPUT JSON FORMAT:
+{{
+  "criterion_id": "{criterion_id}",
+  "alignment_summary": "Concise explanation of alignment (max 2 sentences).",
+  "key_aligned_concepts": ["Concept A", "Concept B"],
+  "evidence_citations": [
+    {{
+      "chunk_id": "...",
+      "quote": "Direct quote...",
+      "why_it_matters": "One phrase on relevance."
+    }}
+  ],
+  "assumptions": []
+}}
+"""
+
+GAP_PROMPT = """
+You are an expert in regulatory gap analysis.
+Task: "Identify what is MISSING, WEAKER, or DIVERGENT in the external framework compared to the EU requirement, but do not force to find something.
+You will be given the requirement, the expected evidence (indicators), the aligment findings and the retrieved text."
+
+Context:
+- Criterion ID: "{criterion_id}"
+- EU Requirement: "{criterion_requirement}"
+- Alignment Findings: {alignment_json}
+- Retrieved Text: {evidence_text}
+
+Instructions:
+1. Compare EU requirement vs. Retrieved Text.
+2. Identify:
+   - MISSING: Required concepts not present.
+   - WEAKER: Present but less binding/specific.
+   - DIVERGENT: Different scope/focus.
+3. Be purely descriptive. Do not invent gaps.
+4. Output STRICT JSON only.
+
+OUTPUT JSON FORMAT:
+{{
+  "criterion_id": "{criterion_id}",
+  "gap_summary": "Concise summary of gaps (max 2 sentences).",
+  "missing_elements": ["Element 1", "Element 2"],
+  "weaker_areas": ["Area 1"],
+  "scope_divergences": ["Divergence 1"],
+  "uncertainties": []
+}}
+"""
+
+SYNTHESIS_PROMPT = """
+You are a neutral compliance arbiter.
+Task: "Assign a compliance status based on Alignment and Gap analysis."
+Context:
+- Criterion ID: "{criterion_id}"
+- EU Requirement: "{criterion_requirement}"
+- Rubric: {compliance_rubric_json}
+- Alignment Analysis: {alignment_json}
+- Gap Analysis: {gap_json}
+
+Instructions:
+1. Assign status based strictly on the Rubric and Findings given the rubirc. However if there is fully alignment, assign COMPLIANT.
+2. Analyse contradictions between alignment and gap analysis, if present.
+3. Justify conciseley taking into acccount alignment, gap analysis and the contradictions between them.
+4. Output STRICT JSON only.
+
+OUTPUT JSON FORMAT:
+{{
+  "criterion_id": "{criterion_id}",
+  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_APPLICABLE | NOT_EVIDENCED",
+  "justification": "1-2 sentence justification grounded in rubric. Reference arguments to evidence given.",
+  "key_aligned_concepts": ["From Alignment"],
+  "decisive_gaps_or_divergences": ["From Gaps"],
+  "tensions_or_ambiguities": [],
+  "confidence": 0.0-1.0
+}}
+"""
+
+# --- 3-in-1 SYNTHESIS AGENT (Single Agent Mode) ---
+# Does all three steps in one pass.
+
+SYNTHESIS_ALL_IN_ONE_PROMPT = """
+You are a neutral, expert compliance analysis assistant evaluating alignment between a regulatory framework document and a specific compliance criterion from the Safety and Security Chapter of the EU Code of Practice for General-Purpose AI Models.
+
+Context:
+Criterion ID: "{criterion_id}"
+EU Requirement: "{criterion_requirement}"
+Expected EU Evidence (Indicators & Concepts):
+{expected_evidence_list}
+
+Retrieved Context from External Framework:
+{evidence_text}
+
+Your Task:
+You must perform a structured, three-step analysis mirroring a rigorous audit process: Conceptual Alignment, Gap Identification, and Final Classification.
+
+--- Step 1: Conceptual Alignment ---
+1. Analyze the retrieved text for CONCEPTUAL OVERLAP with the EU requirement (intent, principles, governance).
+2. Treat similar terminology as equivalent if the regulatory goal matches.
+3. Ignore specific implementation details; focus on whether the core commitments and policies required by the EU are present.
+4. Document the key concepts that successfully align and cite the specific evidence.
+
+--- Step 2: Gap Analysis ---
+1. Identify what is MISSING, WEAKER, or DIVERGENT in the external framework compared to the EU requirement.
+   - MISSING: Required concepts that are completely absent.
+   - WEAKER: Concepts that are present but less binding or less specific than required.
+   - DIVERGENT: Differences in scope, framing, or intent.
+2. Be purely descriptive and objective. Do not invent gaps or force negative findings if full alignment exists.
+
+--- Step 3: Synthesis & Classification ---
+1. Assign one compliance outcome based strictly on the provided rubric and your findings from Step 1 and Step 2.
+2. If the text demonstrates full conceptual alignment without material missing or weaker areas, assign COMPLIANT.
+3. Weigh any contradictions or tensions between the aligned concepts and the identified gaps before rendering a decision.
+
+Rubric:
+- COMPLIANT: All core concepts are explicitly and clearly addressed at a conceptual and structural level.
+- PARTIALLY_COMPLIANT: Some relevant concepts are addressed, but coverage is incomplete, implicit, weaker, or missing important aspects.
+- NOT_COMPLIANT: Does not meaningfully address the intent or clearly diverges from it.
+- NOT_APPLICABLE: The criterion is not applicable to the context.
+- NOT_EVIDENCED: The available evidence is insufficient to determine alignment.
+
+Provide a concise, reasoned justification that links your alignment findings and decisive gaps directly to the chosen rubric classification.
+
+OUTPUT STRICT JSON FORMAT ONLY. CRITICAL: Do NOT use unescaped double quotes inside your string values. If you need to quote text, use single quotes ('...').
+{{
+  "criterion_id": "{criterion_id}",
+  "alignment_summary": "Concise explanation of alignment (max 2 sentences).",
+  "key_aligned_concepts": ["Concept A", "Concept B"],
+  "evidence_citations": [
+    {{"chunk_id":"...", "quote":"Direct quote...", "why_it_matters":"One phrase on relevance."}}
+  ],
+  "gap_summary": "Concise summary of gaps (max 2 sentences).",
+  "missing_elements": ["Element 1"],
+  "weaker_areas": ["Area 1"],
+  "scope_divergences": ["Divergence 1"],
+  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_APPLICABLE | NOT_EVIDENCED",
+  "justification": "1-2 sentence justification grounded in rubric. Reference arguments to evidence.",
+  "decisive_gaps_or_divergences": ["From Gaps step"],
+  "tensions_or_ambiguities": ["Any internal contradictions"],
+  "confidence": 0.0
+}}
+"""
