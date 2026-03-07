@@ -1,0 +1,77 @@
+@startuml Render_Deployment_Architecture
+title Detailed Deployment View: Cloud (Render)
+
+skinparam componentStyle uml2
+skinparam node {
+    BackgroundColor White
+    BorderColor black
+}
+
+actor "User (Browser)" as User
+
+node "GitHub" <<Version Control>> as GH {
+    artifact "Main Branch (Codebase)" as Repo
+}
+
+package "Render Cloud Platform" {
+    node "Static Site Service" <<Service>> as FrontendNode {
+        component "React v19 SPA" #AliceBlue {
+            [Axios Client]
+            [PDF Report Generator (jsPDF)]
+            [Assessment State (Context API)]
+        }
+    }
+
+    node "Web Service" <<Service>> as BackendNode {
+        component "FastAPI Server" #PaleGreen {
+            [API Modules (main.py, models.py)]
+            [Multi-Agent Pipeline] as Pipeline
+            [PDF Parser (PyMuPDF)] as Parser
+        }
+        
+        node "Reasoning Agents" #GhostWhite {
+            component "Alignment Agent" as Agent1
+            component "Gap Agent" as Agent2
+            component "Synthesis Agent" as Agent3
+        }
+        
+        database "Ephemeral Disk Store" <<Wiped on Deploy>> as Storage {
+            folder "uploaded_files/"
+            folder "chroma_db/"
+            folder "assessment_history/"
+        }
+    }
+}
+
+node "LLM Providers (External)" as APIs {
+    component "OpenAI (v4o/mini)" as OpenAI
+    component "Anthropic (Claude 3.5)" as Anthropic
+    component "Google (Gemini 2.0)" as Google
+}
+
+' Interactions
+Repo -down-> FrontendNode : Build & Deploy
+Repo -down-> BackendNode : Build & Deploy
+
+User -down-> FrontendNode : HTTPS (port 443)
+[Axios Client] -right-> [API Modules (main.py, models.py)] : REST/JSON (VITE_API_URL)
+
+Pipeline -down-> Parser : Extract Chunks
+Parser -right-> [chroma_db/] : Ingest Vectors
+Pipeline -down-> Agent1 : Step 1
+Pipeline -down-> Agent2 : Step 2
+Pipeline -down-> Agent3 : Step 3
+
+Agent1 -right-> APIs : API Requests
+Agent2 -right-> APIs : API Requests
+Agent3 -right-> APIs : API Requests
+
+[API Modules (main.py, models.py)] -down-> Storage : I/O Operations
+
+note bottom of Storage
+  **Critical Limitation**:
+  In Render's free tier, this disk is NOT persistent.
+  Data is lost during restarts/redeployments.
+end note
+
+@enduml

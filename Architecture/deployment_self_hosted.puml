@@ -1,0 +1,70 @@
+@startuml Self_Hosted_Deployment_Architecture
+title Detailed Deployment View: Self-Hosted (Mac + ngrok)
+
+skinparam componentStyle uml2
+skinparam node {
+    BackgroundColor White
+    BorderColor black
+}
+
+actor "User (Remote Browser)" as RemoteUser
+actor "User (Local Browser)" as LocalUser
+
+package "User's Workstation (MacBook Air)" {
+    node "Process Manager (PM2)" #GhostWhite {
+        component "Frontend Service" #AliceBlue {
+            [Vite Dev Server (Port 5173)]
+        }
+        component "Backend Service" #PaleGreen {
+            [FastAPI (Uvicorn Port 8000)]
+            [Multi-Agent Reasoners]
+        }
+    }
+
+    node "File System" #White {
+        database "Persistent Local Storage" as Storage {
+            folder "uploaded_files/"
+            folder "chroma_db/"
+            folder "assessment_history/"
+        }
+        artifact "Criteria Files (.json)" as Criteria
+    }
+
+    node "Local Inference Engine" <<Service>> as OllamaNode {
+        component "Ollama (Llama 3)" as Ollama
+    }
+}
+
+cloud "ngrok Security Tunnel" {
+    interface "https://mustipasha.ngrok-free.app" as FrontendURL
+    interface "https://api-mustipasha.ngrok-free.app" as BackendURL
+}
+
+cloud "Public LLM Providers" as CloudAPIs {
+    component "OpenAI" as OpenAI
+    component "Anthropic" as Anthropic
+}
+
+' Interactions
+RemoteUser -down-> FrontendURL : HTTPS
+FrontendURL -down-> [Vite Dev Server (Port 5173)] : Secure Tunnel
+
+LocalUser -down-> [Vite Dev Server (Port 5173)] : localhost:5173
+
+[Vite Dev Server (Port 5173)] -right-> BackendURL : API Requests (Remote)
+[Vite Dev Server (Port 5173)] -right-> [FastAPI (Uvicorn Port 8000)] : localhost:8000 (Local)
+
+BackendURL -down-> [FastAPI (Uvicorn Port 8000)] : Secure Tunnel
+
+[FastAPI (Uvicorn Port 8000)] -down-> Storage : Persistent I/O
+[FastAPI (Uvicorn Port 8000)] -down-> Criteria : Read Definitions
+[FastAPI (Uvicorn Port 8000)] -right-> Ollama : Local Reasoning
+[FastAPI (Uvicorn Port 8000)] -right-> CloudAPIs : Cloud Embeddings/Models
+
+note bottom of Storage
+  **Major Advantage**:
+  Everything is stored on your local disk.
+  No data is lost when you stop the app.
+end note
+
+@enduml

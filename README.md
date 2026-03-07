@@ -116,14 +116,23 @@ npm install
 
 ## ▶️ Running the Application
 
-**Option A: Use the startup script (recommended)**
+**Option A: Use PM2 (recommended for background execution)**
+```bash
+# start both services defined in ecosystem.config.js
+pm2 start ecosystem.config.js
+
+# monitor processes
+pm2 status
+pm2 logs
+```
+
+**Option B: Use the startup script**
 ```bash
 chmod +x run.sh   # first time only
 ./run.sh
 ```
-This starts both the backend (port `8000`) and frontend (port `5173`) simultaneously. Press `Ctrl+C` to stop both.
 
-**Option B: Start services manually**
+**Option C: Start services manually**
 
 ```bash
 # Terminal 1 — Backend
@@ -216,6 +225,29 @@ In the frontend, select **"Ollama (Local)"** as the provider and **"llama3"** as
 > **Note:** Ollama runs with `format="json"` enforced to ensure structured output for the agent pipeline. Local inference is significantly slower than cloud providers and depends on your hardware. Concurrency is limited to 4 parallel criteria to avoid saturating CPU/GPU resources.
 
 > **Important:** Even when using Ollama for reasoning, you still need an `OPENAI_API_KEY` in your `.env` because embeddings always use OpenAI to maintain vector store consistency.
+
+---
+
+## ☁️ Cloud Deployment (Render)
+
+This application is designed to be deployed on **Render**.
+
+### 1. Backend (Web Service)
+- **Runtime**: `Python 3`
+- **Build Command**: `pip install -r backend/requirements.txt`
+- **Start Command**: `python backend/main.py` (or `uvicorn api.main:app --host 0.0.0.0 --port $PORT` in `backend/` directory)
+- **Environment Variables**:
+  - `OPENAI_API_KEY`: Required for embeddings.
+  - `ANTHROPIC_API_KEY`, `GOOGLE_API_KEY`: Optional.
+
+### 2. Frontend (Static Site)
+- **Build Command**: `npm install && npm run build`
+- **Publish Directory**: `frontend/dist`
+- **Environment Variables**:
+  - `VITE_API_URL`: The URL of your deployed backend service.
+
+> [!WARNING]
+> **Ephemeral Storage**: In Render's free tier, the disk is not persistent. Any uploaded files, the ChromaDB vector store, and assessment history will be wiped whenever the service restarts or redeploys. For production usage, consider using an external database and persistent storage.
 
 ---
 
