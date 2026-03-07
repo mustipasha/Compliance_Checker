@@ -3,6 +3,7 @@ import { CheckCircle, XCircle, AlertTriangle, HelpCircle, Info, X, FileText, Quo
 import { exportResultsToPDF } from '../utils/pdfExport';
 import { PdfViewer } from './PdfViewer';
 import { WorkflowTrace } from './WorkflowTrace';
+import { API_BASE_URL } from '../config';
 
 interface Evidence {
     text: string;
@@ -361,7 +362,7 @@ export const Results: React.FC<ResultsProps> = ({ report }) => {
             {/* PDF Viewer Modal */}
             {viewingEvidence && (
                 <PdfViewer
-                    url={`http://localhost:8000/documents/${encodeURIComponent(viewingEvidence.source)}/content`}
+                    url={`${API_BASE_URL}/documents/${encodeURIComponent(viewingEvidence.source)}/content`}
                     initialPage={viewingEvidence.page + 1}
                     highlightText={viewingEvidence.text}
                     onClose={() => setViewingEvidence(null)}

@@ -319,7 +319,7 @@ async def get_criteria():
 @app.get("/framework/pdf")
 async def get_framework_pdf():
     """Serves the official Code of Practice PDF."""
-    pdf_path = "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Codes_of_Practice/Code_of_Practice_for_GeneralPurpose_AI_Models_Safety_and_Security_Chapter_hchDfNmrzSPiuU5PNh77HCxHu0c_118119 (1).pdf"
+    pdf_path = os.path.join(os.path.dirname(__file__), "..", "..", "Code_of_Practice_for_GeneralPurpose_AI_Models_Safety_and_Security_Chapter.pdf")
     if not os.path.exists(pdf_path):
         raise HTTPException(status_code=404, detail="Framework PDF not found")
     return FileResponse(pdf_path, media_type="application/pdf", filename="Code_of_Practice.pdf")

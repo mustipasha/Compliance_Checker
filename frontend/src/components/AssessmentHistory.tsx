@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Calendar, ChevronRight, BarChart3, AlertCircle, Trash2, Filter, XCircle } from 'lucide-react';
 import { Results } from './Results';
+import { API_BASE_URL } from '../config';
 
 interface AssessmentSummary {
     filename: string;
@@ -28,7 +29,7 @@ export const AssessmentHistory: React.FC = () => {
     const fetchHistory = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://localhost:8000/assessments');
+            const response = await axios.get(`${API_BASE_URL}/assessments`);
             setHistory(response.data);
             setError('');
         } catch (err) {
@@ -41,7 +42,7 @@ export const AssessmentHistory: React.FC = () => {
 
     const loadReport = async (filename: string) => {
         try {
-            const response = await axios.get(`http://localhost:8000/assessments/${filename}`);
+            const response = await axios.get(`${API_BASE_URL}/assessments/${filename}`);
             setSelectedReport(response.data);
         } catch (err) {
             console.error(err);
@@ -54,7 +55,7 @@ export const AssessmentHistory: React.FC = () => {
         if (!confirm('Are you sure you want to delete this assessment?')) return;
 
         try {
-            await axios.delete(`http://localhost:8000/assessments/${filename}`);
+            await axios.delete(`${API_BASE_URL}/assessments/${filename}`);
             setHistory(history.filter(h => h.filename !== filename));
         } catch (err) {
             console.error(err);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BookOpen, ChevronRight, Target } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { PdfViewer } from './PdfViewer';
+import { API_BASE_URL } from '../config';
 
 interface Criterion {
     id: string;
@@ -30,7 +31,7 @@ export const CommitmentExplorer: React.FC = () => {
 
     useEffect(() => {
         // ... (fetch logic same as before)
-        fetch('http://localhost:8000/criteria')
+        fetch(`${API_BASE_URL}/criteria`)
             .then(res => res.json())
             .then(data => {
                 let comms = data.commitments || [];
@@ -63,7 +64,7 @@ export const CommitmentExplorer: React.FC = () => {
             {/* PDF Viewer Modal */}
             {viewingPdfPage !== null && (
                 <PdfViewer
-                    url="http://localhost:8000/framework/pdf"
+                    url={`${API_BASE_URL}/framework/pdf`}
                     initialPage={viewingPdfPage}
                     onClose={() => setViewingPdfPage(null)}
                 />
