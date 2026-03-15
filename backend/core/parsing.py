@@ -1,4 +1,5 @@
 import fitz  # PyMuPDF
+import re
 from typing import List, Dict, Any, Optional
 from langchain_core.documents import Document
 
@@ -17,6 +18,8 @@ class HierarchicalPDFParser:
         toc = doc.get_toc()
         hierarchy = self._get_chapter_hierarchy(toc)
         
+        # Group text by chapter to avoid breaking sentences across pages
+        chapters_content = {}
         documents = []
         
         for page_num, page in enumerate(doc):
@@ -24,17 +27,61 @@ class HierarchicalPDFParser:
             if not text.strip():
                 continue
                 
-            current_page_idx = page_num + 1
-            chapter_info = self._get_metadata_for_page(hierarchy, current_page_idx)
+            # Clean up text:
+            text = text.strip()
             
+            # 1. Strip standalone page numbers at start/end (aggressive cleaning)
+            # Handles numbers followed by a newline or significant horizontal space
+            text = re.sub(r'^\d+\s*(\n|\s{2,})', '', text) 
+            text = re.sub(r'(\n|\s{2,})\d+$', '', text) 
+            
+            # 2. Fix hyphenated words broken across lines
+            text = re.sub(r'(\w+)-\n(\w+)', r'\1\2', text)
+            
+            # 3. Collapse multiple whitespace/newlines to normalize paragraph breaks
+            text = re.sub(r'\n{3,}', '\n\n', text)
+            text = text.strip()
+                
+            chapter_info = self._get_metadata_for_page(hierarchy, page_num)
+            chapter_title = chapter_info["chapter"]
+            
+            if chapter_title not in chapters_content:
+                chapters_content[chapter_title] = {
+                    "text": "",
+                    "start_page": page_num,
+                    "end_page": page_num,
+                    "source": file_path.split("/")[-1],
+                    "total_pages": doc.page_count,
+                    "page_offsets": [] # List of (char_start, page_num)
+                }
+            
+            # Append text and update the end page of this chapter block
+            current_offset = len(chapters_content[chapter_title]["text"])
+            if current_offset > 0:
+                chapters_content[chapter_title]["text"] += "\n" + text
+                # Account for the newline added
+                chapters_content[chapter_title]["page_offsets"].append({
+                    "start": current_offset + 1,
+                    "page_num": page_num
+                })
+            else:
+                chapters_content[chapter_title]["text"] = text
+                chapters_content[chapter_title]["page_offsets"].append({
+                    "start": 0,
+                    "page_num": page_num
+                })
+                
+            chapters_content[chapter_title]["end_page"] = page_num
+            
+        for chapter, data in chapters_content.items():
             metadata = {
-                "source": file_path.split("/")[-1],
-                "page": page_num,
-                "total_pages": doc.page_count,
-                **chapter_info
+                "source": data["source"],
+                "chapter": chapter,
+                "page": f"{data['start_page']}-{data['end_page']}" if data['start_page'] != data['end_page'] else data['start_page'],
+                "total_pages": data["total_pages"],
+                "page_offsets": data["page_offsets"]
             }
-            
-            documents.append(Document(page_content=text, metadata=metadata))
+            documents.append(Document(page_content=data["text"], metadata=metadata))
             
         doc.close()
         return documents

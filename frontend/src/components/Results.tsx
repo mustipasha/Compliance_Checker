@@ -8,9 +8,22 @@ import { API_BASE_URL } from '../config';
 interface Evidence {
     text: string;
     source: string;
-    page: number;
+    page: number | string;
     chunk_id?: string;
     chapter?: string;
+}
+
+interface EvidenceCitation {
+    chunk_id: string;
+    quote: string;
+    why_it_matters?: string;
+}
+
+interface AlignmentOutput {
+    alignment_summary: string;
+    key_aligned_concepts: string[];
+    evidence_citations?: EvidenceCitation[];
+    assumptions?: string[];
 }
 
 interface CriterionResult {
@@ -26,7 +39,7 @@ interface CriterionResult {
     decisive_gaps_or_divergences?: string[];
     tensions_or_ambiguities?: string[];
     evidence: Evidence[];
-    alignment_findings: any;
+    alignment_findings: AlignmentOutput;
     gap_analysis: any;
     synthesis_result: any;
 }
@@ -161,6 +174,35 @@ const MeasureDetailModal = ({ measure, onClose, onViewSource }: {
                         </div>
                     )}
 
+                    {/* AI Evidence Citations - NEW SECTION */}
+                    {measure.alignment_findings?.evidence_citations && measure.alignment_findings.evidence_citations.length > 0 && (
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-2 text-xs font-black text-gray-400 uppercase tracking-[0.2em]">
+                                <Quote size={14} className="text-blue-500" /> Decisive Evidence Quotes (AI Selected)
+                            </div>
+                            <div className="grid gap-3">
+                                {measure.alignment_findings.evidence_citations.map((cite, idx) => (
+                                    <div key={idx} className="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 space-y-3">
+                                        <div className="flex items-start gap-3">
+                                            <Quote size={16} className="text-blue-400 shrink-0 mt-1" />
+                                            <p className="text-sm text-gray-800 font-semibold italic leading-relaxed">
+                                                "{cite.quote}"
+                                            </p>
+                                        </div>
+                                        {cite.why_it_matters && (
+                                            <div className="pl-7 border-l-2 border-blue-200">
+                                                <p className="text-[11px] font-bold text-blue-600 uppercase tracking-wider mb-0.5">Focus Point</p>
+                                                <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                                                    {cite.why_it_matters}
+                                                </p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     {/* Decisive Gaps */}
                     {measure.decisive_gaps_or_divergences && measure.decisive_gaps_or_divergences.length > 0 && (
                         <div className="space-y-4">
@@ -230,7 +272,7 @@ const MeasureDetailModal = ({ measure, onClose, onViewSource }: {
                                                 <FileText size={10} /> {ev.source}
                                                 {ev.chapter && <span className="opacity-60">| {ev.chapter}</span>}
                                             </span>
-                                            {ev.page !== undefined && <span>Page {ev.page + 1}</span>}
+                                            {ev.page !== undefined && <span>Page {typeof ev.page === 'number' ? ev.page + 1 : ev.page}</span>}
                                         </div>
 
                                         <button
@@ -363,7 +405,16 @@ export const Results: React.FC<ResultsProps> = ({ report }) => {
             {viewingEvidence && (
                 <PdfViewer
                     url={`${API_BASE_URL}/documents/${encodeURIComponent(viewingEvidence.source)}/content`}
-                    initialPage={viewingEvidence.page + 1}
+                    initialPage={(() => {
+                        const p = viewingEvidence.page;
+                        if (typeof p === 'number') return p + 1;
+                        if (typeof p === 'string' && p.includes('-')) {
+                            const start = parseInt(p.split('-')[0]);
+                            return isNaN(start) ? 1 : start + 1;
+                        }
+                        const parsed = parseInt(String(p));
+                        return isNaN(parsed) ? 1 : parsed + 1;
+                    })()}
                     highlightText={viewingEvidence.text}
                     onClose={() => setViewingEvidence(null)}
                 />

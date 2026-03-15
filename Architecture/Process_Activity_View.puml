@@ -1,0 +1,45 @@
+@startuml Process_Activity_View
+title Process Activity View: Assessment Lifecycle
+
+|User|
+start
+:Choose Model & Reasoning Mode;
+:Select PDF Document;
+:Execute "Upload & Run Assessment";
+
+|Backend (Ingestion)|
+:Receive Multi-part File;
+:Extract Text (PyMuPDF);
+:Capture Metadata (Source, Page, Chapter);
+:Chunk & Embed;
+:Upsert to ChromaDB;
+
+|Backend (Orchestrator)|
+:Initialize Assessment Pipeline;
+:Load Framework Schema (criteria_new.json);
+while (Next Criterion in JSON?) is (Yes)
+    :Generate Semantic Query (Requirement + Keywords);
+    :Retrieve Top-K Evidence Chunks (Filter >= 0.3 or Top-3 Fallback);
+    
+    :Assemble Context (Assessment Question + Requirement + Expected Evidence + Rubric + Evidence);
+    if (Mode == "Triple"?) then (True)
+        :Step 1: Conceptual Alignment;
+        :Step 2: Gap Analysis;
+        :Step 3: Synthesis & Verification;
+    else (False)
+        :Single Agent (3-in-1 Prompting);
+    endif
+    :Evaluate Compliance Classification (e.g., NOT_EVIDENCED);
+    
+    :Map Status to Numeric Score (1.0 / 0.5 / 0.0);
+endwhile (Done)
+
+:Compute Aggregated Compliance Score;
+:Generate & Archive JSON Report;
+
+|Frontend|
+:Display Real-time Results;
+:Render History & Dashboard;
+stop
+
+@enduml

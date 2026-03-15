@@ -1,0 +1,46 @@
+@startuml Use_Case_View
+title Use Case View: Role-Specific Scenarios
+
+left to right direction
+
+actor "Compliance Officer\n(Product Owner)" as User
+actor "System Admin\n(Technical)" as Admin
+
+package "AI Compliance Checker" {
+    package "Assessment & Reporting" {
+        usecase "Upload System Documentation (PDF)" as UC1
+        usecase "Explore Framework Requirements" as UC2
+        usecase "Select LLM Provider & Model" as UC3
+        usecase "Run Compliance Assessment" as UC4
+        usecase "View Assessment History" as UC5
+        usecase "Export Detailed Report" as UC6
+    }
+    
+    package "Content & Data Management" {
+        usecase "Update Compliance Criteria (JSON)" as UC8
+        usecase "Reset Vector Database" as UC9
+        usecase "Delete Documents/Assessments" as UC10
+    }
+
+    package "Infrastructure" {
+        usecase "Configure Local Reasoning (Ollama)" as UC7
+        usecase "Manage API Keys & Environment" as UC11
+    }
+}
+
+' User (Product Owner) Relations
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC8
+User --> UC9
+User --> UC10
+
+' Admin (Technical) Relations
+Admin --> UC7
+Admin --> UC11
+
+@enduml

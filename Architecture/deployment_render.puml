@@ -24,12 +24,12 @@ package "Render Cloud Platform" {
 
     node "Web Service" <<Service>> as BackendNode {
         component "FastAPI Server" #PaleGreen {
-            [API Modules (main.py, models.py)]
-            [Multi-Agent Pipeline] as Pipeline
-            [PDF Parser (PyMuPDF)] as Parser
+            [API (main.py, models.py)]
+            [Ingestion (Chromadb)]
+            [Orchestrator (pipeline.py)]
         }
         
-        node "Reasoning Agents" #GhostWhite {
+        node "Multi-Agent Pipeline" #GhostWhite {
             component "Alignment Agent" as Agent1
             component "Gap Agent" as Agent2
             component "Synthesis Agent" as Agent3
@@ -44,29 +44,29 @@ package "Render Cloud Platform" {
 }
 
 node "LLM Providers (External)" as APIs {
-    component "OpenAI (v4o/mini)" as OpenAI
-    component "Anthropic (Claude 3.5)" as Anthropic
-    component "Google (Gemini 2.0)" as Google
+    component "OpenAI (gpt-5-nano)" as OpenAI
+    component "Anthropic (Claude 4.6)" as Anthropic
+    component "Google (Gemini 3)" as Google
+    component "Ollama (Local/RPC)" as Ollama
 }
 
 ' Interactions
-Repo -down-> FrontendNode : Build & Deploy
-Repo -down-> BackendNode : Build & Deploy
+Repo -down-> FrontendNode : Build & Deploy (npm)
+Repo -down-> BackendNode : Build & Deploy (pip)
 
 User -down-> FrontendNode : HTTPS (port 443)
-[Axios Client] -right-> [API Modules (main.py, models.py)] : REST/JSON (VITE_API_URL)
+[Axios Client] -right-> [API (main.py, models.py)] : REST/JSON (VITE_API_URL)
 
-Pipeline -down-> Parser : Extract Chunks
-Parser -right-> [chroma_db/] : Ingest Vectors
-Pipeline -down-> Agent1 : Step 1
-Pipeline -down-> Agent2 : Step 2
-Pipeline -down-> Agent3 : Step 3
+[Orchestrator (pipeline.py)] -down-> [Ingestion (Chromadb)] : Retrieve Context
+[Orchestrator (pipeline.py)] -down-> Agent1 : Step 1: Align
+[Orchestrator (pipeline.py)] -down-> Agent2 : Step 2: Gap
+[Orchestrator (pipeline.py)] -down-> Agent3 : Step 3: Synthesis
 
 Agent1 -right-> APIs : API Requests
 Agent2 -right-> APIs : API Requests
 Agent3 -right-> APIs : API Requests
 
-[API Modules (main.py, models.py)] -down-> Storage : I/O Operations
+[API (main.py, models.py)] -down-> Storage : File I/O & DB Persistence
 
 note bottom of Storage
   **Critical Limitation**:

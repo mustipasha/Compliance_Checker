@@ -1,0 +1,49 @@
+@startuml Physical_View_Local
+title Physical View (Local Application Server Version)
+
+actor "End User" as User
+
+node "Client Browser" {
+    component "React SPA"
+}
+
+node "Application Server" {
+    node "Web Service" {
+        component "Agent Pipeline" as Pipeline
+        component "FastAPI Engine" as API
+        component "PDF Parser" as Parser
+    }
+    
+    node "Local ML (Optional)" {
+        component "Ollama Service" as Ollama
+    }
+    
+    node "Persistence" {
+        database "Vector Store (ChromaDB)" as DB
+        database "File Store" as Files
+        file "Framework Schema (criteria_new.json)" as Criteria
+    }
+}
+
+node "Cloud Services" {
+    cloud "LLM Providers" {
+        [OpenAI]
+        [Anthropic]
+        [Google Gemini]
+    }
+}
+
+' Connectivity
+User -down-> "React SPA" : Interaction
+"React SPA" -down-> API : HTTPS / JSON
+
+Pipeline -down-> Ollama : Local API
+API -down-> DB : Vector I/O
+API -down-> Files : File I/O
+API -down-> Criteria : File I/O (Read)
+
+Pipeline -right-> [OpenAI] : REST
+Pipeline -right-> [Anthropic] : REST
+Pipeline -right-> [Google Gemini] : REST
+
+@enduml

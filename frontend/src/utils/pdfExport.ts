@@ -3,7 +3,17 @@ import jsPDF from 'jspdf';
 interface Evidence {
     text: string;
     source: string;
-    page: number;
+    page: number | string;
+}
+
+interface AlignmentOutput {
+    alignment_summary: string;
+    key_aligned_concepts?: string[];
+    evidence_citations?: {
+        chunk_id: string;
+        quote: string;
+        why_it_matters?: string;
+    }[];
 }
 
 interface CriterionResult {
@@ -16,6 +26,7 @@ interface CriterionResult {
     tensions_or_ambiguities?: string[];
     evidence: Evidence[];
     expected_evidence?: string[];
+    alignment_findings?: AlignmentOutput;
 }
 
 interface CommitmentResult {
@@ -230,6 +241,51 @@ export const exportResultsToPDF = (report: AssessmentReport) => {
             };
 
             renderSection('Key Aligned Concepts', result.key_aligned_concepts, COLORS.success);
+
+            // AI Evidence Citations (NEW)
+            if (result.alignment_findings?.evidence_citations && result.alignment_findings.evidence_citations.length > 0) {
+                if (currentY > 260) {
+                    doc.addPage();
+                    currentY = 25;
+                }
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(9);
+                doc.setTextColor(COLORS.primary[0], COLORS.primary[1], COLORS.primary[2]); // Blue
+                doc.text('DECISIVE EVIDENCE QUOTES (AI SELECTED)', margin + 2, currentY);
+                currentY += 8;
+
+                result.alignment_findings.evidence_citations.forEach((cite: any) => {
+                    doc.setFont('helvetica', 'italic');
+                    doc.setFontSize(9);
+                    doc.setTextColor(COLORS.text[0], COLORS.text[1], COLORS.text[2]);
+                    const quoteLines = doc.splitTextToSize(`"${cite.quote}"`, contentWidth - 10);
+
+                    const quoteHeight = (quoteLines.length * 4.5) + (cite.why_it_matters ? 15 : 5); // Estimate height
+                    if (currentY + quoteHeight > 280) {
+                        doc.addPage();
+                        currentY = 25;
+                    }
+
+                    doc.text(quoteLines, margin + 5, currentY);
+                    currentY += quoteLines.length * 4.5 + 2;
+
+                    if (cite.why_it_matters) {
+                        doc.setFont('helvetica', 'bold');
+                        doc.setFontSize(8);
+                        doc.setTextColor(COLORS.primary[0], COLORS.primary[1], COLORS.primary[2]);
+                        doc.text('FOCUS POINT:', margin + 5, currentY);
+                        doc.setFont('helvetica', 'normal');
+                        doc.setTextColor(COLORS.secondary[0], COLORS.secondary[1], COLORS.secondary[2]);
+                        const focusLines = doc.splitTextToSize(cite.why_it_matters, contentWidth - 25);
+                        doc.text(focusLines, margin + 25, currentY);
+                        currentY += (focusLines.length * 4) + 6;
+                    } else {
+                        currentY += 4;
+                    }
+                });
+                currentY += 4;
+            }
+
             renderSection('Decisive Gaps & Divergences', result.decisive_gaps_or_divergences, COLORS.danger);
             renderSection('Tensions & Ambiguities', result.tensions_or_ambiguities, [249, 115, 22]); // orange-500
 
@@ -248,7 +304,8 @@ export const exportResultsToPDF = (report: AssessmentReport) => {
 
                 result.evidence.forEach((ev) => {
                     const evText = `"${ev.text}"`;
-                    const sourceText = `- ${ev.source}${ev.page > 0 ? `, p. ${ev.page}` : ''}`;
+                    const pageText = typeof ev.page === 'number' ? `p. ${ev.page + 1}` : `p. ${ev.page}`;
+                    const sourceText = `- ${ev.source}, ${pageText}`;
                     const lines = doc.splitTextToSize(evText, contentWidth - 15);
 
                     const evHeight = (lines.length * 4.5) + 10;

@@ -4,12 +4,14 @@ import { Search, Compass, Target, Zap, ChevronRight, Activity } from 'lucide-rea
 interface Evidence {
     text: string;
     source: string;
-    page: number;
+    page: number | string;
 }
 
 interface AlignmentOutput {
     alignment_summary: string;
     key_aligned_concepts: string[];
+    evidence_citations?: any[];
+    assumptions?: string[];
 }
 
 interface GapAnalysisOutput {

@@ -174,14 +174,16 @@ async def run_assessment(
                 return await run_compliance_check(measure, provider=selected_provider, model=selected_model, mode=mode)
 
         tasks = [run_with_semaphore(m) for m in all_measures]
+        print(f"DEBUG: Starting {len(tasks)} assessment tasks...")
         flat_results = await asyncio.gather(*tasks)
+        print(f"DEBUG: Successfully gathered {len(flat_results)} results.")
 
-
-        
         # Map results by ID for easy lookup during grouping
+        print(f"DEBUG: Mapping results...")
         results_map = {r.criterion_id: r for r in flat_results}
         
         # Scoring and Grouping Logic
+        print(f"DEBUG: Calculating scores and grouping by commitments...")
         total_weighted_score = 0
         total_measures = 0
         
@@ -203,7 +205,6 @@ async def run_assessment(
             comm_id = measure_data.get("commitment_id")
             comm_title = measure_data.get("commitment_title")
             
-            # Fallback for flat schema: Use ID prefix (e.g., SS-1 from SS-1.1)
             if not comm_id:
                 comm_id = measure_data["id"].split('.')[0] if '.' in measure_data["id"] else measure_data["id"]
                 comm_title = f"Commitment {comm_id}"
@@ -217,6 +218,7 @@ async def run_assessment(
             commitments_map[comm_id]["results"].append(res)
             
         score = (total_weighted_score / total_measures) * 100 if total_measures > 0 else 0
+        print(f"DEBUG: Score calculated: {score}. Grouped into {len(commitments_map)} commitments.")
         
         # Convert commitments map to list of CommitmentResult and sort numerically
         commitment_results = [
@@ -227,17 +229,16 @@ async def run_assessment(
             ) for c in commitments_map.values()
         ]
         
-        # Natural sort by commitment ID (SS-1, SS-2, ... SS-10)
-        commitment_results.sort(key=lambda x: int(x.commitment_id.split('-')[1]) if '-' in x.commitment_id else 0)
+        # Natural sort by commitment ID
+        print(f"DEBUG: Sorting commitments...")
+        commitment_results.sort(key=lambda x: int(x.commitment_id.split('-')[1]) if '-' in x.commitment_id and x.commitment_id.split('-')[1].isdigit() else 0)
         
-        # Determine Source Document Name from Vector DB (Primary) or Upload Dir (Secondary)
+        # Determine Source Document Name
+        print(f"DEBUG: Detecting source document...")
         source_doc_name = "Unknown Source"
         try:
             from core.ingestion import get_vector_store
-            # Access underlying collection to peek metadata
             vs = get_vector_store()
-            # method get() helps us peek without full retrieval
-            # fetch a small sample to see sources
             db_data = vs._collection.get(include=['metadatas'], limit=100)
             
             found_sources = set()
@@ -249,9 +250,6 @@ async def run_assessment(
                 source_doc_name = list(found_sources)[0]
             elif len(found_sources) > 1:
                 source_doc_name = f"{len(found_sources)} Documents"
-            elif len(found_sources) == 0:
-                pass 
-                
         except Exception as db_e:
             print(f"Source detection error (DB): {db_e}")
 
@@ -262,7 +260,9 @@ async def run_assessment(
                 source_doc_name = files[0]
             elif len(files) > 1:
                 source_doc_name = f"{len(files)} Documents"
+        print(f"DEBUG: Source document detected: {source_doc_name}")
 
+        print(f"DEBUG: Constructing final AssessmentReport...")
         report = AssessmentReport(
             compliance_score=score, 
             source_document=source_doc_name,
@@ -272,16 +272,15 @@ async def run_assessment(
             commitments=commitment_results,
             criteria=flat_results
         )
+        print(f"DEBUG: AssessmentReport constructed.")
         
-        # Archive documents for history persistence
+        # Archive documents
         try:
             import shutil
             os.makedirs(HISTORY_DOCS_DIR, exist_ok=True)
             if source_doc_name != "Unknown Source":
-                # If it's a specific file, copy it
                 if os.path.isfile(os.path.join(UPLOAD_DIR, source_doc_name)):
                     shutil.copy2(os.path.join(UPLOAD_DIR, source_doc_name), os.path.join(HISTORY_DOCS_DIR, source_doc_name))
-                # If it's "X Documents", archive all currently in UPLOAD_DIR
                 elif " Documents" in source_doc_name:
                     for f in os.listdir(UPLOAD_DIR):
                         if os.path.isfile(os.path.join(UPLOAD_DIR, f)) and not f.startswith('.'):
@@ -290,12 +289,15 @@ async def run_assessment(
             print(f"Archiving error: {archive_e}")
 
         # Save to history
+        print(f"DEBUG: Saving to history...")
         save_assessment_to_history(report)
+        print(f"DEBUG: Successfully saved to history.")
         
+        print(f"DEBUG: Returning report to frontend.")
         return report
 
     except Exception as e:
-        print(f"Assessment error: {e}")
+        print(f"DEBUG: CRITICAL Assessment error: {e}")
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))

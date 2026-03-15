@@ -1,0 +1,258 @@
+[
+  {
+    "query": "Does the framework define, at a conceptual and descriptive level, the key elements required for systemic risk management under the Safety and Security Chapter (including trigger points, risk acceptance logic, mitigation expectations, responsibility allocation, external input, and update processes)?",
+    "expected_chunk_ids": [
+      "78396c870b13904427b12984fd2aa0c0",
+      "cb4512092906805e9d24b2070abfcbe8",
+      "bd5e94d7869381011726340bca0b21c5",
+      "fc7f3851b4e57a813c801eb782dce4c8"
+    ]
+  },
+  {
+    "query": "Does the framework describe how its systemic risk assessment and mitigation processes are intended to be applied across the model lifecycle, including continuous assessment activities, trigger-point evaluations, post-market monitoring, incident consideration, and escalation to a full systemic risk assessment?",
+    "expected_chunk_ids": [
+      "fc7f3851b4e57a813c801eb782dce4c8",
+      "ed53c0d52bf80c23a3709596bf50fb17",
+      "1a27ac7b8b804e7b4f70fba5d8e73f43"
+    ]
+  },
+  {
+    "query": "Does the framework define how and when framework assessments and updates are intended to occur, including assessment triggers, periodic review, evaluation of framework adequacy and adherence, and the handling of remediation and versioning?",
+    "expected_chunk_ids": [
+      "afee1651d2c56fc0ebad8c6d5b793226",
+      "820d201e147c414d884ac055596bc623",
+      "11416d4a7b307f98126d3ed160f7969a"
+    ]
+  },
+  {
+    "query": "Measure 1.4 Framework notifications: Does the framework acknowledge the obligation to notify the AI Office of the framework and its updates, including any intended notification timing?",
+    "expected_chunk_ids": [
+      "11416d4a7b307f98126d3ed160f7969a",
+      "78396c870b13904427b12984fd2aa0c0",
+      "afee1651d2c56fc0ebad8c6d5b793226"
+    ]
+  },
+  {
+    "query": "Does the framework define requirements to maintain, retain, and make available additional detailed documentation and decision justifications for AI Office review?",
+    "expected_chunk_ids": [
+      "2caa00d5b81f34847be0b3a22848beb6",
+      "11416d4a7b307f98126d3ed160f7969a",
+      "69057d0356ed434fe136ec874265cd1a"
+    ]
+  },
+  {
+    "query": "Does the framework define conditions, scope, safeguards, and exceptions for publishing public summaries of the Framework and Model Reports?",
+    "expected_chunk_ids": [
+      "78396c870b13904427b12984fd2aa0c0",
+      "11416d4a7b307f98126d3ed160f7969a",
+      "afee1651d2c56fc0ebad8c6d5b793226"
+    ]
+  },
+  {
+    "query": "Does the framework define a structured systemic risk identification process that is informed by the risk types (Appendix 1.1), the nature of systemic risks (Appendix 1.2), the sources of systemic risks (Appendix 1.3), and that explicitly considers the specified systemic risks (Appendix 1.4)?",
+    "expected_chunk_ids": [
+      "b46c371d48713113d70e72873da6fad3",
+      "bba3f3c215b9d40d9053cc9fa6bb0a18",
+      "a579aed4d666a8ae1be5619e4a9baa22"
+    ]
+  },
+  {
+    "query": "Does the framework define the need for the development of systemic risk scenarios for each identified systemic risk, including the appropriate number and level of detail of scenarios?",
+    "expected_chunk_ids": [
+      "a579aed4d666a8ae1be5619e4a9baa22",
+      "bba3f3c215b9d40d9053cc9fa6bb0a18"
+    ]
+  },
+  {
+    "query": "Does the organisation systematically gather and document model-independent information relevant to identified systemic risks, using structured methods such as web searches or OSINT, literature reviews, market analyses of comparable models, training data reviews, historical incident analysis, forecasting of technological trends, expert consultations, and/or stakeholder or community engagement?",
+    "expected_chunk_ids": [
+      "6cd4dcb6c9cc5d4ab8e7765a5cc7b977",
+      "a579aed4d666a8ae1be5619e4a9baa22",
+      "8770806559f4e5043f358460b3513a72"
+    ]
+  },
+  {
+    "query": "Does the framework describe how model evaluations are intended to be designed and conducted to analyse systemic risks in a state-of-the-art manner, including appropriate elicitation, open-ended or adversarial testing, assessment of mitigation effectiveness, methodological rigour, and the use of qualified evaluation teams?",
+    "expected_chunk_ids": [
+      "2396b14b484274d48b70b4a358f34ee3",
+      "8770806559f4e5043f358460b3513a72",
+      "6088137c8371e92d00bd6c07090eb8e7"
+    ]
+  },
+  {
+    "query": "Does the framework describe how systemic risks are intended to be modelled using state-of-the-art methods, building on systemic risk scenarios and taking into account relevant information from risk identification and systemic risk analysis?",
+    "expected_chunk_ids": [
+      "a579aed4d666a8ae1be5619e4a9baa22",
+      "b46c371d48713113d70e72873da6fad3",
+      "2396b14b484274d48b70b4a358f34ee3"
+    ]
+  },
+  {
+    "query": "Does the framework describe how the probability and severity of harm for systemic risks are intended to be estimated using state-of-the-art methods, taking into account relevant information from systemic risk identification, analysis, and serious incident reporting, and how such estimates are expressed?",
+    "expected_chunk_ids": [
+      "2396b14b484274d48b70b4a358f34ee3",
+      "b46c371d48713113d70e72873da6fad3",
+      "a1ce3239559f4420c2b7434b554b8d82"
+    ]
+  },
+  {
+    "query": "Does the framework describe an approach for post-market monitoring to gather information relevant to systemic risk assessment and updates, and does it define how independent external evaluators may be enabled with appropriate safeguards, where applicable?",
+    "expected_chunk_ids": [
+      "311f250a0699a7da7f0ea69d46b3a435",
+      "6cd4dcb6c9cc5d4ab8e7765a5cc7b977",
+      "c850c38df57dafd097f9fcfe7487885f"
+    ]
+  },
+  {
+    "query": "Does the framework describe and justify how systemic risk acceptance criteria or tiers are defined for each identified systemic risk, how they are used to determine acceptability at the individual and overall level, and how appropriate safety margins are incorporated?",
+    "expected_chunk_ids": [
+      "645c1736acf31a2c2aa81657384f65e9",
+      "f75de3f9be1ce59ca1dc5aab784cd6a1",
+      "0587f87ab11f84845f48489997d48271"
+    ]
+  },
+  {
+    "query": "Does the framework describe how decisions to proceed or not proceed with the development, market availability, or use of the model are made based on systemic risk acceptance determination, and how responses are defined when risks are not acceptable or are likely to become unacceptable?",
+    "expected_chunk_ids": [
+      "f75de3f9be1ce59ca1dc5aab784cd6a1",
+      "97f875ccc8887bd2d73853c0c986a9af",
+      "645c1736acf31a2c2aa81657384f65e9"
+    ]
+  },
+  {
+    "query": "Does the framework define and require the implementation of safety mitigations along the entire model lifecycle that are appropriate to identified systemic risks, sufficiently robust under adversarial pressure, and aligned with the model’s release and distribution strategy, with the objective of ensuring that systemic risks are acceptable?",
+    "expected_chunk_ids": [
+      "7790924ffa86ff286821c84a86d49f86",
+      "6569260ffcd880bb1b403fd333721595",
+      "1a27ac7b8b804e7b4f70fba5d8e73f43"
+    ]
+  },
+  {
+    "query": "Does the framework explicitly define a Security Goal that identifies relevant threat actors (including non-state external and insider threats) and explains how this goal takes into account the model’s current and expected capabilities?",
+    "expected_chunk_ids": [
+      "76f0c2afe743370038dfd7fb2ef4d1ea",
+      "f86e49fa91cbd3079af0558aabb34c1d",
+      "019302e4656448fe8127d458c099869b"
+    ]
+  },
+  {
+    "query": "Does the framework describe how security mitigations are selected to meet the Security Goal, how the mitigation objectives defined in Appendix 4 (e.g. general security, protection of unreleased model parameters, interface hardening, insider threat protection, and security assurance) are addressed or achieved through equivalent measures, and how implementation is intended to be staged over the model lifecycle?",
+    "expected_chunk_ids": [
+      "76f0c2afe743370038dfd7fb2ef4d1ea",
+      "010271c04c26be23e65e6f7fc8511831",
+      "eaeb0fc6caf25b156939a2a8a9876b68"
+    ]
+  },
+  {
+    "query": "Does the Model Report describe the model’s architecture, capabilities, propensities, and affordances, its intended and actual uses, differences between model versions, and its intended behaviour (including principles, refusal topics, and system prompt or references thereto)?",
+    "expected_chunk_ids": [
+      "69057d0356ed434fe136ec874265cd1a",
+      "a0a54ce68bcea0d1e74fc39d4c7d9a0a",
+      "39956bfb5a5fdfd1588ddb0b6e372c49"
+    ]
+  },
+  {
+    "query": "Does the Model Report explain the reasons for proceeding in a way that is consistent with the framework’s systemic risk acceptance determination, including safety margins, foreseeable undermining conditions, and the described decision-making process?",
+    "expected_chunk_ids": [
+      "69057d0356ed434fe136ec874265cd1a",
+      "f75de3f9be1ce59ca1dc5aab784cd6a1",
+      "645c1736acf31a2c2aa81657384f65e9"
+    ]
+  },
+  {
+    "query": "Does the Model Report describe, in a structured and traceable manner, the reported outcomes of systemic risk identification, analysis, evaluation, and mitigation as defined by the framework, including limitations and forward-looking plans?",
+    "expected_chunk_ids": [
+      "b46c371d48713113d70e72873da6fad3",
+      "11416d4a7b307f98126d3ed160f7969a",
+      "a1ce3239559f4420c2b7434b554b8d82"
+    ]
+  },
+  {
+    "query": "Does the Model Report (i) include or link to any available reports from independent external evaluators and independent external security reviews in a manner consistent with confidentiality and evaluator control, (ii) justify the absence of an external evaluator where applicable, and (iii) explain evaluator selection based on qualification criteria when an evaluator was involved?",
+    "expected_chunk_ids": [
+      "35e5a33daa3d724fb302dc58c2eeaa18",
+      "ce893df6e84012a1f80e49d014f01d7b",
+      "b9612e899fa574d3e62bffb26ea4f02e"
+    ]
+  },
+  {
+    "query": "Does the Model Report describe whether and how the model results in material changes to the systemic risk landscape, in a way that supports understanding of implications for systemic risk assessment and mitigation?",
+    "expected_chunk_ids": [
+      "35e5a33daa3d724fb302dc58c2eeaa18",
+      "a1ce3239559f4420c2b7434b554b8d82",
+      "4f8a9dafd72c36809ad2e6c4b9e32c9a"
+    ]
+  },
+  {
+    "query": "Does the framework acknowledge and describe when Model Report updates are required, including material undermining triggers, timing expectations, periodic updates for most capable models, and versioning/changelog requirements?",
+    "expected_chunk_ids": [
+      "4f8a9dafd72c36809ad2e6c4b9e32c9a",
+      "1826c99086c08b04b7d2a349ae3463b8",
+      "afee1651d2c56fc0ebad8c6d5b793226"
+    ]
+  },
+  {
+    "query": "Does the framework acknowledge and describe obligations to provide the AI Office with access to the Model Report and updates, including timing rules, permitted delays with interim reporting, and conditions for redactions?",
+    "expected_chunk_ids": [
+      "1826c99086c08b04b7d2a349ae3463b8",
+      "11416d4a7b307f98126d3ed160f7969a",
+      "3265e6fe3618a6cd2d79c41cf149a491"
+    ]
+  },
+  {
+    "query": "Does the framework explicitly define the four systemic risk responsibility types and describe how they are allocated across organisational governance levels, including independence where required?",
+    "expected_chunk_ids": [
+      "153de400df0681e7814ed2c0b4e7362f",
+      "abdfeec0b9f90ecaa6ca72c3a34783e4",
+      "6de9cb081b90d98861e79ad6dc03f6b0"
+    ]
+  },
+  {
+    "query": "Does the framework explicitly acknowledge management oversight of resource allocation for systemic risk responsibilities and specify the categories of resources to be considered?",
+    "expected_chunk_ids": [
+      "f69effc805310af0a72ff5ea09287471",
+      "abdfeec0b9f90ecaa6ca72c3a34783e4",
+      "153de400df0681e7814ed2c0b4e7362f"
+    ]
+  },
+  {
+    "query": "Does the framework explicitly acknowledge the importance of a healthy systemic risk culture and describe principles or mechanisms intended to promote it?",
+    "expected_chunk_ids": [
+      "24dad68eeb51167e65aec3944ed1b9e4",
+      "69057d0356ed434fe136ec874265cd1a",
+      "11416d4a7b307f98126d3ed160f7969a"
+    ]
+  },
+  {
+    "query": "Does the framework acknowledge and describe approaches for identifying serious incidents, including monitoring external sources and enabling third-party reporting?",
+    "expected_chunk_ids": [
+      "11416d4a7b307f98126d3ed160f7969a",
+      "311f250a0699a7da7f0ea69d46b3a435",
+      "ce893df6e84012a1f80e49d014f01d7b"
+    ]
+  },
+  {
+    "query": "Does the framework specify the minimum information set for serious incident documentation and reporting, including root cause analysis and treatment of missing information?",
+    "expected_chunk_ids": [
+      "4932e59060565c65477c3e99c6fd04e3",
+      "9153e8ad45322fb83047dda932141831",
+      "6bc9e62fe4f78bcc1bfd2150e7f74e17"
+    ]
+  },
+  {
+    "query": "Does the framework specify clearly differentiated reporting timelines for serious incidents (including specific deadlines for initial notification based on severity), periodic intermediate updates for unresolved incidents, and a final report after resolution?",
+    "expected_chunk_ids": [
+      "6bc9e62fe4f78bcc1bfd2150e7f74e17",
+      "7cd7a975bde8e088978bd7364f15b74f",
+      "4932e59060565c65477c3e99c6fd04e3"
+    ]
+  },
+  {
+    "query": "Does the framework define retention requirements for serious-incident documentation that meet or exceed a five-year period?",
+    "expected_chunk_ids": [
+      "6bc9e62fe4f78bcc1bfd2150e7f74e17",
+      "9153e8ad45322fb83047dda932141831",
+      "4932e59060565c65477c3e99c6fd04e3"
+    ]
+  }
+]

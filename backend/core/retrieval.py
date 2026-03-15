@@ -15,7 +15,7 @@ async def retrieve_evidence(query: str, k: int = 5, strategy: str = "hierarchica
     # 1. Broad Search (Fetch more candidates)
     # Lowered threshold to avoid missing relevant but jargon-heavy text
     # Increased fetch count for better post-filtering
-    results = await vector_store.asimilarity_search_with_relevance_scores(query, k=k*4)
+    results = await vector_store.asimilarity_search_with_relevance_scores(query, k=k*5)
     
     # 2. Filter by Score (Lenient)
     # Threshold 0.3 allows for "related" concepts which agent can then verify
@@ -41,10 +41,20 @@ async def retrieve_evidence(query: str, k: int = 5, strategy: str = "hierarchica
             continue
         seen_ids.add(chunk_id)
         
+        raw_page = doc.metadata.get('page', 0)
+        page_num = 0
+        if isinstance(raw_page, int):
+            page_num = raw_page
+        else:
+            import re
+            match = re.search(r'\d+', str(raw_page))
+            if match:
+                page_num = int(match.group())
+                
         evidence_list.append(Evidence(
             text=doc.page_content,
             source=doc.metadata.get('source', 'unknown'),
-            page=doc.metadata.get('page', 0),
+            page=page_num,
             chapter=doc.metadata.get('chapter'),
             metadata=doc.metadata,
             chunk_id=chunk_id,

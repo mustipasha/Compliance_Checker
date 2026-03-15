@@ -1,0 +1,57 @@
+@startuml Process_View
+title Process View: Compliance Assessment Sequence
+
+actor User
+participant "React Frontend" as FE
+participant "FastAPI (main.py)" as API
+participant "Criteria Parser" as CP
+participant "Orchestrator (pipeline.py)" as PC
+participant "Retrieval (retrieval.py)" as RT
+participant "ChromaDB" as DB
+participant "Reasoning Agents" as AG
+participant "LLM Providers" as LLM
+
+User -> FE : Select Model, Mode & PDF Document
+User -> FE : Click "Start Assessment"
+FE -> API : POST /upload (File)
+API -> "Ingestion (ingestion.py)" : ingest_document()
+"Ingestion (ingestion.py)" -> DB : Store Chunks + Metadata
+API --> FE : Upload Success
+
+FE -> API : POST /assess (Model, Mode)
+API -> CP : parse_criteria("criteria_new.json")
+CP --> API : All Measures (List<Dict>)
+API -> PC : run_compliance_check(criterion)
+
+loop For Each Criterion
+    PC -> RT : retrieve_evidence("Requirement + Keywords")
+    RT -> DB : Vector Similarity Search
+    DB --> RT : Top-K Evidence Chunks
+    RT --> PC : Evidence List (Score >= 0.3 or Top-3 Fallback)
+    
+    alt Single Agent Mode
+        PC -> AG : SynthesisAllInOneAgent.run()
+        AG -> LLM : Prompt (Context + Rubric)
+        LLM --> AG : Classification & Decision
+    else Triple Agent Mode (Sequential)
+        PC -> AG : AlignmentAgent (Find overlap)
+        AG -> LLM : Prompt
+        LLM --> AG : Overlap Details
+        
+        PC -> AG : GapAgent (Find gaps)
+        AG -> LLM : Prompt (Overlap + Evidence)
+        LLM --> AG : Gap Analysis
+        
+        PC -> AG : SynthesisAgent (Final Decision)
+        AG -> LLM : Prompt (Overlap + Gaps + Rubric)
+        LLM --> AG : Final Result
+    end
+    
+    PC --> API : CriterionResult
+end
+
+API -> API : Aggregate Scores & Archive JSON
+API --> FE : AssessmentReport (JSON)
+FE -> User : Display Results & Dashboard
+
+@enduml

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api/client';
 import { FileText, Trash2, Calendar, HardDrive, AlertCircle } from 'lucide-react';
-import { API_BASE_URL } from '../config';
 
 interface Document {
     filename: string;
@@ -17,7 +16,7 @@ export const DocumentList: React.FC = () => {
     const fetchDocuments = async () => {
         try {
             setLoading(true);
-            const response = await axios.get(`${API_BASE_URL}/documents`);
+            const response = await api.get('/documents');
             setDocuments(response.data);
             setError('');
         } catch (err) {
@@ -32,7 +31,7 @@ export const DocumentList: React.FC = () => {
         if (!confirm(`Are you sure you want to delete "${filename}"? This will confirm remove it from the database.`)) return;
 
         try {
-            await axios.delete(`${API_BASE_URL}/documents/${filename}`);
+            await api.delete(`/documents/${filename}`);
             setDocuments(docs => docs.filter(d => d.filename !== filename));
         } catch (err) {
             console.error(err);
@@ -67,7 +66,7 @@ export const DocumentList: React.FC = () => {
                         onClick={async () => {
                             if (!confirm('Are you sure you want to clear all indexed documents? This cannot be undone.')) return;
                             try {
-                                await axios.post(`${API_BASE_URL}/reset-db`);
+                                await api.post('/reset-db');
                                 fetchDocuments();
                                 alert('Database cleared successfully!');
                             } catch (error) {

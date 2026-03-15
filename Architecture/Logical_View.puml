@@ -1,0 +1,175 @@
+@startuml Logical_View
+title Logical View (updated Version)
+
+package "FastAPI Models (api.models.py)" {
+    class AssessmentReport {
+        + compliance_score: float
+        + source_document: str
+        + provider: str
+        + model: str
+        + mode: str
+        + commitments: List<CommitmentResult>
+        + criteria: List<CriterionResult>
+    }
+
+    class CommitmentResult {
+        + commitment_id: str
+        + title: str
+        + results: List<CriterionResult>
+    }
+
+    class CriterionResult {
+        + criterion_id: str
+        + title: str
+        + requirement: str
+        + assessment_question: str
+        + expected_evidence: List<str>
+        + status: str
+        + score: int
+        + confidence: float
+        + reasoning: str
+        + key_aligned_concepts: List<str>
+        + decisive_gaps_or_divergences: List<str>
+        + tensions_or_ambiguities: List<str>
+        + alignment_findings: AlignmentOutput
+        + gap_analysis: GapAnalysisOutput
+        + synthesis_result: SynthesisOutput
+        + evidence: List<Evidence>
+    }
+
+    class AlignmentOutput {
+        + criterion_id: str
+        + assessment_question_answer: str
+        + alignment_summary: str
+        + key_aligned_concepts: List<str>
+        + evidence_citations: List<EvidenceCitation>
+        + assumptions: List<str>
+    }
+
+    class GapAnalysisOutput {
+        + criterion_id: str
+        + gap_summary: str
+        + missing_elements: List<str>
+        + weaker_areas: List<str>
+        + scope_divergences: List<str>
+        + alignment_overreach: List<str>
+    }
+
+    class SynthesisOutput {
+        + criterion_id: str
+        + assessment_question_answered: bool
+        + classification: Literal
+        + justification: str
+        + key_aligned_concepts: List<str>
+        + decisive_gaps_or_divergences: List<str>
+        + tensions_or_ambiguities: List<str>
+        + confidence: float
+        + selected_evidence: List<Evidence>
+    }
+
+    class Evidence {
+        + text: str
+        + source: str
+        + page: int
+        + chunk_id: str
+        + relevance_score: float
+        + chapter: str
+        + metadata: Dict
+    }
+
+    class EvidenceCitation {
+        + chunk_id: str
+        + quote: str
+        + why_it_matters: str
+        + indicator_addressed: str
+    }
+    
+    note left of EvidenceCitation
+        **Judicial Selection**: Subsets
+        raw Evidence for final report.
+    end note
+}
+
+package "Agent Logic (agents/)" {
+    abstract class BaseAgent {
+        + prompt: ChatPromptTemplate
+        + chain: Runnable
+        # _clean_json(response)
+    }
+    
+    class AlignmentAgent {
+        + run(criterion, evidence): AlignmentOutput
+    }
+    
+    class GapAgent {
+        + run(criterion, evidence, alignment): GapAnalysisOutput
+    }
+    
+    class SynthesisAgent {
+        + synthesize(criterion, evidence, alignment, gap, rubric): SynthesisOutput
+    }
+    
+    class SynthesisAllInOneAgent {
+        + run(criterion, evidence): Dict
+    }
+
+    BaseAgent <|-- AlignmentAgent
+    BaseAgent <|-- GapAgent
+    BaseAgent <.. SynthesisAgent : implementation pattern
+    BaseAgent <.. SynthesisAllInOneAgent : implementation pattern
+}
+
+package "Core Engines & Utilities" {
+    class HierarchicalPDFParser {
+        + parse(file_path): List<Document>
+        - _get_chapter_hierarchy(toc)
+    }
+
+    class CriteriaParser << (M,orchid) module >> {
+        + parse_criteria(file_path): List<Dict>
+    }
+
+    class IngestionService << (M,orchid) module >> {
+        + ingest_document(file_path, strategy): int
+    }
+    
+    class RetrievalService << (M,orchid) module >> {
+        + retrieve_evidence(query, k, strategy): List<Evidence>
+    }
+    
+    class PipelineOrchestrator << (M,orchid) module >> {
+        + run_compliance_check(criterion, provider, model, mode): CriterionResult
+    }
+
+    class LLMConfiguration << (M,orchid) module >> {
+        + get_llm(temp, provider, model): BaseChatModel
+        + get_embeddings(): OpenAIEmbeddings
+    }
+
+    class ResilienceModule << (M,orchid) module >> {
+        + robust_invoke(chain, input): Any
+    }
+}
+
+' Relationships
+AssessmentReport "1" *-- "many" CommitmentResult : contains
+CommitmentResult "1" *-- "many" CriterionResult : contains
+CriterionResult "1" *-- "1" AlignmentOutput : links
+CriterionResult "1" *-- "1" GapAnalysisOutput : links
+CriterionResult "1" *-- "1" SynthesisOutput : links
+CriterionResult "many" *-- "many" Evidence : cites
+AlignmentOutput "1" *-- "many" EvidenceCitation : contains
+
+PipelineOrchestrator ..> CriteriaParser : calls
+PipelineOrchestrator ..> AlignmentAgent : calls
+PipelineOrchestrator ..> GapAgent : calls
+PipelineOrchestrator ..> SynthesisAgent : calls
+PipelineOrchestrator ..> SynthesisAllInOneAgent : calls
+PipelineOrchestrator ..> RetrievalService : calls
+RetrievalService ..> Evidence : returns
+IngestionService ..> Evidence : vectorizes
+IngestionService ..> HierarchicalPDFParser : uses
+BaseAgent ..> LLMConfiguration : configures
+BaseAgent ..> ResilienceModule : uses robust_invoke
+
+@enduml

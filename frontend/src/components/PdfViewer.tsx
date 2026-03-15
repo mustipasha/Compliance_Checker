@@ -16,12 +16,12 @@ interface PdfViewerProps {
 
 export const PdfViewer: React.FC<PdfViewerProps> = ({ url, initialPage = 1, highlightText, onClose }) => {
     const [numPages, setNumPages] = useState<number | null>(null);
-    const [pageNumber, setPageNumber] = useState<number>(initialPage);
+    const [pageNumber, setPageNumber] = useState<number>(isNaN(initialPage) ? 1 : Math.max(1, Math.floor(initialPage)));
     const [scale, setScale] = useState<number>(1.0);
 
     // Sync initial page when it changes
     useEffect(() => {
-        setPageNumber(initialPage);
+        setPageNumber(isNaN(initialPage) ? 1 : Math.max(1, Math.floor(initialPage)));
     }, [initialPage]);
 
     function onDocumentLoadSuccess({ numPages }: { numPages: number }) {

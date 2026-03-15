@@ -5,30 +5,44 @@ from langchain_core.prompts import ChatPromptTemplate
 
 ALIGNMENT_PROMPT = """
 You are an expert in AI safety governance.
-Task: "Identify conceptual alignment between an external framework and an EU Code of Practice requirement. 
-You will be given below the EU requirement, the expected evidence (indicators), and the retrieved text."
+Task: Identify alignment between an external framework and an EU Code of Practice requirement.
 
 Context:
 - Criterion ID: "{criterion_id}"
+- Assessment Question: "{assessment_question}"
 - EU Requirement: "{criterion_requirement}"
 - Expected Evidence (Indicators): {expected_evidence_list}
 - Retrieved Text: {evidence_text}
 
 Instructions:
-1. Analyze the text for CONCEPTUAL OVERLAP with the EU requirement (intent, principles, governance).
-2. Treat similar terminology as equivalent if the goal matches.
-3. Ignore implementation details; focus on commitment/policy, on concepts that need to be covered given the requirement.
+1. Before analyzing the text, read carefully the retreived text and answer the Assessment Question above in one sentence.
+   Use this as your grounding check — evidence must speak to this specific question.
+
+2. Identify which Expected Evidence indicators are genuinely addressed in the text.
+   For each indicator, ask: does the text address the SAME subject, obligation type,
+   and structural mechanism as the indicator — or does it address a related but
+   different entity using similar language?
+
+3. Distinguish between:
+   - CONCEPTUAL indicators (high-level principles, governance intent) — thematic
+     presence in the text is sufficient evidence.
+   - OPERATIONAL indicators (specific obligations, named authorities, defined
+     timelines, retention periods) — the specific mechanism must be explicitly
+     present. Similar language with a different subject does NOT count.
+
 4. Output STRICT JSON only.
 
 OUTPUT JSON FORMAT:
 {{
   "criterion_id": "{criterion_id}",
+  "assessment_question_answer": "One sentence answering whether the text addresses the assessment question.",
   "alignment_summary": "Concise explanation of alignment (max 2 sentences).",
   "key_aligned_concepts": ["Concept A", "Concept B"],
   "evidence_citations": [
     {{
       "chunk_id": "...",
       "quote": "Direct quote...",
+      "indicator_addressed": "Which specific indicator from Expected Evidence this citation supports.",
       "why_it_matters": "One phrase on relevance."
     }}
   ],
@@ -38,23 +52,38 @@ OUTPUT JSON FORMAT:
 
 GAP_PROMPT = """
 You are an expert in regulatory gap analysis.
-Task: "Identify what is MISSING, WEAKER, or DIVERGENT in the external framework compared to the EU requirement, but do not force to find something.
-You will be given the requirement, the expected evidence (indicators), the aligment findings and the retrieved text."
+Task: Identify what is MISSING, WEAKER, or DIVERGENT in the external framework compared to the EU requirement.
 
 Context:
 - Criterion ID: "{criterion_id}"
+- Assessment Question: "{assessment_question}"
 - EU Requirement: "{criterion_requirement}"
+- Expected Evidence (Indicators): {expected_evidence_list}
 - Alignment Findings: {alignment_json}
 - Retrieved Text: {evidence_text}
 
 Instructions:
-1. Compare EU requirement vs. Retrieved Text.
+1. Work through each Expected Evidence indicator one by one. For each, verify
+   independently whether the retrieved text actually contains the specific subject
+   and mechanism the indicator requires — not just similar language. Do not passively
+   accept the alignment findings as given.
+
 2. Identify:
-   - MISSING: Required concepts not present.
-   - WEAKER: Present but less binding/specific.
-   - DIVERGENT: Different scope/focus.
-3. Be purely descriptive. Do not invent gaps.
-4. Output STRICT JSON only.
+   - MISSING: The specific mechanism, obligation, or subject required by the
+     indicator is not present in the text at all.
+   - WEAKER: The concept is present but less binding, less specific, or applies
+     to a different entity than the requirement specifies.
+   - DIVERGENT: The text addresses a related but structurally different subject
+     (e.g. internal governance updates vs. regulatory notification obligations).
+
+3. Pay particular attention to operational indicators (specific authorities,
+   timelines, retention periods, named obligations). For these, note explicitly
+   if the alignment analysis claimed coverage that the text does not support.
+
+4. Be descriptive. Do not invent gaps — but do not suppress gaps because the
+   alignment agent claimed coverage.
+
+5. Output STRICT JSON only.
 
 OUTPUT JSON FORMAT:
 {{
@@ -63,35 +92,58 @@ OUTPUT JSON FORMAT:
   "missing_elements": ["Element 1", "Element 2"],
   "weaker_areas": ["Area 1"],
   "scope_divergences": ["Divergence 1"],
+  "alignment_overreach": ["Any indicator the alignment agent claimed as covered but which the text does not actually support"],
   "uncertainties": []
 }}
 """
 
 SYNTHESIS_PROMPT = """
 You are a neutral compliance arbiter.
-Task: "Assign a compliance status based on Alignment and Gap analysis."
+Task: Assign a compliance status based on Alignment and Gap analysis.
+
 Context:
 - Criterion ID: "{criterion_id}"
+- Assessment Question: "{assessment_question}"
 - EU Requirement: "{criterion_requirement}"
-- Rubric: {compliance_rubric_json}
+- Expected Evidence (Indicators): {expected_evidence_list}
+- Rubric: {compliance_rubric}
 - Alignment Analysis: {alignment_json}
 - Gap Analysis: {gap_json}
 
 Instructions:
-1. Assign status based strictly on the Rubric and Findings given the rubirc. However if there is fully alignment, assign COMPLIANT.
-2. Analyse contradictions between alignment and gap analysis, if present.
-3. Justify conciseley taking into acccount alignment, gap analysis and the contradictions between them.
-4. Output STRICT JSON only.
+1. First, check whether the gap analysis flagged alignment_overreach entries or
+   identified the assessment question as unanswered. If so, treat the affected
+   indicators as unmet before scoring.
+
+2. Treat "Expected Evidence (Indicators)" as your mandatory checklist. Go through
+   each indicator and determine: is it genuinely present in the text with the correct
+   subject, obligation type, and structural mechanism?
+
+3. Apply the rubric's NOT_COMPLIANT / PARTIALLY_COMPLIANT boundary rule:
+   - If unmet indicators are operational and binary in nature (specific notification
+     obligations, defined timelines, named authorities, retention periods), their
+     absence is NOT compensated by thematic alignment elsewhere. Assign NOT_COMPLIANT.
+   - If unmet indicators are conceptual or structural but the core intent is partially
+     reflected, assign PARTIALLY_COMPLIANT.
+
+4. Where the gap analysis flags alignment_overreach, treat those indicators as unmet.
+
+5. Justify concisely by naming which specific indicators were found, which were
+   missing, and — for NOT_COMPLIANT decisions — why thematic overlap is insufficient
+   to satisfy them.
+
+6. Output STRICT JSON only.
 
 OUTPUT JSON FORMAT:
 {{
   "criterion_id": "{criterion_id}",
+  "assessment_question_answered": true | false,
   "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_APPLICABLE | NOT_EVIDENCED",
-  "justification": "1-2 sentence justification grounded in rubric. Reference arguments to evidence given.",
+  "justification": "1-2 sentence justification. Name which indicators were found, which were missing, and why missing operational indicators cannot be offset by thematic alignment.",
   "key_aligned_concepts": ["From Alignment"],
   "decisive_gaps_or_divergences": ["From Gaps"],
   "tensions_or_ambiguities": [],
-  "confidence": 0.0-1.0
+  "confidence": (indicators supported by evidence) / (total indicators)
 }}
 """
 

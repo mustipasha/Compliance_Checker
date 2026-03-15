@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/client';
 import { Upload as UploadIcon, FileText, AlertCircle } from 'lucide-react';
-import { API_BASE_URL } from '../config';
 
 interface UploadProps {
     onUploadComplete: () => void;
@@ -29,7 +28,7 @@ export const Upload: React.FC<UploadProps> = ({ onUploadComplete }) => {
         formData.append('file', file);
 
         try {
-            await axios.post(`${API_BASE_URL}/upload`, formData, {
+            await api.post('/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

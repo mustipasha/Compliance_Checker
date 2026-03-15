@@ -6,6 +6,7 @@ from agents.prompts import ALIGNMENT_PROMPT, GAP_PROMPT
 
 from core.resilience import robust_invoke
 from core.llm_config import get_llm
+from core.json_utils import clean_and_parse_json
 
 
 class BaseAgent:
@@ -14,25 +15,12 @@ class BaseAgent:
         llm = get_llm(temperature=0, provider=provider, model=model)
         self.chain = self.prompt | llm
 
-    def _clean_json(self, response) -> str:
+    def _parse_response(self, response) -> Dict[str, Any]:
         content = response.content
         if isinstance(content, list):
             content = "".join([part.get("text", "") if isinstance(part, dict) else str(part) for part in content])
         
-        content = content.strip()
-        if content.startswith("```json"):
-            content = content[7:]
-        if content.startswith("```"):
-            content = content[3:]
-        if content.endswith("```"):
-            content = content[:-3]
-        
-        content = content.strip()
-        
-        # Simple heuristic to fix common JSON errors (like missing commas between fields)
-        # This is very basic: if we see "key": preceded by ", or ] or } without a comma, we might be able to help.
-        # However, it's safer to just return as is if it fails.
-        return content
+        return clean_and_parse_json(content)
 
 class AlignmentAgent(BaseAgent):
     """
@@ -55,13 +43,13 @@ class AlignmentAgent(BaseAgent):
         try:
             response = await robust_invoke(self.chain, {
                 "criterion_id": criterion.get('id', 'unknown'),
+                "assessment_question": criterion.get('assessment_question', ''),
                 "criterion_requirement": criterion['requirement'],
                 "expected_evidence_list": expected_ev_text,
                 "evidence_text": evidence_text
             })
             
-            content = self._clean_json(response)
-            data = json.loads(content)
+            data = self._parse_response(response)
             return AlignmentOutput(**data)
             
         except Exception as e:
@@ -86,16 +74,24 @@ class GapAgent(BaseAgent):
     async def run(self, criterion: Dict, evidence: List[Evidence], alignment_output: AlignmentOutput) -> GapAnalysisOutput:
         evidence_text = "\n\n".join([f"[{e.chunk_id}] {e.text}" for i, e in enumerate(evidence)])
         
+        # Format Expected Evidence
+        expected_ev = criterion.get('expected_evidence', [])
+        if isinstance(expected_ev, list):
+            expected_ev_text = "\n".join([f"- {item}" for item in expected_ev])
+        else:
+            expected_ev_text = str(expected_ev)
+
         try:
             response = await robust_invoke(self.chain, {
+                "criterion_id": criterion.get('id', 'unknown'),
+                "assessment_question": criterion.get('assessment_question', ''),
                 "criterion_requirement": criterion['requirement'],
+                "expected_evidence_list": expected_ev_text,
                 "alignment_json": alignment_output.model_dump_json(indent=2),
-                "evidence_text": evidence_text,
-                "criterion_id": criterion.get('id', 'unknown')
+                "evidence_text": evidence_text
             })
             
-            content = self._clean_json(response)
-            data = json.loads(content)
+            data = self._parse_response(response)
             return GapAnalysisOutput(**data)
             
         except Exception as e:

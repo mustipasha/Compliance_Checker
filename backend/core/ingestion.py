@@ -39,19 +39,27 @@ def ingest_document(file_path: str, strategy: str = "hierarchical"):
     else:
         from langchain_community.document_loaders import PyPDFLoader
         loader = PyPDFLoader(file_path)
-        documents = loader.load()
-        for doc in documents:
-            doc.metadata["source"] = filename
+        pages = loader.load()
+        # Merge all pages into a single document to allow cross-page chunking
+        full_text = "\n".join([p.page_content for p in pages])
+        documents = [Document(
+            page_content=full_text, 
+            metadata={
+                "source": filename, 
+                "page": f"1-{len(pages)}" if len(pages) > 1 else 0
+            }
+        )]
 
     # 2. Split Text
     # Hierarchical might benefit from slightly larger context or metadata prepending
-    chunk_size = 1500 if strategy == "hierarchical" else 1000
-    chunk_overlap = 200 if strategy == "hierarchical" else 150
+    chunk_size = 1500 if strategy == "hierarchical" else 1500
+    chunk_overlap = 200 if strategy == "hierarchical" else 200
     
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
-        separators=["\n\n", "\n", ". ", " ", ""]
+        separators=["\n\n", "\n", ". ", " ", ""],
+        add_start_index=True
     )
     chunks = text_splitter.split_documents(documents)
     
@@ -62,8 +70,21 @@ def ingest_document(file_path: str, strategy: str = "hierarchical"):
     
     for chunk in chunks:
         source = chunk.metadata.get("source", "unknown")
-        page = chunk.metadata.get("page", 0)
         chapter = chunk.metadata.get("chapter", "")
+        start_index = chunk.metadata.get("start_index", 0)
+        page_offsets = chunk.metadata.get("page_offsets", [])
+        
+        # Determine the precise page number based on character offset
+        page = chunk.metadata.get("page", 0) # Fallback
+        if page_offsets:
+            # Find the highest page_num where start <= start_index
+            estimated_page = page_offsets[0]["page_num"]
+            for offset in page_offsets:
+                if start_index >= offset["start"]:
+                    estimated_page = offset["page_num"]
+                else:
+                    break
+            page = estimated_page
         
         # ID input includes strategy and chapter to keep collections distinct if mixed
         id_input = f"{chunk.page_content}_{source}_{page}_{chapter}_{strategy}"
@@ -73,6 +94,12 @@ def ingest_document(file_path: str, strategy: str = "hierarchical"):
             seen_ids.add(chunk_id)
             unique_ids.append(chunk_id)
             chunk.metadata["chunk_id"] = chunk_id
+            chunk.metadata["page"] = page
+            # Clean up metadata before storage
+            if "page_offsets" in chunk.metadata:
+                del chunk.metadata["page_offsets"]
+            if "start_index" in chunk.metadata:
+                del chunk.metadata["start_index"]
             unique_chunks.append(chunk)
 
     # 3. Store in Vector DB

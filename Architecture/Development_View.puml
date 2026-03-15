@@ -1,0 +1,100 @@
+@startuml Development_View
+title Development View: Component & File mapping
+
+package "Frontend (React + Vite)" {
+    [Bootstrapper (main.tsx)] as Main
+    [App Router (App.tsx)] as App
+    [Context (AssessmentContext.tsx)] as Context
+    [Client (api/client.ts)] as Client
+    
+    package "Routes & Views" {
+        [Flow (AssessmentFlow.tsx)] as Flow
+        [History (AssessmentHistory.tsx)] as History
+        [Library (DocumentList.tsx)] as Library
+        [Exploration (CommitmentExplorer.tsx)] as Explorer
+        [Methods (Methodology.tsx)] as Methods
+    }
+
+    package "Internal Components" {
+        [Upload (Upload.tsx)] as Upload
+        [Results (Results.tsx)] as Results
+        [PDF Viewer (PdfViewer.tsx)] as PdfViewer
+        [Lifecycle Graph (ProcessLifecycle.tsx)] as Lifecycle
+        [Trace UI (WorkflowTrace.tsx)] as Trace
+    }
+    
+    ' Hierarchy
+    Main --> App
+    App --> Context
+    App --> Flow
+    App --> History
+    App --> Library
+    App --> Explorer
+    App --> Methods
+    
+    Flow --> Upload
+    Flow --> Results
+    Results --> PdfViewer
+    Flow --> Trace
+    Methods --> Lifecycle
+    
+    Context ..> Client
+}
+
+package "Backend (FastAPI)" as Backend {
+    package "Server Layer" {
+        [API (api/main.py)] as API
+        [Models (api/models.py)] as Models
+        [Criteria Parser (criteria_parser.py)] as CritParser
+    }
+    
+    package "Orchestration" {
+        [Pipeline (core/pipeline.py)] as Pipeline
+        [Ingestion (core/ingestion.py)] as Ingestion
+        [PDF Parsing (core/parsing.py)] as Parsing
+        [Retrieval (core/retrieval.py)] as Retrieval
+        [LLM Config (core/llm_config.py)] as LLMConfig
+    }
+    
+    package "Multi-Agent System" {
+        [Reasoners (agents/reasoners.py)] as Reasoners
+        [Judge (agents/judge.py)] as Judge
+        [Prompts (agents/prompts.py)] as Prompts
+    }
+}
+
+package "Data & Services" {
+    database "ChromaDB (chroma_db/)"
+    database "Assessment Logs (assessment_history/)"
+    file "Framework Schema (criteria_new.json)" as CriteriaJSON
+    [LLM Cloud (OpenAI / Anthropic / Google)] as LLMs
+}
+
+' Connectivity
+Client -down-> API : REST / JSON
+
+' Service Interactions
+API --> CritParser
+CritParser --> CriteriaJSON : Reads
+API --> Pipeline
+API --> Ingestion
+Pipeline --> Retrieval
+Pipeline --> Reasoners
+Pipeline --> Judge
+Reasoners ..> Prompts
+Judge ..> Prompts
+
+Ingestion --> Parsing
+Ingestion --> LLMConfig
+Retrieval --> LLMConfig
+
+' Storage Interactions
+Ingestion --> "ChromaDB (chroma_db/)"
+Retrieval --> "ChromaDB (chroma_db/)"
+API --> "Assessment Logs (assessment_history/)"
+
+' LLM Interactions
+Reasoners --> LLMs
+Judge --> LLMs
+
+@enduml

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chunk Viewer</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --border-color: #334155;
+            --success-color: #10b981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: var(--surface-color);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        #searchInput {
+            padding: 0.75rem;
+            width: 300px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .chunk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .chunk-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .chunk-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            border-color: #475569;
+        }
+
+        .chunk-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .chunk-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .chunk-chapter {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .chunk-text {
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        /* Custom scrollbar for text area */
+        .chunk-text::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chunk-text::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        .chunk-text::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .copy-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #2563eb;
+        }
+
+        .copy-btn.copied {
+            background: var(--success-color);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .metrics {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>🔍 RAG Chunk Viewer</h1>
+            <p style="color: var(--text-muted);">Easily browse your database chunks and copy their IDs for manual ground
+                truth creation.</p>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search chunk text or chapter...">
+            <div class="metrics">
+                Showing <span id="chunkCount">0</span> chunks
+            </div>
+        </div>
+
+        <div class="chunk-grid" id="chunkGrid">
+            <!-- Chunks will be injected here -->
+            <div id="loading" style="text-align: center; grid-column: 1 / -1; padding: 2rem;">
+                Loading chunks from 'chunks_export.json'...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allChunks = [];
+
+        // Load the JSON file
+        fetch('chunks_export_across_pages.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Could not find chunks_export.json. Make sure you are running a local server.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                allChunks = data;
+                document.getElementById('loading').style.display = 'none';
+                renderChunks(allChunks);
+            })
+            .catch(error => {
+                document.getElementById('loading').innerHTML = `
+                <div style="color: #ef4444; max-width: 600px; margin: 0 auto;">
+                    <h3>Failed to load chunks</h3>
+                    <p>${error.message}</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        Because of browser security rules, you cannot load local JSON files directly from the file system (file://) using JavaScript.<br><br>
+                        <strong>To fix this, open your terminal in this folder and run:</strong><br>
+                        <code>python3 -m http.server 8000</code><br><br>
+                        Then visit: <strong>http://localhost:8000/chunk_viewer.html</strong>
+                    </p>
+                </div>
+            `;
+            });
+
+        function renderChunks(chunks) {
+            const grid = document.getElementById('chunkGrid');
+            grid.innerHTML = '';
+            document.getElementById('chunkCount').innerText = chunks.length;
+
+            chunks.forEach((chunk, index) => {
+                const card = document.createElement('div');
+                card.className = 'chunk-card';
+
+                card.innerHTML = `
+                <div class="chunk-header">
+                    <div>
+                        <div class="chunk-chapter">${escapeHtml(chunk.chapter || 'No Chapter')} (Page ${chunk.page || 'N/A'})</div>
+                        <div class="chunk-meta">ID: ${chunk.chunk_id.substring(0, 10)}...</div>
+                    </div>
+                </div>
+                <div class="chunk-text">${escapeHtml(chunk.text)}</div>
+                <button class="copy-btn" onclick="copyId('${chunk.chunk_id}', this)">
+                    📋 Copy Chunk ID
+                </button>
+            `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = allChunks.filter(chunk =>
+                (chunk.text && chunk.text.toLowerCase().includes(query)) ||
+                (chunk.chapter && chunk.chapter.toLowerCase().includes(query))
+            );
+            renderChunks(filtered);
+        });
+
+        // Copy functionality
+        function copyId(id, btnElement) {
+            navigator.clipboard.writeText(id).then(() => {
+                const originalText = btnElement.innerText;
+                btnElement.innerText = '✅ Copied to clipboard!';
+                btnElement.classList.add('copied');
+
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Helper to prevent XSS and formatting issues
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+
+</body>
+
+</html>

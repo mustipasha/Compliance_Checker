@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
-import { API_BASE_URL } from '../config';
+import api from '../api/client';
 
 interface AssessmentReport {
     compliance_score: number;
@@ -50,7 +49,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     const [selectedMode, setSelectedMode] = useState<'single' | 'triple'>('single');
 
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/llm-options`)
+        api.get('/llm-options')
             .then(res => {
                 const opts: LlmOptions = res.data;
                 setLlmOptions(opts);
@@ -71,8 +70,8 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     const handleUploadComplete = async () => {
         setStep('assessing');
         try {
-            const response = await axios.post(
-                `${API_BASE_URL}/assess?provider=${selectedProvider}&model=${encodeURIComponent(selectedModel)}&mode=${selectedMode}`
+            const response = await api.post(
+                `/assess?provider=${selectedProvider}&model=${encodeURIComponent(selectedModel)}&mode=${selectedMode}`
             );
             setReport(response.data);
             setStep('results');

@@ -1,0 +1,15 @@
+[
+  {
+    "query": "What are the systemic risks identified for the model?",
+    "expected_chunk_ids": [
+      "your-chunk-id-1-here",
+      "your-chunk-id-2-here"
+    ]
+  },
+  {
+    "query": "Describe the safety and security framework implementation.",
+    "expected_chunk_ids": [
+      "your-chunk-id-3-here"
+    ]
+  }
+]

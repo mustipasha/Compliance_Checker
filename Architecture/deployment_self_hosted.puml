@@ -1,5 +1,5 @@
 @startuml Self_Hosted_Deployment_Architecture
-title Detailed Deployment View: Self-Hosted (Mac + ngrok)
+title Detailed Deployment View: Workstation (Local + PM2)
 
 skinparam componentStyle uml2
 skinparam node {
@@ -7,8 +7,8 @@ skinparam node {
     BorderColor black
 }
 
-actor "User (Remote Browser)" as RemoteUser
 actor "User (Local Browser)" as LocalUser
+actor "User (Remote/Tunnel)" as RemoteUser
 
 package "User's Workstation (MacBook Air)" {
     node "Process Manager (PM2)" #GhostWhite {
@@ -16,8 +16,15 @@ package "User's Workstation (MacBook Air)" {
             [Vite Dev Server (Port 5173)]
         }
         component "Backend Service" #PaleGreen {
-            [FastAPI (Uvicorn Port 8000)]
-            [Multi-Agent Reasoners]
+            [API (main.py)]
+            [Ingestion (Chromadb)]
+            [Orchestrator (pipeline.py)]
+        }
+        
+        node "Multi-Agent Pipeline" #GhostWhite {
+            component "Alignment Agent" as Agent1
+            component "Gap Agent" as Agent2
+            component "Synthesis Agent" as Agent3
         }
     }
 
@@ -31,35 +38,39 @@ package "User's Workstation (MacBook Air)" {
     }
 
     node "Local Inference Engine" <<Service>> as OllamaNode {
-        component "Ollama (Llama 3)" as Ollama
+        component "Ollama (Local Models)" as Ollama
     }
 }
 
-cloud "ngrok Security Tunnel" {
-    interface "https://mustipasha.ngrok-free.app" as FrontendURL
-    interface "https://api-mustipasha.ngrok-free.app" as BackendURL
+cloud "Pinggy/Tunnel (Optional)" {
+    interface "https://mustipasha.pinggy.link" as TunnelURL
 }
 
-cloud "Public LLM Providers" as CloudAPIs {
-    component "OpenAI" as OpenAI
-    component "Anthropic" as Anthropic
+node "LLM Providers (External)" as APIs {
+    component "OpenAI (gpt-5-nano)" as OpenAI
+    component "Anthropic (Claude 4.6)" as Anthropic
+    component "Google (Gemini 3)" as Google
 }
 
 ' Interactions
-RemoteUser -down-> FrontendURL : HTTPS
-FrontendURL -down-> [Vite Dev Server (Port 5173)] : Secure Tunnel
+RemoteUser -down-> TunnelURL : HTTPS
+TunnelURL -down-> [Vite Dev Server (Port 5173)] : Secure Tunnel
 
 LocalUser -down-> [Vite Dev Server (Port 5173)] : localhost:5173
+[Vite Dev Server (Port 5173)] -right-> [API (main.py)] : API Requests (localhost:8000)
 
-[Vite Dev Server (Port 5173)] -right-> BackendURL : API Requests (Remote)
-[Vite Dev Server (Port 5173)] -right-> [FastAPI (Uvicorn Port 8000)] : localhost:8000 (Local)
+[Orchestrator (pipeline.py)] -down-> [Ingestion (Chromadb)] : Retrieve Context
+[Orchestrator (pipeline.py)] -down-> Agent1 : Step 1: Align
+[Orchestrator (pipeline.py)] -down-> Agent2 : Step 2: Gap
+[Orchestrator (pipeline.py)] -down-> Agent3 : Step 3: Synthesis
 
-BackendURL -down-> [FastAPI (Uvicorn Port 8000)] : Secure Tunnel
+Agent1 -right-> APIs : API Requests
+Agent2 -right-> APIs : API Requests
+Agent3 -right-> APIs : API Requests
 
-[FastAPI (Uvicorn Port 8000)] -down-> Storage : Persistent I/O
-[FastAPI (Uvicorn Port 8000)] -down-> Criteria : Read Definitions
-[FastAPI (Uvicorn Port 8000)] -right-> Ollama : Local Reasoning
-[FastAPI (Uvicorn Port 8000)] -right-> CloudAPIs : Cloud Embeddings/Models
+[API (main.py)] -down-> Storage : Persistent I/O & DB
+[API (main.py)] -down-> Criteria : Read Definitions
+[API (main.py)] -right-> Ollama : Local Reasoning
 
 note bottom of Storage
   **Major Advantage**:

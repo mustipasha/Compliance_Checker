@@ -1,0 +1,56 @@
+@startuml Physical_View
+title Physical View: Execution & Deployment Environment (Render/Cloud)
+
+actor "End User" as User
+
+node "Client Browser" {
+    component "React SPA"
+}
+
+cloud "Render (Cloud Platform)" {
+    node "Web Service (Backend)" {
+        component "FastAPI Engine" as API
+        component "Agent Pipeline" as Agents
+        component "PDF Parser" as Parser
+    }
+    
+    node "Static Site (Frontend)" {
+        component "Vite Build / Assets"
+    }
+
+    node "Persistence (Ephemeral Disk)" {
+        database "Vector Store (ChromaDB)" as DB
+        database "File Store" as Files
+        file "Framework Schema (criteria_new.json)" as Criteria
+    }
+}
+
+node "Local Server (Workstation)" <<Optional>> {
+    node "Ollama Runtime" {
+        component "Local Models" as Ollama
+    }
+}
+
+node "Cloud LLM Services" {
+    cloud "External APIs" {
+        [OpenAI]
+        [Anthropic]
+        [Google Gemini]
+    }
+}
+
+' Connectivity
+"Vite Build / Assets" -right-> "React SPA" : Loaded in Browser
+
+User -down-> "React SPA" : Interaction
+"React SPA" -down-> API : REST / JSON
+
+API -down-> DB : Disk I/O
+API -down-> Files : Disk I/O
+
+Agents -right-> [OpenAI] : REST
+Agents -right-> [Anthropic] : REST
+Agents -right-> [Google Gemini] : REST
+Agents -down-> Ollama : Local-API (via Tunnel)
+
+@enduml
