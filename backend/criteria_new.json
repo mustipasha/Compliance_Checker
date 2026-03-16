@@ -26,12 +26,11 @@
             "The framework describes, at a high level, expected categories or types of safety and security mitigations associated with different risk levels.",
             "The framework explains how responsibility for systemic risk assessment and mitigation is allocated within the organization.",
             "The framework describes whether and how input from external actors may influence risk-related decisions.",
-            "The framework describes how and under what conditions the framework itself would be reviewed or updated.",
-            "Indicative concepts and phrases: framework scope, systemic risk management, trigger points, risk acceptance criteria, mitigation expectations, responsibility allocation, external input, framework update process"
+            "The framework describes how and under what conditions the framework itself would be reviewed or updated."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -62,12 +61,11 @@
             "The framework describes how post-market monitoring is conducted to inform ongoing systemic risk assessment.",
             "The framework explains how information about serious incidents or near misses is taken into account within the risk assessment process.",
             "The framework describes how results from trigger-point evaluations, post-market monitoring, or incident inputs can lead to deeper analysis or escalation to a full systemic risk assessment and mitigation process.",
-            "The framework outlines the sequence or structure of the full systemic risk assessment and mitigation process (identification, analysis, acceptability determination, mitigation, and re-assessment).",
-            "Indicative concepts and phrases: continuous implementation, lifecycle application, trigger-point evaluation, post-market monitoring, incident inputs, escalation, full systemic risk assessment, mitigation cycle"
+            "The framework outlines the sequence or structure of the full systemic risk assessment and mitigation process (identification, analysis, acceptability determination, mitigation, and re-assessment)."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -99,12 +97,11 @@
             "The framework explains that framework adherence is assessed, including consideration of non-adherence and its causes.",
             "The framework describes how findings from a framework assessment may lead to updates of the framework to keep it state-of-the-art.",
             "The framework describes that updates are intended to be versioned and accompanied by a changelog explaining the nature and rationale of changes.",
-            "The framework describes how remediation plans are intended to be defined when framework assessments identify risks of continued or future non-adherence.",
-            "Indicative concepts and phrases: framework assessment, adequacy, adherence, periodic review, reassessment triggers, serious incidents, material changes, versioning, changelog, remediation planning"
+            "The framework describes how remediation plans are intended to be defined when framework assessments identify risks of continued or future non-adherence."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -132,12 +129,11 @@
           "expected_evidence": [
             "The framework explicitly acknowledges an obligation to notify or inform the AI Office about the Safety and Security Framework.",
             "The framework indicates that updates to the framework are also subject to notification.",
-            "The framework references the intended timing for such notification (e.g. after confirmation or update).",
-            "Indicative concepts and phrases: AI Office notification, regulatory notification, framework notification, update notification"
+            "The framework references the intended timing for such notification (e.g. after confirmation or update)."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -172,12 +168,11 @@
             "Documentation defines requirements for documenting model evaluations, results, and evaluation strategies.",
             "Documentation defines requirements for documenting implemented safety mitigations.",
             "Documentation defines how key systemic risk processes, decisions, and justifications are recorded.",
-            "Documentation specifies retention periods for additional documentation (e.g. at least 10 years).",
-            "Indicative keywords/phrases: additional documentation, detailed description, architecture, integration, evaluations, results, safety mitigations, decision records, justification, retention, AI Office request"
+            "Documentation specifies retention periods for additional documentation (e.g. at least 10 years)."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -201,12 +196,11 @@
             "The framework indicates that publication is required when necessary for systemic risk assessment or mitigation.",
             "The framework indicates that removals or redactions are applied to protect sensitive commercial information and the effectiveness of safety and security mitigations.",
             "The framework states that Model Report summaries include high-level descriptions of systemic risk assessment results and safety and security mitigations.",
-            "The framework defines exceptions where publication is not required for similarly safe or safer models.",
-            "Indicative keywords/phrases: public transparency, publish summaries, framework summary, model report summary, systemic risk, safeguards, redactions, sensitive information, similarly safe or safer, exception justification"
+            "The framework defines exceptions where publication is not required for similarly safe or safer models."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -235,12 +229,11 @@
             "The framework indicates that potential systemic risks are initially considered with reference to the types of risks defined in Appendix 1.1 (e.g. risks to public health, safety, public security, fundamental rights, and society).",
             "The framework explains that the identification process considers the nature of systemic risks, including essential and contributing characteristics such as scale, propagation, capability-dependence, or irreversibility (Appendix 1.2).",
             "The framework describes how potential sources of systemic risks are considered in the identification process, including model capabilities, model propensities, and model affordances or contextual factors (Appendix 1.3).",
-            "The framework explicitly indicates that the specified systemic risks listed in Appendix 1.4 are taken into account as part of the systemic risk identification process, such as risks related to chemical, biological, radiological, and nuclear (CBRN) threats, loss of control of the model, large-scale cyber offence, and harmful manipulation.",
-            "Indicative concepts and phrases: systemic risk identification, structured process, risk types, nature of systemic risks, risk sources, model capabilities, model propensities, model affordances, specified systemic risks"
+            "The framework explicitly indicates that the specified systemic risks listed in Appendix 1.4 are taken into account as part of the systemic risk identification process, such as risks related to chemical, biological, radiological, and nuclear (CBRN) threats, loss of control of the model, large-scale cyber offence, and harmful manipulation."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -269,12 +262,11 @@
             "The framework states that systemic risk scenarios are to be developed.",
             "The framework states that systemic risk scenarios are developed for each identified systemic risk.",
             "The framework indicates that the number of systemic risk scenarios should be appropriate.",
-            "The framework indicates that the level of detail of systemic risk scenarios should be appropriate.",
-            "Indicative concepts and phrases: systemic risk scenarios, scenario development, number of scenarios, level of detail, scenario appropriateness, linkage to identified risks"
+            "The framework indicates that the level of detail of systemic risk scenarios should be appropriate."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -308,12 +300,11 @@
             "The framework describes that systemic risk analysis is informed by model-independent information.",
             "The framework explains that the breadth and depth of model-independent information gathering are adjusted based on the characteristics or severity of the systemic risk.",
             "The framework indicates categories of methods that may be used to gather model-independent information, such as web searches or open-source intelligence, literature reviews, market analyses, reviews of historical incident data, forecasting of general trends, expert interviews or panels, and participatory or community-based research methods.",
-            "The framework clarifies the role of model-independent information in informing subsequent stages of systemic risk analysis (e.g. evaluations, modelling, or estimation), without requiring that such stages have already been performed.",
-            "Indicative concepts and phrases: model-independent information, information gathering, breadth and depth, proportionality, literature review, market analysis, incident data, expert input, participatory methods"
+            "The framework clarifies the role of model-independent information in informing subsequent stages of systemic risk analysis (e.g. evaluations, modelling, or estimation), without requiring that such stages have already been performed."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -346,12 +337,11 @@
             "The framework indicates that evaluations assess model capabilities, propensities, affordances, or effects.",
             "The framework states that evaluations are designed appropriately for the model and the systemic risk.",
             "The framework indicates that evaluations include open-ended testing to identify unexpected behaviours or emergent properties.",
-            "The framework indicates that evaluation design is informed by model-independent information.",
-            "Indicative concepts and phrases: model evaluations, state-of-the-art evaluation, open-ended testing, adversarial testing, model elicitation, mitigation effectiveness, evaluation rigour, external evaluators"
+            "The framework indicates that evaluation design is informed by model-independent information."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -380,12 +370,11 @@
             "The framework states that systemic risk modelling is conducted.",
             "The framework indicates that modelling uses at least state-of-the-art risk modelling methods.",
             "The framework indicates that modelling builds on systemic risk scenarios developed pursuant to Measure 2.2.",
-            "The framework indicates that modelling takes into account information gathered during systemic risk identification and systemic risk analysis.",
-            "Indicative concepts and phrases: systemic risk modelling, risk modelling methods, state-of-the-art modelling, scenario-based modelling, information inputs"
+            "The framework indicates that modelling takes into account information gathered during systemic risk identification and systemic risk analysis."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -412,12 +401,11 @@
             "The framework indicates that at least state-of-the-art risk estimation methods are used, appropriate to the systemic risk being assessed.",
             "The framework explains that risk estimation takes into account relevant information inputs, such as outputs from systemic risk identification and analysis and information about serious incidents or near misses.",
             "The framework describes how estimates of systemic risk are expressed, for example as risk scores, risk matrices, probability distributions, or other qualitative, semi-quantitative, or quantitative formats.",
-            "The framework explains the purpose of risk estimation in supporting systemic risk acceptance determination, without requiring specific numerical or qualitative results.",
-            "Indicative concepts and phrases: systemic risk estimation, probability of harm, severity of harm, risk estimation methods, risk score, risk matrix, probability distribution"
+            "The framework explains the purpose of risk estimation in supporting systemic risk acceptance determination, without requiring specific numerical or qualitative results."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -448,12 +436,11 @@
             "The framework indicates that a range of post-market monitoring methods may be used, such as collecting end-user feedback, providing reporting or incident channels, engaging with affected stakeholders, monitoring public sources, or supporting independent research.",
             "The framework describes how post-market monitoring applies when the model is integrated into AI systems provided or deployed by the Signatory.",
             "The framework describes whether and under what conditions independent external evaluators are intended to be provided with access to the model for post-market monitoring purposes.",
-            "The framework explains the safeguards associated with external evaluator access, such as selection criteria, information security measures, responsible disclosure procedures, and non-retaliation commitments.",
-            "Indicative concepts and phrases: post-market monitoring, continuous monitoring, incident reporting, feedback channels, independent external evaluators, evaluator access, safeguards, responsible disclosure, non-retaliation"
+            "The framework explains the safeguards associated with external evaluator access, such as selection criteria, information security measures, responsible disclosure procedures, and non-retaliation commitments."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -491,12 +478,11 @@
             "The framework explains that acceptance tiers or criteria are measurable and are defined primarily in terms of model capabilities, and may also incorporate model propensities, risk estimates, or other suitable metrics.",
             "The framework indicates that at least one systemic risk tier exists that has not yet been reached by the model.",
             "The framework describes how acceptance criteria or tiers are used to determine acceptability for each systemic risk and for the overall systemic risk.",
-            "The framework explains how safety margins are incorporated into acceptance determination, taking into account uncertainty, potential future changes in model capabilities or usage, limitations of risk assessments, and the effectiveness of safety and security mitigations.",
-            "Indicative concepts and phrases: systemic risk acceptance, acceptance criteria, risk tiers, measurable thresholds, capability-based tiers, safety margin, uncertainty, acceptability determination"
+            "The framework explains how safety margins are incorporated into acceptance determination, taking into account uncertainty, potential future changes in model capabilities or usage, limitations of risk assessments, and the effectiveness of safety and security mitigations."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -527,12 +513,11 @@
             "The framework states that if systemic risks are not acceptable or are reasonably foreseeable to soon become unacceptable, appropriate measures must be taken before proceeding.",
             "The framework describes possible actions when risks are not acceptable, such as not making the model available on the market, restricting availability, withdrawing, or recalling the model.",
             "The framework states that safety and/or security mitigations are to be implemented when systemic risks are not acceptable.",
-            "The framework states that another round of systemic risk identification, systemic risk analysis, and systemic risk acceptance determination is to be conducted when risks are not acceptable or are reasonably foreseeable to soon become unacceptable.",
-            "Indicative concepts and phrases: proceed or not proceed, go/no-go decision logic, systemic risk acceptability, restriction, withdrawal, recall, mitigation, reassessment cycle"
+            "The framework states that another round of systemic risk identification, systemic risk analysis, and systemic risk acceptance determination is to be conducted when risks are not acceptable or are reasonably foreseeable to soon become unacceptable."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -561,19 +546,18 @@
           "id": "SS-5.1",
           "short_name": "Safety mitigations",
           "title": "Safety mitigations",
-          "requirement": "The framework defines and requires the implementation of safety mitigations along the entire model lifecycle that are appropriate to identified systemic risks, sufficiently robust under adversarial pressure, and taking into account the model’s release and distribution strategy, with the objective of ensuring that systemic risks are acceptable",
+          "requirement": "The framework defines and requires the implementation of safety mitigations along the entire model lifecycle that are appropriate to identified systemic risks, sufficiently robust under adversarial pressure, and taking into account the model\u2019s release and distribution strategy, with the objective of ensuring that systemic risks are acceptable",
           "assessment_question": "Does the framework define and require the implementation of safety mitigations along the entire model lifecycle that are appropriate to identified systemic risks, sufficiently robust under adversarial pressure, and taking into account the model\u2019s release and distribution strategy, with the objective of ensuring that systemic risks are acceptable?",
           "expected_evidence": [
             "The framework describes categories or types of safety mitigations intended to address systemic risks.",
             "The framework explains that safety mitigations are designed to be robust under adversarial pressure, such as attempts to bypass or subvert them.",
             "The framework indicates that safety mitigations take into account the model's release and distribution strategy.",
             "The framework provides examples of safety mitigation approaches, such as e.g. input or output filtering, behaviour modification, staged access, or other emerging safety techniques.",
-            "The framework indicates that safety mitigations are considered and adapted across the model lifecycle.",
-            "Indicative concepts and phrases: safety mitigation strategy, adversarial robustness, release strategy, distribution strategy, filtering, access staging, behaviour modification"
+            "The framework indicates that safety mitigations are considered and adapted across the model lifecycle."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -610,12 +594,11 @@
             "The framework explicitly defines a Security Goal describing the purpose and scope of security protections for the model.",
             "The Security Goal identifies relevant threat actors, including non-state external threats, insider threats, and other expected threat actors.",
             "The framework explains how the Security Goal takes into account the current capabilities of the model.",
-            "The framework indicates that expected or foreseeable future model capabilities are considered when defining the Security Goal.",
-            "Indicative concepts and phrases: security goal, threat actors, non-state external threats, insider threats, model capability assumptions, future capability considerations"
+            "The framework indicates that expected or foreseeable future model capabilities are considered when defining the Security Goal."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -643,12 +626,11 @@
             "The framework explicitly links security mitigations to achieving a defined Security Goal.",
             "The framework indicates that security mitigations align with the mitigation objectives defined in Appendix 4, such as general security protections, protection of unreleased model parameters, interface-access hardening, insider threat mitigation, and security assurance.",
             "The framework indicates that specific security measures may vary depending on organisational context or infrastructure, and explains how alternative mitigations achieve equivalent mitigation objectives.",
-            "The framework indicates that security mitigations may be implemented in stages as model capabilities increase along the model lifecycle.",
-            "Indicative concepts and phrases: security mitigation objectives, Appendix 4 alignment, protection of model parameters, interface hardening, insider threats, security assurance, staged security implementation"
+            "The framework indicates that security mitigations may be implemented in stages as model capabilities increase along the model lifecycle."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -684,12 +666,11 @@
             "The Model Report provides a high-level description of the model\u2019s architecture, capabilities, propensities, and affordances, and how it differs from other models made available by the provider.",
             "The Model Report describes how the model has been used and how it is intended to be used, including relevant use contexts.",
             "The Model Report identifies model versions that are or will be made available on the market and explains relevant differences, including differences in systemic risks or mitigations.",
-            "The Model Report includes or references a model specification describing how the model is intended to operate, including guiding principles, prioritisation of instructions, refusal topics, and the system prompt (or a valid reference to it).",
-            "Indicative concepts and phrases: model description, intended use, version differences, model specification, guiding principles, refusal topics, system prompt"
+            "The Model Report includes or references a model specification describing how the model is intended to operate, including guiding principles, prioritisation of instructions, refusal topics, and the system prompt (or a valid reference to it)."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -718,12 +699,11 @@
           "expected_evidence": [
             "The Model Report explains why the systemic risks are considered acceptable for this model, with reference to the acceptance logic and safety margins defined in the framework.",
             "The Model Report identifies foreseeable conditions under which this justification would no longer hold.",
-            "The Model Report describes how the decision to proceed was made in line with the framework, including whether external actors or independent external evaluators informed the decision.",
-            "Indicative concepts and phrases: reported justification, consistency with acceptance criteria, safety margins, undermining conditions, decision rationale, external input"
+            "The Model Report describes how the decision to proceed was made in line with the framework, including whether external actors or independent external evaluators informed the decision."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -754,12 +734,11 @@
             "The Model Report summarises relevant model evaluation approaches and results used to understand systemic risks, including illustrative examples or references.",
             "The Model Report describes implemented safety mitigations and their limitations, and explains how they align with the framework\u2019s safety requirements.",
             "The Model Report describes the Security Goal and implemented security mitigations, including alignment with defined mitigation objectives or justified alternatives.",
-            "The Model Report includes a high-level forward-looking description of planned model developments and anticipated changes to capabilities, risks, and mitigations.",
-            "Indicative concepts and phrases: reported results, description of process, assumptions and uncertainties, mitigation rationale, security goal, limitations, forward-looking plans"
+            "The Model Report includes a high-level forward-looking description of planned model developments and anticipated changes to capabilities, risks, and mitigations."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -789,12 +768,11 @@
             "The Model Report includes or references (e.g., via valid hyperlinks) any available reports from independent external evaluators involved under Appendix 3.5, and any available independent external security review reports under Appendix 4.5, where sharing is compatible with confidentiality obligations and external-party control over publication.",
             "The Model Report indicates that inclusion of external reports does not imply endorsement of their content by the Signatory.",
             "If no independent external evaluator was involved, the Model Report provides a justification referencing the applicable exception conditions (e.g., similarly safe or safer model, or inability to appoint qualified evaluators despite early search efforts).",
-            "If at least one independent external evaluator was involved, the Model Report explains the choice of evaluator with reference to qualification criteria (e.g., domain expertise, technical evaluation experience, appropriate security protocols, confidentiality protections).",
-            "Indicative concepts and phrases: external evaluator report, independent external security review, confidentiality obligations, control over publication, no implicit endorsement, evaluator qualification criteria, justification for absence"
+            "If at least one independent external evaluator was involved, the Model Report explains the choice of evaluator with reference to qualification criteria (e.g., domain expertise, technical evaluation experience, appropriate security protocols, confidentiality protections)."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -824,12 +802,11 @@
             "The Model Report describes scaling effects or scaling laws that suggest novel or materially enhanced model capabilities, where applicable.",
             "The Model Report summarises characteristics of novel model architectures that materially improve computational efficiency or capabilities, where applicable.",
             "The Model Report describes information relevant to assessing changes in mitigation effectiveness (e.g., reduced human legibility of chain-of-thought or other safety-relevant properties).",
-            "The Model Report describes training techniques that materially improve the efficiency or feasibility of training (e.g., distributed or large-scale training), where applicable.",
-            "Indicative concepts and phrases: material changes, systemic risk landscape, scaling laws, novel architectures, mitigation effectiveness, training techniques, computational efficiency"
+            "The Model Report describes training techniques that materially improve the efficiency or feasibility of training (e.g., distributed or large-scale training), where applicable."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -859,12 +836,11 @@
             "The framework lists or references example triggers for updates, such as material changes in model capabilities, use, integrations, serious incidents, or evaluation validity.",
             "The framework specifies expectations regarding the timing of Model Report updates, including completion within a reasonable time and prior to market release for deliberate changes.",
             "The framework acknowledges periodic Model Report updates for the most capable models (e.g. at least every six months), including applicable exemptions.",
-            "The framework requires updated Model Reports to include versioning information and a changelog explaining how and why updates were made.",
-            "Indicative concepts and phrases: Model Report update, materially undermined justification, update triggers, reasonable time, periodic updates, most capable models, version number, changelog"
+            "The framework requires updated Model Reports to include versioning information and a changelog explaining how and why updates were made."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -894,12 +870,11 @@
             "The framework acknowledges conditions under which redactions may be applied, such as requirements arising from national security laws.",
             "The framework describes the possibility of delaying provision of the Model Report or updates for a limited period (e.g. up to 15 business days), subject to good-faith conditions.",
             "The framework requires or acknowledges the provision of an interim Model Report containing specified information when such a delay is used.",
-            "The framework describes acceptable access mechanisms (e.g. publicly accessible link or secure channel specified by the AI Office).",
-            "Indicative concepts and phrases: AI Office access, Model Report notification, market placement, five business days, interim Model Report, delay, national security redactions"
+            "The framework describes acceptable access mechanisms (e.g. publicly accessible link or secure channel specified by the AI Office)."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -935,12 +910,11 @@
             "The framework describes how systemic risk ownership is assigned to executive-level functions responsible for risk-producing activities.",
             "The framework describes how systemic risk support and monitoring is assigned to functions that are organisationally independent from core business activities.",
             "The framework describes how systemic risk assurance is provided to a supervisory or independent body, including internal and, where applicable, external assurance.",
-            "The framework acknowledges proportional allocation of responsibilities based on organisational size and complexity (e.g. SMEs or SMCs).",
-            "Indicative concepts and phrases: systemic risk oversight, systemic risk ownership, support and monitoring, assurance, governance levels, supervisory function, executive function, independence"
+            "The framework acknowledges proportional allocation of responsibilities based on organisational size and complexity (e.g. SMEs or SMCs)."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -971,12 +945,11 @@
             "The framework explicitly identifies human resources as a required resource category for systemic risk management.",
             "The framework explicitly identifies financial resources as a required resource category for systemic risk management.",
             "The framework explicitly identifies access to information and knowledge as a required resource category for systemic risk management.",
-            "The framework explicitly identifies computational resources as a required resource category for systemic risk management.",
-            "Indicative concepts and phrases: management oversight, allocation of resources, appropriate resources, human resources, financial resources, information and knowledge, computational resources, systemic risk responsibilities"
+            "The framework explicitly identifies computational resources as a required resource category for systemic risk management."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -1006,12 +979,11 @@
             "The framework states that challenge, escalation, or critical discussion of systemic risk decisions is encouraged.",
             "The framework describes independence or safeguards for actors involved in systemic risk assessment and mitigation.",
             "The framework references internal reporting or whistleblowing channels related to systemic risks.",
-            "The framework includes a non-retaliation commitment or protection for individuals raising systemic risk concerns.",
-            "Indicative concepts and phrases: risk culture, tone from the top, challenge of decisions, independence, reporting channels, whistleblower protection, non-retaliation, systemic risk governance"
+            "The framework includes a non-retaliation commitment or protection for individuals raising systemic risk concerns."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -1047,12 +1019,11 @@
             "The framework explicitly recognises the need to identify and track serious incidents across the model lifecycle.",
             "The framework describes intended methods for identifying serious incidents, including reference to post-market monitoring or similar processes.",
             "The framework references consideration of external information sources (e.g. media, incident databases, research, public reporting).",
-            "The framework describes how downstream providers, users, or other third parties may report serious incidents to the Signatory and/or authorities.",
-            "Indicative concepts and phrases: serious incident identification, incident tracking, external sources, post-market monitoring, third-party reporting, downstream actors, reporting channels"
+            "The framework describes how downstream providers, users, or other third parties may report serious incidents to the Signatory and/or authorities."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -1081,12 +1052,11 @@
             "The framework specifies that a root cause analysis should be conducted, including examination of model outputs, inputs, and any failures or circumvention of systemic risk mitigations.",
             "The framework describes how patterns or signals from post-market monitoring may inform incident analysis.",
             "The framework acknowledges that some information may be unavailable at the time of reporting and requires such gaps to be explicitly recorded.",
-            "The framework indicates that the level of detail in serious incident documentation should be proportionate to the severity of the incident.",
-            "Indicative concepts and phrases: serious incident documentation, minimum information set, root cause analysis, mitigation failure, circumvention, post-market patterns, incomplete information"
+            "The framework indicates that the level of detail in serious incident documentation should be proportionate to the severity of the incident."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -1118,12 +1088,11 @@
             "The framework clarifies that reporting is triggered when the organisation becomes aware of the involvement of its model, including cases of reasonable suspicion of causal linkage.",
             "The framework specifies periodic intermediate updates for unresolved serious incidents (e.g., at least every four weeks after the initial report).",
             "The framework defines a deadline for submitting a final report after resolution of the serious incident (e.g., within 60 days after resolution).",
-            "The framework allows aggregation of multiple similar serious incidents within defined reporting timelines while respecting the earliest applicable deadline.",
-            "Indicative concepts and phrases: reporting timelines, severity-based deadlines, awareness trigger, reasonable likelihood, initial report within X days, intermediate update every four weeks, final report after resolution, serious incident notification"
+            "The framework allows aggregation of multiple similar serious incidents within defined reporting timelines while respecting the earliest applicable deadline."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },
@@ -1157,12 +1126,11 @@
           "expected_evidence": [
             "The framework states that documentation of information related to serious incidents must be retained.",
             "The framework specifies a minimum retention period of at least five years.",
-            "The framework indicates that the retention period is counted from the later of the documentation date or the date of the serious incident.",
-            "Indicative keywords/phrases: retain, retention, serious incident, documentation, records, five years, minimum period, archival, storage"
+            "The framework indicates that the retention period is counted from the later of the documentation date or the date of the serious incident."
           ],
           "compliance_rubric": {
             "COMPLIANT": "All indicators in 'Expected Evidence' are clearly and explicitly present in the text. The framework demonstrates complete structural implementation of the requirement with no material gaps.",
-            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap — default to NOT_COMPLIANT in that case.",
+            "PARTIALLY_COMPLIANT": "Most key concepts are addressed, but several structural indicators are missing, implicit, or incomplete. The requirement is only partially reflected. NOTE: If the unmet indicators are operational and binary in nature (e.g. a specific notification obligation, a defined timeline, a retention period, a named external authority), their absence cannot be compensated by thematic or conceptual overlap \u2014 default to NOT_COMPLIANT in that case.",
             "NOT_COMPLIANT": "The retrieved text does not meaningfully address the core intent, OR the text addresses related governance themes but the specific operational mechanism required by this criterion (e.g. a regulatory obligation, a defined procedure, a named authority) is entirely absent.",
             "NOT_EVIDENCED / UNKNOWN": "Retrieved documentation is insufficient to determine whether the specific indicators and structural requirements are addressed."
           },

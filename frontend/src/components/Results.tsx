@@ -33,7 +33,9 @@ interface CriterionResult {
     expected_evidence?: string[];
     status: string;
     score: number;
-    confidence?: number;
+    evidence_coverage?: number;
+    met_indicators_count?: number;
+    total_indicators_count?: number;
     reasoning: string;
     key_aligned_concepts?: string[];
     decisive_gaps_or_divergences?: string[];
@@ -136,16 +138,27 @@ const MeasureDetailModal = ({ measure, onClose, onViewSource }: {
                                 <div className="flex items-center gap-2 text-xs font-black text-gray-400 uppercase tracking-[0.2em]">
                                     <Info size={14} className="text-purple-500" /> Requirement
                                 </div>
-                                {measure.confidence !== undefined && (
-                                    <div className="flex items-center gap-1.5 px-2 py-1 bg-gray-100 rounded-md">
-                                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Confidence</span>
-                                        <div className="h-1 w-12 bg-gray-200 rounded-full overflow-hidden">
-                                            <div
-                                                className={`h-full rounded-full ${measure.confidence > 0.8 ? 'bg-green-500' : measure.confidence > 0.5 ? 'bg-yellow-500' : 'bg-red-500'}`}
-                                                style={{ width: `${measure.confidence * 100}%` }}
-                                            />
+                                {(measure.evidence_coverage !== undefined || measure.met_indicators_count !== undefined) && (
+                                    <div className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-lg">
+                                        <div className="flex flex-col items-end">
+                                            <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Evidence Coverage</span>
+                                            <div className="flex items-center gap-2">
+                                                {measure.met_indicators_count !== undefined && (
+                                                    <span className="text-[10px] font-black text-blue-600">
+                                                        {measure.met_indicators_count}/{measure.total_indicators_count} <span className="text-gray-400 font-bold uppercase tracking-tighter">Indicators</span>
+                                                    </span>
+                                                )}
+                                                <div className="h-1.5 w-16 bg-gray-200 rounded-full overflow-hidden">
+                                                    <div
+                                                        className={`h-full rounded-full transition-all duration-500 ${measure.evidence_coverage! > 0.8 ? 'bg-green-500' : measure.evidence_coverage! > 0.5 ? 'bg-yellow-500' : 'bg-red-500'}`}
+                                                        style={{ width: `${(measure.evidence_coverage || 0) * 100}%` }}
+                                                    />
+                                                </div>
+                                                <span className="text-xs font-black text-gray-900 leading-none">
+                                                    {((measure.evidence_coverage || 0) * 100).toFixed(0)}%
+                                                </span>
+                                            </div>
                                         </div>
-                                        <span className="text-[10px] font-bold text-gray-700">{(measure.confidence * 100).toFixed(0)}%</span>
                                     </div>
                                 )}
                             </div>

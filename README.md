@@ -12,7 +12,7 @@ An AI-powered compliance assessment tool that evaluates regulatory framework doc
 - **Dual Reasoning Modes** — Choose between a fast **Single Agent** mode or a rigorous **Triple Agent** pipeline (Alignment → Gap → Synthesis).
 - **RAG-Based Evidence Retrieval** — Documents are chunked (with chapter-aware hierarchical parsing via PyMuPDF), embedded using OpenAI embeddings, and stored in ChromaDB for semantic similarity search.
 - **Hierarchical Criteria Assessment** — 10 EU Safety & Security Commitments, each with multiple criteria, assessed individually and scored.
-- **Interactive Results Dashboard** — Drill into each criterion's alignment findings, gap analysis, evidence citations, and confidence scores.
+- **Interactive Results Dashboard** — Drill into each criterion's alignment findings, gap analysis, expected evidence coverage, citations, and confidence scores.
 - **PDF Export** — Generate detailed PDF compliance reports with per-commitment score breakdowns.
 - **Assessment History** — All past assessments are persisted and can be reviewed, compared, or deleted.
 - **Framework Guide** — Browse the full EU criteria structure with expected evidence indicators.
@@ -171,7 +171,7 @@ npm run dev
 
 1. **Ingestion** — Uploaded PDFs are parsed using PyMuPDF with chapter-aware hierarchical chunking. Text is split into overlapping chunks (1500 chars for hierarchical, 1000 for flat), embedded using OpenAI embeddings, and stored in ChromaDB.
 2. **Retrieval** — For each EU criterion, relevant chunks are retrieved via semantic similarity search (`k=5`, with 4× oversampling and score filtering ≥ 0.3).
-3. **Reasoning** — Retrieved evidence is analyzed by LLM agent(s) against the EU criterion, producing alignment findings, gap analysis, and a final classification.
+3. **Reasoning** — Retrieved evidence is analyzed by LLM agent(s) against the EU criterion and its expected evidence indicators, producing alignment findings, gap analysis, evidence coverage metrics, and a final classification.
 
 ### Reasoning Modes
 

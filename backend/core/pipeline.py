@@ -88,7 +88,12 @@ async def run_compliance_check(criterion: Dict, provider: str = None, model: str
         expected_evidence=criterion.get('expected_evidence', []),
         status=final_status,
         score=final_score,
-        confidence=synthesis_result.confidence,
+        
+        # Coverage Metrics
+        evidence_coverage=synthesis_result.evidence_coverage,
+        met_indicators_count=synthesis_result.met_indicators_count,
+        total_indicators_count=synthesis_result.total_indicators_count,
+
         reasoning=synthesis_result.justification,
         key_aligned_concepts=synthesis_result.key_aligned_concepts if hasattr(synthesis_result, 'key_aligned_concepts') else [],
         decisive_gaps_or_divergences=synthesis_result.decisive_gaps_or_divergences if hasattr(synthesis_result, 'decisive_gaps_or_divergences') else [],

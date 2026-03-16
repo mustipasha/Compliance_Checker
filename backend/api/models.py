@@ -44,7 +44,11 @@ class SynthesisOutput(BaseModel):
     key_aligned_concepts: List[str] = []
     decisive_gaps_or_divergences: List[str] = []
     tensions_or_ambiguities: List[str] = []
-    confidence: float
+    
+    # Coverage Metrics
+    evidence_coverage: float = 0.0 # Ratio of met indicators
+    met_indicators_count: int = 0
+    total_indicators_count: int = 0
     
     # Internal helpers
     selected_evidence: List[Evidence] = [] 
@@ -59,7 +63,12 @@ class CriterionResult(BaseModel):
     expected_evidence: List[str] = []
     status: str  # e.g., "PARTIALLY_COMPLIANT" (Rubric-based)
     score: int   # Mapped from rubric (100, 50, 0)
-    confidence: float
+    
+    # Coverage Metrics
+    evidence_coverage: float = 0.0
+    met_indicators_count: int = 0
+    total_indicators_count: int = 0
+
     reasoning: str # From Synthesis justification
     key_aligned_concepts: List[str] = []
     decisive_gaps_or_divergences: List[str] = []

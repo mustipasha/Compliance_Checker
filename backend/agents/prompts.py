@@ -132,7 +132,12 @@ Instructions:
    missing, and — for NOT_COMPLIANT decisions — why thematic overlap is insufficient
    to satisfy them.
 
-6. Output STRICT JSON only.
+6. Evidence Coverage Calculation:
+   - "total_indicators_count": The total number of Expected Evidence indicators provided in the prompt.
+   - "met_indicators_count": The number of those indicators that were found and supported by retrieved evidence.
+   - "evidence_coverage": (met_indicators_count) / (total_indicators_count).
+
+7. Output STRICT JSON only.
 
 OUTPUT JSON FORMAT:
 {{
@@ -143,7 +148,9 @@ OUTPUT JSON FORMAT:
   "key_aligned_concepts": ["From Alignment"],
   "decisive_gaps_or_divergences": ["From Gaps"],
   "tensions_or_ambiguities": [],
-  "confidence": (indicators supported by evidence) / (total indicators)
+  "met_indicators_count": 0,
+  "total_indicators_count": 0,
+  "evidence_coverage": 0.0
 }}
 """
 
@@ -154,60 +161,70 @@ SYNTHESIS_ALL_IN_ONE_PROMPT = """
 You are a neutral, expert compliance analysis assistant evaluating alignment between a regulatory framework document and a specific compliance criterion from the Safety and Security Chapter of the EU Code of Practice for General-Purpose AI Models.
 
 Context:
-Criterion ID: "{criterion_id}"
-EU Requirement: "{criterion_requirement}"
-Expected EU Evidence (Indicators & Concepts):
-{expected_evidence_list}
+- Criterion ID: "{criterion_id}"
+- Assessment Question: "{assessment_question}"
+- EU Requirement: "{criterion_requirement}"
+- Expected Evidence (Indicators): {expected_evidence_list}
+- Rubric: {compliance_rubric}
 
-Retrieved Context from External Framework:
+Retrieved Text from External Framework:
 {evidence_text}
 
 Your Task:
 You must perform a structured, three-step analysis mirroring a rigorous audit process: Conceptual Alignment, Gap Identification, and Final Classification.
 
 --- Step 1: Conceptual Alignment ---
-1. Analyze the retrieved text for CONCEPTUAL OVERLAP with the EU requirement (intent, principles, governance).
-2. Treat similar terminology as equivalent if the regulatory goal matches.
-3. Ignore specific implementation details; focus on whether the core commitments and policies required by the EU are present.
-4. Document the key concepts that successfully align and cite the specific evidence.
+1. Before analyzing the text, answer the Assessment Question above in one sentence based on the Retrieved Text. Use this as your grounding check.
+2. Identify which Expected Evidence indicators are genuinely addressed in the text.
+3. Distinguish between:
+   - CONCEPTUAL indicators (high-level principles, governance intent) — thematic presence in the text is sufficient evidence.
+   - OPERATIONAL indicators (specific obligations, named authorities, defined timelines, retention periods) — the specific mechanism must be explicitly present. Similar language with a different subject does NOT count.
+4. Document the key concepts that successfully align. Cite the specific evidence and explicitly state which Expected Evidence indicator it addresses.
 
 --- Step 2: Gap Analysis ---
 1. Identify what is MISSING, WEAKER, or DIVERGENT in the external framework compared to the EU requirement.
-   - MISSING: Required concepts that are completely absent.
+   - MISSING: Required concepts or specific operational mechanisms that are completely absent.
    - WEAKER: Concepts that are present but less binding or less specific than required.
    - DIVERGENT: Differences in scope, framing, or intent.
 2. Be purely descriptive and objective. Do not invent gaps or force negative findings if full alignment exists.
+3. Pay particular attention to operational indicators. Note explicitly if they are not supported by the text.
 
 --- Step 3: Synthesis & Classification ---
 1. Assign one compliance outcome based strictly on the provided rubric and your findings from Step 1 and Step 2.
-2. If the text demonstrates full conceptual alignment without material missing or weaker areas, assign COMPLIANT.
-3. Weigh any contradictions or tensions between the aligned concepts and the identified gaps before rendering a decision.
+2. Treat "Expected Evidence (Indicators)" as your mandatory checklist. 
+3. Apply the rubric's NOT_COMPLIANT / PARTIALLY_COMPLIANT boundary rule:
+   - If unmet indicators are operational and binary in nature (specific notification obligations, timelines, named authorities), their absence is NOT compensated by thematic alignment elsewhere. Assign NOT_COMPLIANT.
+   - If unmet indicators are conceptual or structural but the core intent is partially reflected, assign PARTIALLY_COMPLIANT.
+   - If the text demonstrates full conceptual and operational alignment without material missing or weaker areas, assign COMPLIANT.
 
-Rubric:
-- COMPLIANT: All core concepts are explicitly and clearly addressed at a conceptual and structural level.
-- PARTIALLY_COMPLIANT: Some relevant concepts are addressed, but coverage is incomplete, implicit, weaker, or missing important aspects.
-- NOT_COMPLIANT: Does not meaningfully address the intent or clearly diverges from it.
-- NOT_APPLICABLE: The criterion is not applicable to the context.
-- NOT_EVIDENCED: The available evidence is insufficient to determine alignment.
+Provide a concise, reasoned justification that links your alignment findings and decisive gaps directly to the chosen rubric classification. Name which specific indicators were found, which were missing, and the rationale for the final score.
 
-Provide a concise, reasoned justification that links your alignment findings and decisive gaps directly to the chosen rubric classification.
+--- Step 4: Evidence Coverage Calculation ---
+1. Record "total_indicators_count": The total number of Expected Evidence indicators provided in the context above.
+2. Record "met_indicators_count": The number of those indicators that were successfully found and supported by retrieved evidence.
+3. Calculate "evidence_coverage": (met_indicators_count) / (total_indicators_count).
 
 OUTPUT STRICT JSON FORMAT ONLY. CRITICAL: Do NOT use unescaped double quotes inside your string values. If you need to quote text, use single quotes ('...').
 {{
   "criterion_id": "{criterion_id}",
+  "assessment_question_answer": "One sentence answering whether the text addresses the assessment question.",
   "alignment_summary": "Concise explanation of alignment (max 2 sentences).",
   "key_aligned_concepts": ["Concept A", "Concept B"],
   "evidence_citations": [
-    {{"chunk_id":"...", "quote":"Direct quote...", "why_it_matters":"One phrase on relevance."}}
+    {{"chunk_id":"...", "quote":"Direct quote...", "why_it_matters":"One phrase on relevance.", "indicator_addressed": "Which specific Expected Evidence indicator this citation supports."}}
   ],
   "gap_summary": "Concise summary of gaps (max 2 sentences).",
   "missing_elements": ["Element 1"],
   "weaker_areas": ["Area 1"],
   "scope_divergences": ["Divergence 1"],
+  "alignment_overreach": ["Any indicator falsely appearing aligned but not strictly supported"],
+  "assessment_question_answered": true | false,
   "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_APPLICABLE | NOT_EVIDENCED",
   "justification": "1-2 sentence justification grounded in rubric. Reference arguments to evidence.",
   "decisive_gaps_or_divergences": ["From Gaps step"],
   "tensions_or_ambiguities": ["Any internal contradictions"],
-  "confidence": 0.0
+  "met_indicators_count": 0,
+  "total_indicators_count": 0,
+  "evidence_coverage": 0.0
 }}
 """

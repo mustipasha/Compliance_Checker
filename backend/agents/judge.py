@@ -54,9 +54,9 @@ class SynthesisAgent:
             
             data = self._parse_response(response)
             
-            # Ensure confidence is a float
-            if 'confidence' in data:
-                data['confidence'] = float(data['confidence'])
+            # Ensure coverage is a float
+            if 'evidence_coverage' in data:
+                data['evidence_coverage'] = float(data['evidence_coverage'])
                 
             result = SynthesisOutput(**data)
             
@@ -74,7 +74,9 @@ class SynthesisAgent:
                 key_aligned_concepts=[],
                 decisive_gaps_or_divergences=[],
                 tensions_or_ambiguities=[],
-                confidence=0.0,
+                evidence_coverage=0.0,
+                met_indicators_count=0,
+                total_indicators_count=0,
                 selected_evidence=[]
             )
 
@@ -106,10 +108,14 @@ class SynthesisAllInOneAgent:
             expected_ev_text = str(expected_ev)
 
         try:
+            rubric_json = json.dumps(criterion.get("compliance_rubric", {}), indent=2)
+
             response = await robust_invoke(self.chain, {
                 "criterion_id": criterion.get('id', 'unknown'),
+                "assessment_question": criterion.get('assessment_question', ''),
                 "criterion_requirement": criterion['requirement'],
                 "expected_evidence_list": expected_ev_text,
+                "compliance_rubric": rubric_json,
                 "evidence_text": evidence_text
             })
             
@@ -141,7 +147,9 @@ class SynthesisAllInOneAgent:
                 key_aligned_concepts=data.get('key_aligned_concepts', []),
                 decisive_gaps_or_divergences=data.get('decisive_gaps_or_divergences', []),
                 tensions_or_ambiguities=data.get('tensions_or_ambiguities', []),
-                confidence=float(data.get('confidence', 0.0)),
+                evidence_coverage=float(data.get('evidence_coverage', 0.0)),
+                met_indicators_count=int(data.get('met_indicators_count', 0)),
+                total_indicators_count=int(data.get('total_indicators_count', 0)),
                 selected_evidence=evidence[:5]
             )
             
