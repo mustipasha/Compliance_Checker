@@ -12,7 +12,7 @@ An AI-powered compliance assessment tool that evaluates regulatory framework doc
 - **Dual Reasoning Modes** — Choose between a fast **Single Agent** mode or a rigorous **Triple Agent** pipeline (Alignment → Gap → Synthesis).
 - **RAG-Based Evidence Retrieval** — Documents are chunked (with chapter-aware hierarchical parsing via PyMuPDF), embedded using OpenAI embeddings, and stored in ChromaDB for semantic similarity search.
 - **Hierarchical Criteria Assessment** — 10 EU Safety & Security Commitments, each with multiple criteria, assessed individually and scored.
-- **Interactive Results Dashboard** — Drill into each criterion's alignment findings, gap analysis, expected evidence coverage, citations, and confidence scores.
+- **Interactive Results Dashboard** — Drill into each criterion's alignment findings, gap analysis, expected evidence coverage, and citations.
 - **PDF Export** — Generate detailed PDF compliance reports with per-commitment score breakdowns.
 - **Assessment History** — All past assessments are persisted and can be reviewed, compared, or deleted.
 - **Framework Guide** — Browse the full EU criteria structure with expected evidence indicators.

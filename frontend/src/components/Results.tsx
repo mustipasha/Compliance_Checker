@@ -80,6 +80,14 @@ const StatusIcon = ({ status, size = 5 }: { status: string, size?: number }) => 
     }
 };
 
+const STATUS_TOOLTIPS: Record<string, string> = {
+    'compliant': 'Full conceptual and operational alignment: all required indicators are present in the document with the correct subject, obligation type, and mechanism.',
+    'partially compliant': 'Core intent is partially reflected, but some indicators are missing or weaker. Unmet indicators are conceptual or structural rather than strictly operational.',
+    'not compliant': 'One or more critical operational indicators are absent (e.g. specific timelines, named authorities, defined obligations). Thematic alignment alone does not satisfy these requirements.',
+    'not evidenced': 'The tool could not retrieve sufficient evidence to assess this criterion. Result should be treated with caution.',
+    'unknown': 'The tool could not retrieve sufficient evidence to assess this criterion. Result should be treated with caution.',
+};
+
 const StatusBadge = ({ status }: { status: string }) => {
     const colors = {
         'compliant': 'bg-green-100 text-green-800',
@@ -89,9 +97,13 @@ const StatusBadge = ({ status }: { status: string }) => {
     };
     const normalizedStatus = status.toLowerCase().replace(/_/g, ' ');
     const colorClass = colors[normalizedStatus as keyof typeof colors] || colors['unknown'];
+    const tooltip = STATUS_TOOLTIPS[normalizedStatus] || STATUS_TOOLTIPS['unknown'];
 
     return (
-        <span className={`px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider rounded ${colorClass}`}>
+        <span
+            title={tooltip}
+            className={`px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider rounded cursor-help ${colorClass}`}
+        >
             {normalizedStatus}
         </span>
     );
@@ -139,28 +151,32 @@ const MeasureDetailModal = ({ measure, onClose, onViewSource }: {
                                     <Info size={14} className="text-purple-500" /> Requirement
                                 </div>
                                 {(measure.evidence_coverage !== undefined || measure.met_indicators_count !== undefined) && (
-                                    <div className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-lg">
-                                        <div className="flex flex-col items-end">
-                                            <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Evidence Coverage</span>
-                                            <div className="flex items-center gap-2">
-                                                {measure.met_indicators_count !== undefined && (
-                                                    <span className="text-[10px] font-black text-blue-600">
-                                                        {measure.met_indicators_count}/{measure.total_indicators_count} <span className="text-gray-400 font-bold uppercase tracking-tighter">Indicators</span>
-                                                    </span>
-                                                )}
-                                                <div className="h-1.5 w-16 bg-gray-200 rounded-full overflow-hidden">
-                                                    <div
-                                                        className={`h-full rounded-full transition-all duration-500 ${measure.evidence_coverage! > 0.8 ? 'bg-green-500' : measure.evidence_coverage! > 0.5 ? 'bg-yellow-500' : 'bg-red-500'}`}
-                                                        style={{ width: `${(measure.evidence_coverage || 0) * 100}%` }}
-                                                    />
-                                                </div>
-                                                <span className="text-xs font-black text-gray-900 leading-none">
-                                                    {((measure.evidence_coverage || 0) * 100).toFixed(0)}%
+                                    <div className="flex flex-col gap-1.5 px-3 py-1.5 bg-gray-100 rounded-lg">
+                                        <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest leading-none">Evidence Coverage</span>
+                                        <div className="flex items-center gap-2">
+                                            {measure.met_indicators_count !== undefined && (
+                                                <span className="text-[10px] font-black text-blue-600">
+                                                    {measure.met_indicators_count}/{measure.total_indicators_count} <span className="text-gray-400 font-bold uppercase tracking-tighter">Indicators</span>
                                                 </span>
+                                            )}
+                                            <div className="h-1.5 w-16 bg-gray-200 rounded-full overflow-hidden">
+                                                <div
+                                                    className={`h-full rounded-full transition-all duration-500 ${measure.evidence_coverage! > 0.8 ? 'bg-green-500' : measure.evidence_coverage! > 0.5 ? 'bg-yellow-500' : 'bg-red-500'}`}
+                                                    style={{ width: `${(measure.evidence_coverage || 0) * 100}%` }}
+                                                />
                                             </div>
+                                            <span className="text-xs font-black text-gray-900 leading-none">
+                                                {((measure.evidence_coverage || 0) * 100).toFixed(0)}%
+                                            </span>
                                         </div>
+                                        {measure.met_indicators_count !== undefined && (
+                                            <p className="text-[10px] text-gray-400 italic leading-snug max-w-[220px]">
+                                                Coverage reflects matched indicators. The final status also weighs decisive gaps — a criterion may still be Not Compliant if critical elements are absent, even with partial indicator coverage.
+                                            </p>
+                                        )}
                                     </div>
                                 )}
+
                             </div>
                             <div className="bg-purple-50/30 p-6 rounded-2xl border border-purple-100/50">
                                 <p className="text-sm text-gray-700 leading-relaxed font-medium break-words whitespace-pre-wrap">
@@ -469,6 +485,9 @@ export const Results: React.FC<ResultsProps> = ({ report }) => {
                         <div className="text-center">
                             <div className="text-5xl font-black mb-1 tracking-tighter">{report.compliance_score.toFixed(1)}%</div>
                             <div className="text-[10px] font-bold uppercase tracking-widest text-blue-200 opacity-80">Overall Score</div>
+                            <div className="text-[9px] text-blue-300/60 mt-1 font-medium">
+                                Compliant = 1pt &middot; Partial = 0.5pt &middot; Non-Compliant = 0pt
+                            </div>
                         </div>
                         <div className="w-px h-16 bg-white/20" />
                         <div className="text-center">

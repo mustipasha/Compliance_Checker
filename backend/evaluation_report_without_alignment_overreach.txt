@@ -1,0 +1,112 @@
+Evaluation Report (Binary Mode: False)
+Number of runs evaluated: 5
+==================================================
+
+### Per-Run Classification Metrics (Weighted)
+Run Filename                                                                     | Acc    | W-P    | W-R    | W-F1  
+-------------------------------------------------------------------------------------------------------------------
+nist_ablation_run_1.json                                                         | 0.5625 | 0.8688 | 0.5625 | 0.5997
+nist_ablation_run_2.json                                                         | 0.5625 | 0.8717 | 0.5625 | 0.6032
+nist_ablation_run_3.json                                                         | 0.5938 | 0.8750 | 0.5938 | 0.6354
+nist_ablation_run_4.json                                                         | 0.5625 | 0.8688 | 0.5625 | 0.5997
+nist_ablation_run_5.json                                                         | 0.5625 | 0.8688 | 0.5625 | 0.5997
+
+### Per-Run Confusion Matrices
+
+Run: nist_ablation_run_1.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 12         | 14         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: nist_ablation_run_2.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 1          | 12         | 13         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: nist_ablation_run_3.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 1          | 13         | 12         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: nist_ablation_run_4.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 12         | 14         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: nist_ablation_run_5.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 12         | 14         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+### Global Classification Metrics (Mean ± Std)
+Accuracy:           0.5687 ± 0.0125
+----------------------------------------
+Precision for each class but weights it by the number of actual samples (Support) in the Ground Truth.
+Weighted-Precision: 0.8706 ± 0.0025
+Weighted-Recall:    0.5687 ± 0.0125
+Weighted-F1 Score:  0.6075 ± 0.0140
+----------------------------------------
+Precision for each class separately
+Macro-Precision:    0.3275 ± 0.0033
+Macro-Recall:       0.3673 ± 0.0038
+Macro-F1 Score:     0.2779 ± 0.0071
+
+### Global Retrieval Metrics (Mean ± Std)
+Avg Precision:    0.0000 ± 0.0000
+Avg Recall:       0.0000 ± 0.0000
+
+### Per-Criterion Stability (how consistent the AI is)
+Criterion  | Stability  | Most Common Prediction
+-------------------------------------------------------
+SS-1.1     | 100.00%    | PARTIALLY_COMPLIANT
+SS-1.2     | 60.00%     | PARTIALLY_COMPLIANT
+SS-1.3     | 100.00%    | PARTIALLY_COMPLIANT
+SS-1.4     | 100.00%    | NOT_COMPLIANT
+SS-10.1    | 100.00%    | NOT_COMPLIANT
+SS-10.2    | 100.00%    | NOT_COMPLIANT
+SS-2.1     | 100.00%    | NOT_COMPLIANT
+SS-2.2     | 100.00%    | NOT_COMPLIANT
+SS-3.1     | 100.00%    | PARTIALLY_COMPLIANT
+SS-3.2     | 100.00%    | PARTIALLY_COMPLIANT
+SS-3.3     | 100.00%    | NOT_COMPLIANT
+SS-3.4     | 60.00%     | NOT_COMPLIANT
+SS-3.5     | 100.00%    | PARTIALLY_COMPLIANT
+SS-4.1     | 100.00%    | NOT_COMPLIANT
+SS-4.2     | 100.00%    | NOT_COMPLIANT
+SS-5.1     | 80.00%     | PARTIALLY_COMPLIANT
+SS-6.1     | 100.00%    | NOT_COMPLIANT
+SS-6.2     | 60.00%     | NOT_COMPLIANT
+SS-7.1     | 80.00%     | PARTIALLY_COMPLIANT
+SS-7.2     | 100.00%    | NOT_COMPLIANT
+SS-7.3     | 60.00%     | PARTIALLY_COMPLIANT
+SS-7.4     | 100.00%    | NOT_COMPLIANT
+SS-7.5     | 100.00%    | NOT_COMPLIANT
+SS-7.6     | 100.00%    | NOT_COMPLIANT
+SS-7.7     | 100.00%    | NOT_COMPLIANT
+SS-8.1     | 100.00%    | PARTIALLY_COMPLIANT
+SS-8.2     | 60.00%     | PARTIALLY_COMPLIANT
+SS-8.3     | 80.00%     | PARTIALLY_COMPLIANT
+SS-9.1     | 60.00%     | PARTIALLY_COMPLIANT
+SS-9.2     | 60.00%     | PARTIALLY_COMPLIANT
+SS-9.3     | 100.00%    | NOT_COMPLIANT
+SS-9.4     | 100.00%    | NOT_COMPLIANT

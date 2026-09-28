@@ -143,7 +143,7 @@ OUTPUT JSON FORMAT:
 {{
   "criterion_id": "{criterion_id}",
   "assessment_question_answered": true | false,
-  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_APPLICABLE | NOT_EVIDENCED",
+  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED",
   "justification": "1-2 sentence justification. Name which indicators were found, which were missing, and why missing operational indicators cannot be offset by thematic alignment.",
   "key_aligned_concepts": ["From Alignment"],
   "decisive_gaps_or_divergences": ["From Gaps"],
@@ -219,7 +219,7 @@ OUTPUT STRICT JSON FORMAT ONLY. CRITICAL: Do NOT use unescaped double quotes ins
   "scope_divergences": ["Divergence 1"],
   "alignment_overreach": ["Any indicator falsely appearing aligned but not strictly supported"],
   "assessment_question_answered": true | false,
-  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_APPLICABLE | NOT_EVIDENCED",
+  "classification": "COMPLIANT | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED",
   "justification": "1-2 sentence justification grounded in rubric. Reference arguments to evidence.",
   "decisive_gaps_or_divergences": ["From Gaps step"],
   "tensions_or_ambiguities": ["Any internal contradictions"],

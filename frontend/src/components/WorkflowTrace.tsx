@@ -22,7 +22,7 @@ interface GapAnalysisOutput {
 interface SynthesisOutput {
     classification: string;
     justification: string;
-    confidence: number;
+    evidence_coverage: number;
 }
 
 interface CriterionResult {
@@ -66,7 +66,7 @@ export const WorkflowTrace: React.FC<WorkflowTraceProps> = ({ result }) => {
             id: 'synthesis',
             title: 'Synthesis & Final Score',
             icon: <Zap className="w-4 h-4" />,
-            description: `${result.synthesis_result.classification.replace(/_/g, ' ')} with ${(result.synthesis_result.confidence * 100).toFixed(0)}% confidence`,
+            description: `${result.synthesis_result.classification.replace(/_/g, ' ')} with ${(result.synthesis_result.evidence_coverage * 100).toFixed(0)}% evidence coverage`,
             color: 'text-purple-500',
             bgColor: 'bg-purple-50'
         }

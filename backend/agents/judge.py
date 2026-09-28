@@ -184,7 +184,7 @@ class SynthesisAllInOneAgent:
                     key_aligned_concepts=[],
                     decisive_gaps_or_divergences=[],
                     tensions_or_ambiguities=[],
-                    confidence=0.0,
+                    evidence_coverage=0.0,
                     selected_evidence=[]
                 )
             }

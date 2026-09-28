@@ -15,7 +15,7 @@ from agents.judge import SynthesisAgent, SynthesisAllInOneAgent
 SINGLE_AGENT_MODE = True
 # ---------------------
 
-async def run_compliance_check(criterion: Dict, provider: str = None, model: str = None, mode: str = "single") -> CriterionResult:
+async def run_compliance_check(criterion: Dict, provider: str = None, model: str = None, mode: str = "single", suppress_overreach: bool = False) -> CriterionResult:
     """
     Runs the conceptual alignment pipeline.
     provider/model: Optional LLM overrides (falls back to env vars).
@@ -60,7 +60,13 @@ async def run_compliance_check(criterion: Dict, provider: str = None, model: str
         # Step B: Gap Analysis
         print(f"DEBUG: [{criterion.get('id')}] Running Gap Analysis...")
         gap_result = await g_agent.run(criterion, evidence, alignment_result)
-        
+
+        # --- ABLATION: suppress alignment_overreach if flag is set ---
+        if suppress_overreach:
+            gap_result.alignment_overreach = []
+            print(f"DEBUG: [{criterion.get('id')}] alignment_overreach suppressed (ablation mode).")
+        # -------------------------------------------------------------
+
         # Step C: Synthesis
         print(f"DEBUG: [{criterion.get('id')}] Running Synthesis...")
         rubric_json = json.dumps(criterion.get("compliance_rubric", {}), indent=2)

@@ -93,6 +93,7 @@ class AssessmentReport(BaseModel):
     provider: Optional[str] = None
     model: Optional[str] = None
     mode: Optional[str] = None
+    suppress_overreach: bool = False  # Ablation flag: True = overreach suppression disabled
     # Restored commitment hierarchy for frontend compatibility
     commitments: List[CommitmentResult]
     # Keep flat list for internal use if needed, but primary is commitments

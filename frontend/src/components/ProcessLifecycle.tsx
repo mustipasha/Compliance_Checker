@@ -71,7 +71,7 @@ export const ProcessLifecycle: React.FC = () => {
                 points: [
                     'Precise citation mapping to source document segments',
                     'Weighted scoring across 32 compliance criteria',
-                    'Final report compilation with confidence metrics',
+                    'Final report compilation with evidence coverage metrics',
                     'Historical record versioning for audit trails'
                 ],
                 tech: 'jsPDF | Custom Scoring Algorithms'

@@ -1,0 +1,501 @@
+2026-03-17 12:53:01,382 [PID 75301] INFO No binary specified, looking for `pyre.bin` in PATH
+2026-03-17 12:53:01,383 [PID 75301] INFO Pyre binary is located at `.venv/bin/pyre.bin`
+2026-03-17 12:53:01,383 [PID 75301] INFO Could not determine the number of Pyre workers from configuration. Auto-set the value to 4.
+2026-03-17 12:53:01,384 [PID 75301] INFO No typeshed specified, looking for it...
+2026-03-17 12:53:01,384 [PID 75301] INFO Found: `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed`
+2026-03-17 12:53:01,384 [PID 75301] INFO Writing arguments into /var/folders/7k/1gw9jfrj34gbp5qzj_6bk2rw0000gn/T/pyre_arguments_v3cyt745.json...
+2026-03-17 12:53:01,384 [PID 75301] DEBUG Arguments:
+{
+  "source_paths": {
+    "kind": "simple",
+    "paths": [
+      "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+    ]
+  },
+  "search_paths": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/python3.11/site-packages",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stdlib",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ExifRead",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyMySQL",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyYAML",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/aiofiles",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/chevron",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/colorama",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ldap3",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/mysqlclient",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/paramiko",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/psycopg2",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pycurl",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/python-dateutil",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pytz",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/regex",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/requests",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/retry",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/tqdm",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ujson"
+  ],
+  "excludes": [],
+  "checked_directory_allowlist": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+  ],
+  "checked_directory_blocklist": [],
+  "extensions": [],
+  "log_path": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.pyre",
+  "global_root": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend",
+  "debug": false,
+  "python_version": {
+    "major": 3,
+    "minor": 11,
+    "micro": 14
+  },
+  "system_platform": "darwin",
+  "shared_memory": {},
+  "parallel": true,
+  "number_of_workers": 4,
+  "additional_logging_sections": [],
+  "show_error_traces": false,
+  "strict": false
+}
+2026-03-17 12:53:01,386 [PID 75301] ERROR [Errno 86] Bad CPU type in executable: '.venv/bin/pyre.bin'
+2026-03-17 13:08:24,357 [PID 78996] INFO No binary specified, looking for `pyre.bin` in PATH
+2026-03-17 13:08:24,357 [PID 78996] INFO Pyre binary is located at `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/bin/pyre.bin`
+2026-03-17 13:08:24,357 [PID 78996] INFO Could not determine the number of Pyre workers from configuration. Auto-set the value to 4.
+2026-03-17 13:08:24,357 [PID 78996] INFO No typeshed specified, looking for it...
+2026-03-17 13:08:24,357 [PID 78996] INFO Found: `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed`
+2026-03-17 13:08:24,358 [PID 78996] INFO Writing arguments into /var/folders/7k/1gw9jfrj34gbp5qzj_6bk2rw0000gn/T/pyre_arguments_u8i0t_g8.json...
+2026-03-17 13:08:24,358 [PID 78996] DEBUG Arguments:
+{
+  "source_paths": {
+    "kind": "simple",
+    "paths": [
+      "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+    ]
+  },
+  "search_paths": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/python3.11/site-packages",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stdlib",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ExifRead",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyMySQL",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyYAML",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/aiofiles",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/chevron",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/colorama",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ldap3",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/mysqlclient",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/paramiko",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/psycopg2",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pycurl",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/python-dateutil",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pytz",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/regex",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/requests",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/retry",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/tqdm",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ujson"
+  ],
+  "excludes": [],
+  "checked_directory_allowlist": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+  ],
+  "checked_directory_blocklist": [],
+  "extensions": [],
+  "log_path": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.pyre",
+  "global_root": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend",
+  "debug": false,
+  "python_version": {
+    "major": 3,
+    "minor": 11,
+    "micro": 14
+  },
+  "system_platform": "darwin",
+  "shared_memory": {},
+  "parallel": true,
+  "number_of_workers": 4,
+  "additional_logging_sections": [],
+  "show_error_traces": false,
+  "strict": false
+}
+2026-03-17 13:08:24,360 [PID 78996] ERROR [Errno 86] Bad CPU type in executable: '/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/bin/pyre.bin'
+2026-03-17 13:08:33,431 [PID 79111] INFO No binary specified, looking for `pyre.bin` in PATH
+2026-03-17 13:08:33,431 [PID 79111] INFO Pyre binary is located at `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/bin/pyre.bin`
+2026-03-17 13:08:33,432 [PID 79111] INFO Could not determine the number of Pyre workers from configuration. Auto-set the value to 4.
+2026-03-17 13:08:33,432 [PID 79111] INFO No typeshed specified, looking for it...
+2026-03-17 13:08:33,432 [PID 79111] INFO Found: `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed`
+2026-03-17 13:08:33,432 [PID 79111] INFO Writing arguments into /var/folders/7k/1gw9jfrj34gbp5qzj_6bk2rw0000gn/T/pyre_arguments_ewf71f0o.json...
+2026-03-17 13:08:33,432 [PID 79111] DEBUG Arguments:
+{
+  "source_paths": {
+    "kind": "simple",
+    "paths": [
+      "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+    ]
+  },
+  "search_paths": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/python3.11/site-packages",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stdlib",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ExifRead",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyMySQL",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyYAML",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/aiofiles",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/chevron",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/colorama",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ldap3",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/mysqlclient",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/paramiko",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/psycopg2",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pycurl",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/python-dateutil",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pytz",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/regex",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/requests",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/retry",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/tqdm",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ujson"
+  ],
+  "excludes": [],
+  "checked_directory_allowlist": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+  ],
+  "checked_directory_blocklist": [],
+  "extensions": [],
+  "log_path": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.pyre",
+  "global_root": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend",
+  "debug": false,
+  "python_version": {
+    "major": 3,
+    "minor": 11,
+    "micro": 14
+  },
+  "system_platform": "darwin",
+  "shared_memory": {},
+  "parallel": true,
+  "number_of_workers": 4,
+  "additional_logging_sections": [],
+  "show_error_traces": false,
+  "strict": false
+}
+2026-03-17 13:08:33,434 [PID 79111] ERROR [Errno 86] Bad CPU type in executable: '/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/bin/pyre.bin'
+2026-03-17 22:53:11,206 [PID 82176] INFO No binary specified, looking for `pyre.bin` in PATH
+2026-03-17 22:53:11,207 [PID 82176] INFO Pyre binary is located at `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/bin/pyre.bin`
+2026-03-17 22:53:11,207 [PID 82176] INFO Could not determine the number of Pyre workers from configuration. Auto-set the value to 4.
+2026-03-17 22:53:11,207 [PID 82176] INFO No typeshed specified, looking for it...
+2026-03-17 22:53:11,207 [PID 82176] INFO Found: `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed`
+2026-03-17 22:53:11,209 [PID 82176] INFO Writing arguments into /var/folders/7k/1gw9jfrj34gbp5qzj_6bk2rw0000gn/T/pyre_arguments_rbs6ozf1.json...
+2026-03-17 22:53:11,209 [PID 82176] DEBUG Arguments:
+{
+  "source_paths": {
+    "kind": "simple",
+    "paths": [
+      "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+    ]
+  },
+  "search_paths": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/python3.11/site-packages",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stdlib",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ExifRead",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyMySQL",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyYAML",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/aiofiles",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/chevron",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/colorama",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ldap3",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/mysqlclient",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/paramiko",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/psycopg2",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pycurl",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/python-dateutil",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pytz",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/regex",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/requests",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/retry",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/tqdm",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ujson"
+  ],
+  "excludes": [],
+  "checked_directory_allowlist": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+  ],
+  "checked_directory_blocklist": [],
+  "extensions": [],
+  "log_path": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.pyre",
+  "global_root": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend",
+  "debug": false,
+  "python_version": {
+    "major": 3,
+    "minor": 11,
+    "micro": 14
+  },
+  "system_platform": "darwin",
+  "shared_memory": {},
+  "parallel": true,
+  "number_of_workers": 4,
+  "additional_logging_sections": [],
+  "show_error_traces": false,
+  "strict": false
+}
+2026-03-17 22:53:11,212 [PID 82176] ERROR [Errno 86] Bad CPU type in executable: '/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/bin/pyre.bin'
+2026-03-17 23:16:59,707 [PID 88362] INFO No binary specified, looking for `pyre.bin` in PATH
+2026-03-17 23:16:59,707 [PID 88362] INFO Pyre binary is located at `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/bin/pyre.bin`
+2026-03-17 23:16:59,707 [PID 88362] INFO Could not determine the number of Pyre workers from configuration. Auto-set the value to 4.
+2026-03-17 23:16:59,708 [PID 88362] INFO No typeshed specified, looking for it...
+2026-03-17 23:16:59,708 [PID 88362] INFO Found: `/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed`
+2026-03-17 23:16:59,708 [PID 88362] INFO Writing arguments into /var/folders/7k/1gw9jfrj34gbp5qzj_6bk2rw0000gn/T/pyre_arguments_twvpahdc.json...
+2026-03-17 23:16:59,708 [PID 88362] DEBUG Arguments:
+{
+  "source_paths": {
+    "kind": "simple",
+    "paths": [
+      "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+    ]
+  },
+  "search_paths": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/python3.11/site-packages",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/python3.11/site-packages/langchain_core",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stdlib",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ExifRead",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyMySQL",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/PyYAML",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/aiofiles",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/chevron",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/colorama",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ldap3",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/mysqlclient",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/paramiko",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/psycopg2",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pycurl",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/python-dateutil",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/pytz",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/regex",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/requests",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/retry",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/tqdm",
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.venv/lib/pyre_check/typeshed/stubs/ujson"
+  ],
+  "excludes": [],
+  "checked_directory_allowlist": [
+    "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend"
+  ],
+  "checked_directory_blocklist": [],
+  "extensions": [],
+  "log_path": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend/.pyre",
+  "global_root": "/Users/Musta/Documents/Universiy of Vienna/5. Semester/MA/Compliance Checker Tool/backend",
+  "debug": false,
+  "python_version": {
+    "major": 3,
+    "minor": 11,
+    "micro": 14
+  },
+  "system_platform": "darwin",
+  "shared_memory": {},
+  "parallel": true,
+  "number_of_workers": 4,
+  "additional_logging_sections": [],
+  "show_error_traces": false,
+  "strict": false
+}
+2026-03-17 23:16:59,746 [PID 88362] PERFORMANCE  Initialized shared memory (heap size: 8589934592, dep table pow: 1, hash table pow: 26): 0.000s
+2026-03-17 23:16:59,759 [PID 88362] PERFORMANCE  Initialized multiprocessing workers (workers: 4): 0.007s
+2026-03-17 23:16:59,759 [PID 88362] INFO  Building module tracker...
+2026-03-17 23:17:00,310 [PID 88362] PERFORMANCE  Module tracker built: 0.547s
+2026-03-17 23:17:00,310 [PID 88362] PERFORMANCE  Full environment built: 0.547s
+2026-03-17 23:17:00,310 [PID 88362] INFO  Collecting all definitions...
+2026-03-17 23:17:01,041 [PID 88362] INFO <unknown>:110: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,089 [PID 88362] INFO <unknown>:899: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:23: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:25: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:27: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:29: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:31: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:33: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:35: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:43: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:45: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:01,637 [PID 88362] INFO <unknown>:47: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:02,033 [PID 88362] INFO <unknown>:1000: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:02,383 [PID 88362] INFO <unknown>:105: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:02,384 [PID 88362] INFO <unknown>:179: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:02,384 [PID 88362] INFO <unknown>:278: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:02,384 [PID 88362] INFO <unknown>:423: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:02,384 [PID 88362] INFO <unknown>:533: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:02,384 [PID 88362] INFO <unknown>:644: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:588: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:595: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:597: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:600: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:602: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:604: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:608: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,401 [PID 88362] INFO <unknown>:611: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:613: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:615: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:668: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:670: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1034: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1036: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1038: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1040: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1042: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1044: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1046: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,402 [PID 88362] INFO <unknown>:1048: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1050: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1052: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1054: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1057: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1059: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1061: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1063: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1065: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1067: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1069: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1071: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,403 [PID 88362] INFO <unknown>:1073: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1075: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1077: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1079: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1081: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1083: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1085: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1188: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,404 [PID 88362] INFO <unknown>:1190: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,417 [PID 88362] INFO <unknown>:2435: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,417 [PID 88362] INFO <unknown>:2437: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,417 [PID 88362] INFO <unknown>:2585: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,417 [PID 88362] INFO <unknown>:2590: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,417 [PID 88362] INFO <unknown>:2593: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,417 [PID 88362] INFO <unknown>:2601: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:2605: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:2607: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:3251: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:3818: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:3819: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:4301: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:4302: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:4305: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:4306: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,418 [PID 88362] INFO <unknown>:4369: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4483: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4485: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4487: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4489: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4491: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4493: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4495: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:03,429 [PID 88362] INFO <unknown>:4497: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:04,508 [PID 88362] INFO <unknown>:216: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,024 [PID 88362] INFO <unknown>:295: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,024 [PID 88362] INFO <unknown>:296: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,024 [PID 88362] INFO <unknown>:443: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,106 [PID 88362] INFO <unknown>:292: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,180 [PID 88362] INFO <unknown>:489: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,181 [PID 88362] INFO <unknown>:1085: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,419 [PID 88362] INFO <unknown>:514: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,876 [PID 88362] INFO <unknown>:67: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,876 [PID 88362] INFO <unknown>:82: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,876 [PID 88362] INFO <unknown>:149: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,876 [PID 88362] INFO <unknown>:196: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:05,877 [PID 88362] INFO <unknown>:429: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:08,392 [PID 88362] WARNING  Parser error in module `joblib.test.test_func_inspect_special_encoding`: CPython runtime raised a non-syntax exception
+2026-03-17 23:17:10,101 [PID 88362] WARNING  Parser error in module `onnxruntime.tools.qnn.gen_qnn_ctx_onnx_model`: expected an indented block after 'for' statement on line 116
+2026-03-17 23:17:10,273 [PID 88362] WARNING <unknown>:46: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:10,273 [PID 88362] WARNING <unknown>:47: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:10,273 [PID 88362] WARNING <unknown>:49: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:10,273 [PID 88362] WARNING <unknown>:148: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:10,273 [PID 88362] WARNING <unknown>:149: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:10,273 [PID 88362] WARNING <unknown>:150: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:12,449 [PID 88362] WARNING  Parser error in module `onnxruntime.backend.backend`: expected an indented block after 'else' statement on line 127
+2026-03-17 23:17:13,225 [PID 88362] WARNING  Parser error in module `onnxruntime.tools.qnn.add_trans_cast`: expected an indented block after 'for' statement on line 115
+2026-03-17 23:17:13,488 [PID 88362] WARNING <unknown>:1010: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:13,666 [PID 88362] WARNING <unknown>:158: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:15,368 [PID 88362] WARNING <unknown>:877: SyntaxWarning: invalid escape sequence '\w'
+2026-03-17 23:17:16,322 [PID 88362] WARNING  Parser error in module `numpy._core.tests.test_regression`: CPython runtime raised a non-syntax exception
+2026-03-17 23:17:16,680 [PID 88362] WARNING <unknown>:218: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:17,393 [PID 88362] WARNING <unknown>:200: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,561 [PID 88362] WARNING <unknown>:1582: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,731 [PID 88362] WARNING <unknown>:7697: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,731 [PID 88362] WARNING <unknown>:7698: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,731 [PID 88362] WARNING <unknown>:7699: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,731 [PID 88362] WARNING <unknown>:7700: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,731 [PID 88362] WARNING <unknown>:7701: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,731 [PID 88362] WARNING <unknown>:7702: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:18,847 [PID 88362] WARNING <unknown>:52: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,281 [PID 88362] WARNING <unknown>:105: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,282 [PID 88362] WARNING <unknown>:106: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,282 [PID 88362] WARNING <unknown>:108: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,282 [PID 88362] WARNING <unknown>:109: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,282 [PID 88362] WARNING <unknown>:132: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,282 [PID 88362] WARNING <unknown>:134: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,282 [PID 88362] WARNING <unknown>:149: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,282 [PID 88362] WARNING <unknown>:151: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:19,691 [PID 88362] WARNING <unknown>:9: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:20,947 [PID 88362] WARNING <unknown>:9263: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:23,135 [PID 88362] WARNING <unknown>:140: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:23,135 [PID 88362] WARNING <unknown>:141: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:23,135 [PID 88362] WARNING <unknown>:142: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:23,135 [PID 88362] WARNING <unknown>:143: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:23,146 [PID 88362] WARNING <unknown>:112: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,346 [PID 88362] WARNING <unknown>:114: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:136: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:203: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:204: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:205: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:206: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:207: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:208: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:209: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:210: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:211: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:212: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:213: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:214: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:215: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:216: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:217: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:225: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:225: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:226: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:226: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:227: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:227: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:228: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:228: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:621: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:622: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:623: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:624: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:625: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:626: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:638: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:638: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:639: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,347 [PID 88362] WARNING <unknown>:639: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:24,410 [PID 88362] WARNING <unknown>:71: SyntaxWarning: invalid escape sequence '\N'
+2026-03-17 23:17:25,426 [PID 88362] PERFORMANCE  Collected definitions (defines: 248709): 25.116s
+2026-03-17 23:17:25,426 [PID 88362] INFO  Checking 248709 functions...
+2026-03-17 23:17:27,823 [PID 88362] WARNING  Pyre could not resolve the type variable for symbol pydantic.functional_serializers.AnyType, which is probably an imported type variable pydantic.SerializeAsAny. This could cause downstream generic classes to be poorly understood. You can fix this problem by avoiding importing the type variable.
+2026-03-17 23:17:34,765 [PID 88362] INFO  Processed 4975 of 248709 functions
+2026-03-17 23:17:36,016 [PID 88362] INFO  Processed 9950 of 248709 functions
+2026-03-17 23:17:36,040 [PID 88362] INFO  Processed 14925 of 248709 functions
+2026-03-17 23:17:37,956 [PID 88362] INFO  Processed 19900 of 248709 functions
+2026-03-17 23:17:43,482 [PID 88362] INFO  Processed 24875 of 248709 functions
+2026-03-17 23:17:45,326 [PID 88362] INFO  Processed 29850 of 248709 functions
+2026-03-17 23:17:48,676 [PID 88362] INFO  Processed 34825 of 248709 functions
+2026-03-17 23:17:54,057 [PID 88362] INFO  Processed 39800 of 248709 functions
+2026-03-17 23:17:56,948 [PID 88362] INFO  Processed 44775 of 248709 functions
+2026-03-17 23:17:59,460 [PID 88362] INFO  Processed 49750 of 248709 functions
+2026-03-17 23:18:03,714 [PID 88362] INFO  Processed 54725 of 248709 functions
+2026-03-17 23:18:06,018 [PID 88362] INFO  Processed 59700 of 248709 functions
+2026-03-17 23:18:07,498 [PID 88362] INFO  Processed 64675 of 248709 functions
+2026-03-17 23:18:07,829 [PID 88362] INFO  Processed 69650 of 248709 functions
+2026-03-17 23:18:19,715 [PID 88362] INFO  Processed 74625 of 248709 functions
+2026-03-17 23:18:25,465 [PID 88362] INFO  Processed 79600 of 248709 functions
+2026-03-17 23:19:05,643 [PID 88362] INFO  Processed 84575 of 248709 functions
+2026-03-17 23:19:06,696 [PID 88362] INFO  Processed 89550 of 248709 functions
+2026-03-17 23:19:12,024 [PID 88362] INFO  Processed 94525 of 248709 functions
+2026-03-17 23:19:13,914 [PID 88362] INFO  Processed 99500 of 248709 functions
+2026-03-17 23:19:23,416 [PID 88362] INFO  Processed 104475 of 248709 functions
+2026-03-17 23:19:23,509 [PID 88362] INFO  Processed 109450 of 248709 functions
+2026-03-17 23:19:28,769 [PID 88362] PERFORMANCE  Long type check of callable (cutoff time: 60, callable: numpy.typing.tests.data.reveal.polynomial_polyutils.$toplevel)
+2026-03-17 23:19:28,769 [PID 88362] INFO  The type check of numpy.typing.tests.data.reveal.polynomial_polyutils.$toplevel is taking more than 60 seconds (pid = 88430)
+2026-03-17 23:19:34,012 [PID 88362] INFO  Processed 114425 of 248709 functions
+2026-03-17 23:19:35,476 [PID 88362] INFO  Processed 119400 of 248709 functions

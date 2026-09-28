@@ -141,7 +141,8 @@ async def test_retrieval_api(query: str, k: int = 5):
 async def run_assessment(
     provider: str = Query(None, description="LLM provider (openai, anthropic, google, ollama)"),
     model: str = Query(None, description="Model name"),
-    mode: str = Query("single", description="Reasoning mode (single or triple)")
+    mode: str = Query("single", description="Reasoning mode (single or triple)"),
+    suppress_overreach: bool = Query(False, description="Ablation: disable alignment_overreach suppression (triple mode only)")
 ):
     try:
         selected_provider = provider or os.getenv("LLM_PROVIDER", "openai")
@@ -171,7 +172,7 @@ async def run_assessment(
             async with semaphore:
                 import random
                 await asyncio.sleep(random.uniform(0.1, 0.1))
-                return await run_compliance_check(measure, provider=selected_provider, model=selected_model, mode=mode)
+                return await run_compliance_check(measure, provider=selected_provider, model=selected_model, mode=mode, suppress_overreach=suppress_overreach)
 
         tasks = [run_with_semaphore(m) for m in all_measures]
         print(f"DEBUG: Starting {len(tasks)} assessment tasks...")
@@ -269,6 +270,7 @@ async def run_assessment(
             provider=selected_provider,
             model=selected_model,
             mode=mode,
+            suppress_overreach=suppress_overreach,
             commitments=commitment_results,
             criteria=flat_results
         )
