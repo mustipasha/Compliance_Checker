@@ -10,6 +10,7 @@ This folder contains the data and the script behind the functionality tests repo
 | `runs/nist_baseline/` | The five baseline runs against the NIST AI RMF |
 | `../backend/ablation_runs/` | The five ablation runs against the NIST AI RMF (`suppress_overreach=true`) |
 | `assessment_ground_truth.json` | Reference labels for the NIST AI RMF test (26 `PARTIALLY_COMPLIANT`, 6 `NOT_COMPLIANT`) |
+| `reference_annotation_nist.docx` | Annotation instruction, labels and justifications behind the NIST AI RMF reference labels |
 | `sanity_ground_truth.json` | Reference labels for the sanity check. Every criterion is `COMPLIANT`, as described in the thesis. |
 | `calculate_metrics.py` | Computes accuracy, per-class and weighted metrics, confusion matrices and stability |
 | `reports/` | The original metric reports for the sanity check and the NIST baseline |
