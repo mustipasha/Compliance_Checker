@@ -1,0 +1,112 @@
+Evaluation Report (Binary Mode: False)
+Number of runs evaluated: 5
+==================================================
+
+### Per-Run Classification Metrics (Weighted)
+Run Filename                                                                     | Acc    | W-P    | W-R    | W-F1  
+-------------------------------------------------------------------------------------------------------------------
+NIST_AI_RMFpdf_20260317_135800.json                                              | 0.5000 | 0.8636 | 0.5000 | 0.5317
+NIST_AI_RMFpdf_20260317_233044.json                                              | 0.4062 | 0.8575 | 0.4062 | 0.4173
+NIST_AI_RMFpdf_20260317_233406.json                                              | 0.5625 | 0.8688 | 0.5625 | 0.5997
+NIST_AI_RMFpdf_20260317_233711.json                                              | 0.5000 | 0.8636 | 0.5000 | 0.5317
+NIST_AI_RMFpdf_20260317_234047.json                                              | 0.4688 | 0.7833 | 0.4688 | 0.5086
+
+### Per-Run Confusion Matrices
+
+Run: NIST_AI_RMFpdf_20260317_135800.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 10         | 16         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: NIST_AI_RMFpdf_20260317_233044.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 7          | 19         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: NIST_AI_RMFpdf_20260317_233406.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 12         | 14         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: NIST_AI_RMFpdf_20260317_233711.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 10         | 16         | 0         
+NOT_COMPLIANT | 0          | 0          | 6          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+Run: NIST_AI_RMFpdf_20260317_234047.json
+Actual\Pred | COMPLIANT  | PARTIALLY_COMPLIANT | NOT_COMPLIANT | NOT_EVIDENCED / UNKNOWN
+----------------------------------------------------------------------------------------
+COMPLIANT   | 0          | 0          | 0          | 0         
+PARTIALLY_COMPLIANT | 0          | 10         | 16         | 0         
+NOT_COMPLIANT | 0          | 1          | 5          | 0         
+NOT_EVIDENCED / UNKNOWN | 0          | 0          | 0          | 0         
+--------------------------------------------------
+
+### Global Classification Metrics (Mean ± Std)
+Accuracy:           0.4875 ± 0.0508
+----------------------------------------
+Precision for each class but weights it by the number of actual samples (Support) in the Ground Truth.
+Weighted-Precision: 0.8474 ± 0.0322
+Weighted-Recall:    0.4875 ± 0.0508
+Weighted-F1 Score:  0.5178 ± 0.0588
+----------------------------------------
+Precision for each class separately
+Macro-Precision:    0.3116 ± 0.0133
+Macro-Recall:       0.3359 ± 0.0220
+Macro-F1 Score:     0.2392 ± 0.0233
+
+### Global Retrieval Metrics (Mean ± Std)
+Avg Precision:    0.0000 ± 0.0000
+Avg Recall:       0.0000 ± 0.0000
+
+### Per-Criterion Stability (how consistent the AI is)
+Criterion  | Stability  | Most Common Prediction
+-------------------------------------------------------
+SS-1.1     | 100.00%    | PARTIALLY_COMPLIANT
+SS-1.2     | 80.00%     | PARTIALLY_COMPLIANT
+SS-1.3     | 100.00%    | PARTIALLY_COMPLIANT
+SS-1.4     | 100.00%    | NOT_COMPLIANT
+SS-10.1    | 100.00%    | NOT_COMPLIANT
+SS-10.2    | 100.00%    | NOT_COMPLIANT
+SS-2.1     | 100.00%    | NOT_COMPLIANT
+SS-2.2     | 100.00%    | NOT_COMPLIANT
+SS-3.1     | 80.00%     | PARTIALLY_COMPLIANT
+SS-3.2     | 60.00%     | PARTIALLY_COMPLIANT
+SS-3.3     | 100.00%    | NOT_COMPLIANT
+SS-3.4     | 80.00%     | NOT_COMPLIANT
+SS-3.5     | 60.00%     | PARTIALLY_COMPLIANT
+SS-4.1     | 100.00%    | NOT_COMPLIANT
+SS-4.2     | 100.00%    | NOT_COMPLIANT
+SS-5.1     | 100.00%    | PARTIALLY_COMPLIANT
+SS-6.1     | 80.00%     | NOT_COMPLIANT
+SS-6.2     | 60.00%     | NOT_COMPLIANT
+SS-7.1     | 80.00%     | NOT_COMPLIANT
+SS-7.2     | 100.00%    | NOT_COMPLIANT
+SS-7.3     | 60.00%     | NOT_COMPLIANT
+SS-7.4     | 100.00%    | NOT_COMPLIANT
+SS-7.5     | 100.00%    | NOT_COMPLIANT
+SS-7.6     | 100.00%    | NOT_COMPLIANT
+SS-7.7     | 100.00%    | NOT_COMPLIANT
+SS-8.1     | 100.00%    | PARTIALLY_COMPLIANT
+SS-8.2     | 100.00%    | PARTIALLY_COMPLIANT
+SS-8.3     | 80.00%     | NOT_COMPLIANT
+SS-9.1     | 100.00%    | NOT_COMPLIANT
+SS-9.2     | 60.00%     | NOT_COMPLIANT
+SS-9.3     | 80.00%     | NOT_COMPLIANT
+SS-9.4     | 100.00%    | NOT_COMPLIANT
